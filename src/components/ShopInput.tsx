@@ -15,23 +15,33 @@
 import { FC, useState } from "react";
 
 interface ShopInputProps {
-  addShopItem: (item: string, priority: string, shop: string) => void;
+  addShopItem: (
+    item: string,
+    priority: "low" | "medium" | "high",
+    shop: string
+  ) => void;
   addShop: (shop: string) => void;
   shops: string[];
 }
 
 const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
   const [inputValue, setInputValue] = useState("");
-  const [priority, setPriority] = useState("");
+  const [priority, setPriority] = useState<"low" | "medium" | "high" | "null">(
+    "null"
+  );
   const [shopName, setShopName] = useState("");
   const [selectedShop, setSelectedShop] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (inputValue.trim() && priority && selectedShop) {
-      addShopItem(inputValue, priority, selectedShop);
+      addShopItem(
+        inputValue,
+        priority as "low" | "medium" | "high",
+        selectedShop
+      );
       setInputValue("");
-      setPriority("");
+      setPriority("null");
       setSelectedShop("");
     }
   };
@@ -69,7 +79,9 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
         {/* Priority selection */}
         <select
           value={priority}
-          onChange={(e) => setPriority(e.target.value)}
+          onChange={(e) =>
+            setPriority(e.target.value as "low" | "medium" | "high")
+          }
           required
         >
           <option value="" disabled hidden>
