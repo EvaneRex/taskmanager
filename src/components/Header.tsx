@@ -4,9 +4,10 @@
  * @param {HeaderProps} props - is the props for the header component
  * @param {string} props.title - the title of the page/type, in our case "Taskmanager"
  * @param {string} props.logoUrl - the url for our logo "Posty"
- * @returns a jsx-element for a Header component, with a logo, title and material UI icon
  *
- * What to add in the main.tsx file?
+ * @returns {JSX.ELEMENT} - for a Header component, with a logo, title and material UI icon
+ *
+ * What to add in the file?
  * <Header title="Taskmanager" logoUrl="/posty_1.svg" />
  */
 
