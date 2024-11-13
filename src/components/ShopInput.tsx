@@ -10,4 +10,9 @@ interface ShopInputProps {
   shops: string[];
 }
 
-const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {};
+const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
+  const [inputValue, setInputValue] = useState("");
+  const [priority, setPriority] = useState("");
+  const [shopName, setShopName] = useState("");
+  const [selectedShop, setSelectedShop] = useState("");
+};
