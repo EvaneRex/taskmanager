@@ -1,7 +1,7 @@
 /**
  * This is the ShopManager component, which connects ShopInput, ShopItem and ShopList into one. This is what creates a functional application for users to add and remove items and shops to/from the list.
  *
- *
+ *@param {}
  *
  */
 import ShopInput from "./ShopInput";
