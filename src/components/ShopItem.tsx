@@ -4,7 +4,6 @@
  * 
  */
 
-import React from 'react'; //Forstår ikke hvorfor det dér ik virker????
 import '/App.css';
 
 //Define interface for ShopItem
