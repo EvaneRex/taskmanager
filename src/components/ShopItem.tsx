@@ -2,21 +2,31 @@
  * Component that handles the display and interaction for each individual task.
  * It is responsible for showing task details such as name, item, priority and status, as well as managing user interactions like marking the task as completed.
  * 
+ * @param {ShopItemProps} -
+ * @param {shopItem} -
+ * @param {removeShopItem} -
+ * @param {toggleShopItemCompletion} -
+ * 
+ * @returns JSX element for rendering the shop item
+ * 
  */
 
-import '/App.css';
 
 //Define interface for ShopItem
 interface ShopItemProps {
     shopItem: {
         id: number;
         name: string;
-        priority: number;
         completed: boolean;
+        department: 'Fruit/Vegetables' | 'Bread' | 'Meat' | 'Dairy' | 'Frozen' | 'Non Food';
+        shop: string;
     };
     removeShopItem: (id: number) => void;
     toggleShopItemCompletion: (id: number) => void;
 }
+//Define the type for shops (will be just a string in this instance)
+export type Shop = string;
+
 
 const ShopItem: React.FC<ShopItemProps> = ({ shopItem, removeShopItem, toggleShopItemCompletion }) => {
     //Function that handle marking a task as complete
