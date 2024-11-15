@@ -2,7 +2,7 @@
  * Component that handles the display and interaction for each individual task.
  * It is responsible for showing task details such as name, item, priority and status, as well as managing user interactions like marking the task as completed.
  * 
- * @param {ShopItemProps} -
+ * @param {ShopItemProps} - The props for the s
  * @param {shopItem} -
  * @param {removeShopItem} -
  * @param {toggleShopItemCompletion} -
