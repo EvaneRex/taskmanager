@@ -2,10 +2,13 @@
  * Component that handles the display and interaction for each individual task.
  * It is responsible for showing task details such as name, item, priority and status, as well as managing user interactions like marking the task as completed.
  * 
- * @param {ShopItemProps} - The props for the s
- * @param {shopItem} -
- * @param {removeShopItem} -
- * @param {toggleShopItemCompletion} -
+ * @param {ShopItemProps} - The props for the shopItem component
+ * @param {Shop} - Defines the type for shops
+ * @param {shopItem} -  contains an items name, department and id. 
+ * @param {removeShopItem} -   function that handle deleting a task
+
+ * @param {toggleShopItemCompletion} -  function that handle marking a task as complete
+
  * 
  * @returns JSX element for rendering the shop item
  * 
@@ -48,7 +51,7 @@ const ShopItem: React.FC<ShopItemProps> = ({ shopItem, removeShopItem, toggleSho
     return (
         <li className={`shop-item ${shopItem.completed ? 'completed' : ''}`}>
             <span>{shopItem.name}</span> {/*Task name without colourchange*/}
-            <span className={`priority-${shopItem.priority}`}> - Afdeling: {shopItem.priority}</span>
+            <span className={`priority-${shopItem.priority}`}> - Department: {shopItem.priority}</span>
 
             <button onClick={() => handleCompleteClick(shopItem.id)} className={`complete ${shopItem.completed ? 'active' : ''}`}>
                 {shopItem.completed ? 'Undo' : 'Complete'}
