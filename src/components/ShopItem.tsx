@@ -51,7 +51,7 @@ const ShopItem: React.FC<ShopItemProps> = ({ shopItem, removeShopItem, toggleSho
     return (
         <li className={`shop-item ${shopItem.completed ? 'completed' : ''}`}>
             <span>{shopItem.name}</span> {/*Task name without colourchange*/}
-            <span className={`priority-${shopItem.priority}`}> - Department: {shopItem.priority}</span>
+            <span className={`priority-${shopItem.department}`}> - Department: {shopItem.department}</span>
 
             <button onClick={() => handleCompleteClick(shopItem.id)} className={`complete ${shopItem.completed ? 'active' : ''}`}>
                 {shopItem.completed ? 'Undo' : 'Complete'}
