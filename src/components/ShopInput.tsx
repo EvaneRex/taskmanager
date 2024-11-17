@@ -86,9 +86,9 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           type="text"
           value={shopName}
           onChange={(e) => setShopName(e.target.value)}
-          placeholder="Tilføj butik"
+          placeholder="Add shop"
         />
-        <button type="submit">Tilføj butikken</button>
+        <button type="submit">Add shop</button>
       </form>
 
       {/* Handles on submit for the items */}
@@ -97,7 +97,7 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Tilføj ny vare"
+          placeholder="Add item"
         />
 
         {/* Priority selection */}
@@ -109,14 +109,14 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           required
         >
           <option value="" disabled hidden>
-            Vælg afdeling
+            Chose department
           </option>
-          <option value="frugt/grønt">Frugt & Grønt</option>
-          <option value="brød">Brød</option>
-          <option value="kød">Kød</option>
+          <option value="fruits/vegetables">Fruits & Vegetables</option>
+          <option value="bread">Bread</option>
+          <option value="meat">Meat</option>
           <option value="nonfood">NonFood</option>
-          <option value="mejeri">Mejeri</option>
-          <option value="frost">Frost</option>
+          <option value="dairy">Dairy</option>
+          <option value="frozen">Frozen</option>
         </select>
 
         {/* Shop selection */}
@@ -126,7 +126,7 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           required
         >
           <option value="" disabled hidden>
-            Vælg butik
+            Add Shop
           </option>
           {shops.map((shop, index) => (
             <option key={index} value={shop}>
@@ -135,7 +135,7 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           ))}
         </select>
 
-        <button type="submit">Tilføj</button>
+        <button type="submit">Add</button>
       </form>
     </>
   );
