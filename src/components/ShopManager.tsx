@@ -1,8 +1,7 @@
 /**
  * This is the ShopManager component, which connects ShopInput, ShopItem and ShopList into one. This is what creates a functional application for users to add and remove items and shops to/from the list.
  *
- *@param {}
- *
+ * @returns {JSX.Element} - the rendered component
  */
 import ShopInput from "./ShopInput";
 import ShopItem from "./ShopItem";
@@ -15,6 +14,13 @@ interface ShopItem {
   completed: boolean;
   priority: "low" | "medium" | "high";
   shop: string;
+  department:
+    | "Fruit/Vegetables"
+    | "Bread"
+    | "Meat"
+    | "Dairy"
+    | "Frozen"
+    | "Non Food";
 }
 
 function ShopManager() {
@@ -39,7 +45,14 @@ function ShopManager() {
   const addShopItem = (
     itemName: string,
     itemPriority: "low" | "medium" | "high",
-    itemShop: string
+    itemShop: string,
+    itemDepartment:
+      | "Fruit/Vegetables"
+      | "Bread"
+      | "Meat"
+      | "Dairy"
+      | "Frozen"
+      | "Non Food"
   ) => {
     const newShopItem: ShopItem = {
       id: Date.now(),
@@ -47,6 +60,7 @@ function ShopManager() {
       completed: false,
       priority: itemPriority || "low",
       shop: itemShop || "General", // Fallback to "General" if no shop is specified
+      department: itemDepartment,
     };
     setShopItems([...shopItems, newShopItem]);
   };

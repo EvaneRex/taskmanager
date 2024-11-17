@@ -3,6 +3,11 @@
  *
  * @param {NewTaskProps} props - The props for the component
  * @param {Function} onAddTask - The function that handles adding a new task.
+ *
+ * @returns {JSX.Element} - A fomr element containing inpput fields for the user to add a title and a summary
+ *
+ * What to put in the file?
+ * <NewTask onAddTask={handleAddTask} />
  */
 import { useRef, type FormEvent } from "react";
 

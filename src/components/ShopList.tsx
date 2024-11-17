@@ -1,5 +1,19 @@
 /**
- * This is the component ShopList that is responsible for showing all of the information. Not to be confused with the ShopManger, that connects all of them to the app.
+ * This is ShopList, which displays the shopping items grouped by shop and sorted by departments. Its also responsible for enabeling the marking of completed or remove buttons.
+ *
+ * @param {ShopListProps} props - The props for the component
+ * @param {ShopItemType[]} props.shopItems - An array for the shopping items to display
+ * @param {(id:number) => void} props.removeShopItem - A function to remove shop items based on id
+ * @param {(id:number) => void} props.toggleShopItemCompletion - A function to toggle the status of an item
+ *
+ * @returns {JSX.Element} - A rendered shoplist component
+ *
+ * What to add in the file?
+ *<ShopList
+        shopItems={shopItems}
+        removeShopItem={removeShopItem}
+        toggleShopItemCompletion={toggleShopItemCompletion}
+      />
  */
 
 import ShopItem from "./ShopItem";
@@ -66,9 +80,9 @@ const ShopList: React.FC<ShopListProps> = ({
   }, {});
 
   return (
-    <div>
+    <div aria-label="Shopping items">
       {Object.keys(groupedShopItems).map((shop) => (
-        <div key={shop}>
+        <section key={shop} aria-labelledby={`shop-${shop}`}>
           <h2>{shop}</h2>
           <ul>
             {groupedShopItems[shop].map((shopItem) => (
@@ -80,7 +94,7 @@ const ShopList: React.FC<ShopListProps> = ({
               />
             ))}
           </ul>
-        </div>
+        </section>
       ))}
     </div>
   );

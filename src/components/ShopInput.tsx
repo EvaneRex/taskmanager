@@ -9,6 +9,7 @@
  * @returns {JSX.Element} - a form interface with 2 sections, one for adding the shops and one for items with specific priority and shop
  *
  * What to add in the file?
+ * <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
  *
  */
 
@@ -18,7 +19,14 @@ interface ShopInputProps {
   addShopItem: (
     item: string,
     priority: "low" | "medium" | "high",
-    shop: string
+    shop: string,
+    department:
+      | "Fruit/Vegetables"
+      | "Bread"
+      | "Meat"
+      | "Dairy"
+      | "Frozen"
+      | "Non Food"
   ) => void;
   addShop: (shop: string) => void;
   shops: string[];
@@ -31,18 +39,34 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
   );
   const [shopName, setShopName] = useState("");
   const [selectedShop, setSelectedShop] = useState("");
+  const [department, setDepartment] = useState<
+    | "Fruit/Vegetables"
+    | "Bread"
+    | "Meat"
+    | "Dairy"
+    | "Frozen"
+    | "Non Food"
+    | "null"
+  >("null");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (inputValue.trim() && priority && selectedShop) {
+    if (
+      inputValue.trim() &&
+      priority &&
+      selectedShop &&
+      department !== "null"
+    ) {
       addShopItem(
         inputValue,
         priority as "low" | "medium" | "high",
-        selectedShop
+        selectedShop,
+        department
       );
       setInputValue("");
       setPriority("null");
       setSelectedShop("");
+      setDepartment("null");
     }
   };
 
