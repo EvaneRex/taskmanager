@@ -49,7 +49,13 @@ export default function TaskManager() {
 
   //handles deletion for tasks based on id
   function handleDeleteTask(id: number) {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    setTasks((prevTasks: Task[]) => {
+      const updatedTasks = prevTasks.filter((task: Task) => task.id !== id);
+
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+
+      return updatedTasks;
+    });
   }
 
   return (
