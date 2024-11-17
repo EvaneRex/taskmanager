@@ -33,13 +33,27 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
   return (
     <form onSubmit={handleSubmit}>
       <p>
-        <label htmlFor="task">Add your task</label>
-        <input type="text" id="task" ref={task} required />
+        <label htmlFor="task"></label>
+        <input
+          type="text"
+          id="task"
+          ref={task}
+          placeholder="Add your task"
+          aria-label="Task input field"
+          required
+        />
       </p>
 
       <p>
-        <label htmlFor="summary">Add your summary</label>
-        <input type="text" id="summary" ref={summary} required />
+        <label htmlFor="summary"></label>
+        <input
+          type="text"
+          id="summary"
+          ref={summary}
+          placeholder="Add summary"
+          aria-label="Summary input field"
+          required
+        />
       </p>
       <p>
         <button type="submit" aria-label="Add task">
