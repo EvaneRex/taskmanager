@@ -10,7 +10,7 @@
  * @param {toggleShopItemCompletion} -  function that handle marking a task as complete
 
  * 
- * @returns JSX element for rendering the shop item
+ * @returns 
  * 
  */
 

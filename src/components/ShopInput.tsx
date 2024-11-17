@@ -90,7 +90,6 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           <option value="frugt/grønt">Frugt & Grønt</option>
           <option value="brød">Brød</option>
           <option value="kød">Kød</option>
-          <option value="konserves">Konserves</option>
           <option value="nonfood">NonFood</option>
           <option value="mejeri">Mejeri</option>
           <option value="frost">Frost</option>
