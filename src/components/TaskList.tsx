@@ -20,11 +20,31 @@ type TaskListProps = {
 };
 
 export default function TaskList({ tasks, onDeleteTask }: TaskListProps) {
+  const handleDelete = (id: number) => {
+    const confirmDeletion = window.confirm(
+      "Are you sure you want to delete this task?"
+    );
+    if (confirmDeletion) {
+      onDeleteTask(id);
+    }
+  };
+
   return (
-    <ul>
+    <ul
+      aria-label="Task list"
+      aria-roledescription="A list for generating tasks based on your input"
+    >
       {tasks.map((task) => (
-        <li key={task.id}>
-          <Task id={task.id} title={task.title} onDelete={onDeleteTask}>
+        <li
+          key={task.id}
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === "Delete") {
+              handleDelete(task.id);
+            }
+          }}
+        >
+          <Task id={task.id} title={task.title} onDelete={handleDelete}>
             <p>{task.description}</p>
           </Task>
         </li>
