@@ -1,5 +1,8 @@
 /**
- * This is the NewTask component
+ * This is the NewTask component. This enables users to add a new task by providing a title and a discription(summary).
+ *
+ * @param {NewTaskProps} props - The props for the component
+ * @param {Function} onAddTask - The function that handles adding a new task.
  */
 import { useRef, type FormEvent } from "react";
 
@@ -25,16 +28,18 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
   return (
     <form onSubmit={handleSubmit}>
       <p>
-        <label htmlFor="task">Your goal</label>
-        <input type="text" id="task" ref={task} />
+        <label htmlFor="task">Add your task</label>
+        <input type="text" id="task" ref={task} required />
       </p>
 
       <p>
-        <label htmlFor="summary">Short summary</label>
-        <input type="text" id="summary" ref={summary} />
+        <label htmlFor="summary">Add your summary</label>
+        <input type="text" id="summary" ref={summary} required />
       </p>
       <p>
-        <button>Add Task</button>
+        <button type="submit" aria-label="Add task">
+          Add task
+        </button>
       </p>
     </form>
   );
