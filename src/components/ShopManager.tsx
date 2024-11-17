@@ -12,7 +12,6 @@ interface ShopItem {
   id: number;
   name: string;
   completed: boolean;
-  priority: "low" | "medium" | "high";
   shop: string;
   department:
     | "Fruit/Vegetables"
@@ -44,21 +43,19 @@ function ShopManager() {
 
   const addShopItem = (
     itemName: string,
-    itemPriority: "low" | "medium" | "high",
-    itemShop: string,
     itemDepartment:
       | "Fruit/Vegetables"
       | "Bread"
       | "Meat"
       | "Dairy"
       | "Frozen"
-      | "Non Food"
+      | "Non Food",
+    itemShop: string
   ) => {
     const newShopItem: ShopItem = {
       id: Date.now(),
       name: itemName,
       completed: false,
-      priority: itemPriority || "low",
       shop: itemShop || "General", // Fallback to "General" if no shop is specified
       department: itemDepartment,
     };

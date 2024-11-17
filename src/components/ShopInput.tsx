@@ -18,15 +18,14 @@ import { FC, useState } from "react";
 interface ShopInputProps {
   addShopItem: (
     item: string,
-    priority: "low" | "medium" | "high",
-    shop: string,
     department:
       | "Fruit/Vegetables"
       | "Bread"
       | "Meat"
       | "Dairy"
       | "Frozen"
-      | "Non Food"
+      | "Non Food",
+    shop: string
   ) => void;
   addShop: (shop: string) => void;
   shops: string[];
@@ -34,39 +33,25 @@ interface ShopInputProps {
 
 const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
   const [inputValue, setInputValue] = useState("");
-  const [priority, setPriority] = useState<"low" | "medium" | "high" | "null">(
-    "null"
-  );
   const [shopName, setShopName] = useState("");
   const [selectedShop, setSelectedShop] = useState("");
-  const [department, setDepartment] = useState<
+  const [selectedDepartment, setSelectedDepartment] = useState<
     | "Fruit/Vegetables"
     | "Bread"
     | "Meat"
     | "Dairy"
     | "Frozen"
     | "Non Food"
-    | "null"
-  >("null");
+    | " "
+  >(" ");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (
-      inputValue.trim() &&
-      priority &&
-      selectedShop &&
-      department !== "null"
-    ) {
-      addShopItem(
-        inputValue,
-        priority as "low" | "medium" | "high",
-        selectedShop,
-        department
-      );
+    if (inputValue.trim() && selectedShop && selectedDepartment !== " ") {
+      addShopItem(inputValue, selectedDepartment, selectedShop);
       setInputValue("");
-      setPriority("null");
       setSelectedShop("");
-      setDepartment("null");
+      setSelectedDepartment(" ");
     }
   };
 
@@ -86,7 +71,7 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           type="text"
           value={shopName}
           onChange={(e) => setShopName(e.target.value)}
-          placeholder="Add shop"
+          placeholder="Add shopname"
         />
         <button type="submit">Add shop</button>
       </form>
@@ -97,26 +82,35 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Add item"
+          placeholder="Add a new item"
         />
 
-        {/* Priority selection */}
+        {/* Department selection */}
         <select
-          value={priority}
+          value={selectedDepartment}
           onChange={(e) =>
-            setPriority(e.target.value as "low" | "medium" | "high")
+            setSelectedDepartment(
+              e.target.value as
+                | "Fruit/Vegetables"
+                | "Bread"
+                | "Meat"
+                | "Dairy"
+                | "Frozen"
+                | "Non Food"
+                | " "
+            )
           }
           required
         >
-          <option value="" disabled hidden>
-            Chose department
+          <option value=" " disabled hidden>
+            Choose department
           </option>
-          <option value="fruits/vegetables">Fruits & Vegetables</option>
-          <option value="bread">Bread</option>
-          <option value="meat">Meat</option>
-          <option value="nonfood">NonFood</option>
-          <option value="dairy">Dairy</option>
-          <option value="frozen">Frozen</option>
+          <option value="Fruit/Vegetables">Fruit & Vegetables</option>
+          <option value="Bread">Bread</option>
+          <option value="Meat">Meat</option>
+          <option value="Non food">NonFood</option>
+          <option value="Dairy">Dairy</option>
+          <option value="Frozen">Frozen</option>
         </select>
 
         {/* Shop selection */}
@@ -126,7 +120,7 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           required
         >
           <option value="" disabled hidden>
-            Add Shop
+            Choose shop
           </option>
           {shops.map((shop, index) => (
             <option key={index} value={shop}>
