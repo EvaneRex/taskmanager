@@ -8,7 +8,7 @@
  * @returns {JSX.ELEMENT} - for a Header component, with a logo, title and material UI icon
  *
  * What to add in the file?
- * <Header title="Taskmanager" logoUrl="/posty_1.svg" />
+ * <Header title="Posty" logoUrl="/posty_1.svg" />
  */
 
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
