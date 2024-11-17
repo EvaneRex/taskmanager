@@ -1,5 +1,8 @@
+/**
+ *
+ */
 import TaskList from "./TaskList.tsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewTask from "./NewTask.tsx";
 
 export type Task = {
@@ -10,6 +13,18 @@ export type Task = {
 
 export default function TaskManager() {
   const [tasks, setTasks] = useState<Task[]>([]);
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+  useEffect(() => {
+    if (tasks.length > 0) {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  }, [tasks]);
 
   function handleAddTask(task: string, summary: string) {
     setTasks((prevTasks) => {
