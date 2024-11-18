@@ -28,6 +28,7 @@ interface TaskListType {
   id: number;
   title: string;
   summary: string;
+  task: string;
   priority: Priority;
   completed: boolean;
 }
@@ -55,6 +56,16 @@ const TaskList: React.FC<TaskListProps> = ({
     return priorityOrder[a.priority] - priorityOrder[b.priority];
   });
 
+  const groupedTasks = sortedTasks.reduce<
+    Record<string, TaskListType[]>
+  >((acc, tasks) => {
+    if (!acc[tasks.task]) {
+      acc[tasks.task] = [];
+    }
+    acc[tasks.task].push(tasks);
+    return acc;
+  }, {});
+
   const handleDelete = (id: number) => {
     const confirmDeletion = window.confirm(
       "Are you sure you want to delete this task?"
@@ -65,7 +76,10 @@ const TaskList: React.FC<TaskListProps> = ({
   };
 
   return (
-    <ul
+    <div arial-label="Task List"
+
+
+
       aria-label="Task list"
       aria-roledescription="A list for generating tasks based on your input"
     >
