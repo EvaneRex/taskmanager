@@ -11,7 +11,7 @@ import TaskList from "./TaskList.tsx";
 import { useState } from "react";
 import NewTask from "./NewTask";
 
-interface Task {
+export type Task {
   id: number;
   title: string;
   summary: string;
