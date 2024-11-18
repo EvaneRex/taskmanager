@@ -73,19 +73,10 @@ const TaskList: React.FC<TaskListProps> = ({
     return acc;
   }, {});
 
-  /*onst handleDelete = (id: number) => {
-    const confirmDeletion = window.confirm(
-      "Are you sure you want to delete this task?"
-    );
-    if (confirmDeletion) {
-      onDeleteTask(id);
-    }
-  };*/
-
   return (
     <div aria-label="Task items">
       {Object.keys(groupedTasks).map((tasks) => (
-        <section key={tasks} aria-labelledby={`Task-${tasks}`}>
+        <section key={tasks} aria-labelledby={`task-${tasks}`}>
           <h2>{tasks}</h2>
           <ul>
             {groupedTasks[tasks].map((taskItem) => (
