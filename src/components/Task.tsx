@@ -18,7 +18,7 @@
 
 
 interface TaskProps {
-  tasks: {
+  taskItem: {
     id: number;
     title: string;
     summary: string;
@@ -27,47 +27,47 @@ interface TaskProps {
     | "High"
     | "Medium"
     | "Low";
-    taskItem: string;
+    tasks: string;
 
   };
-  onDelete: (id: number) => void;
-  toggleTaskListCompletion: (id: number) => void;
+  removeTaskItem: (id: number) => void;
+  toggleTaskItemCompletion: (id: number) => void;
 }
 
 
-export type Task = string;
+export type Tasks = string;
 
 const TaskList: React.FC<TaskProps> = ({
-  taskListItem,
-  onDelete,
-  toggleTaskListCompletion,
+  taskItem,
+  removeTaskItem,
+  toggleTaskItemCompletion,
 }) => {
   const handleCompleteClick = (id: number): void => {
-    toggleTaskListCompletion(id);
+    toggleTaskItemCompletion(id);
   };
 
   const handleDeleteClick = (id: number): void => {
     const confirmed = window.confirm("Are you sure you want to delete this task?");
     if (confirmed) {
-      onDelete(id);
+      removeTaskItem(id);
     }
   };
 
 
   return (
-    <li className={`tasks ${tasks.completed ? "completed" : ""}`}>
-      <span>{tasks.title}</span> {/*Task name without colourchange*/}
-      <span className={`priority-${tasks.priority}`}>
+    <li className={`task-item ${taskItem.completed ? "completed" : ""}`}>
+      <span>{taskItem.title}</span> {/*Task name without colourchange*/}
+      <span className={`priority-${taskItem.priority}`}>
         {" "}
-        - Priority: {tasks.priority}
+        - Priority: {taskItem.priority}
       </span>
       <button
-        onClick={() => handleCompleteClick(tasks.id)}
-        className={`complete ${tasks.completed ? "active" : ""}`}
+        onClick={() => handleCompleteClick(taskItem.id)}
+        className={`complete ${taskItem.completed ? "active" : ""}`}
       >
-        {tasks.completed ? "Undo" : "Complete"}
+        {taskItem.completed ? "Undo" : "Complete"}
       </button>
-      <button onClick={() => handleDeleteClick(tasks.id)} className="delete">
+      <button onClick={() => handleDeleteClick(taskItem.id)} className="delete">
         Delete
       </button>
     </li>

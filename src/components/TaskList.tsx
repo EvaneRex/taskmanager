@@ -58,11 +58,11 @@ const TaskList: React.FC<TaskListProps> = ({
 
   const groupedTasks = sortedTasks.reduce<
     Record<string, TaskListType[]>
-  >((acc, tasks) => {
-    if (!acc[tasks.taskItem]) {
-      acc[tasks.taskItem] = [];
+  >((acc, taskList) => {
+    if (!acc[taskList.taskitem]) {
+      acc[taskList.taskitem] = [];
     }
-    acc[tasks.taskItem].push(tasks);
+    acc[taskList.taskitem].push(taskList);
     return acc;
   }, {});
 
