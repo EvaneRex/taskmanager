@@ -16,28 +16,22 @@
  *
  */
 
-
 interface TaskProps {
   taskItem: {
     id: number;
     title: string;
     summary: string;
     completed: boolean;
-    priority:
-    | "High"
-    | "Medium"
-    | "Low";
+    priority: "High" | "Medium" | "Low";
     tasks: string;
-
   };
   removeTaskItem: (id: number) => void;
   toggleTaskItemCompletion: (id: number) => void;
 }
 
-
 export type Tasks = string;
 
-const TaskList: React.FC<TaskProps> = ({
+const Task: React.FC<TaskProps> = ({
   taskItem,
   removeTaskItem,
   toggleTaskItemCompletion,
@@ -47,12 +41,13 @@ const TaskList: React.FC<TaskProps> = ({
   };
 
   const handleDeleteClick = (id: number): void => {
-    const confirmed = window.confirm("Are you sure you want to delete this task?");
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this task?"
+    );
     if (confirmed) {
       removeTaskItem(id);
     }
   };
-
 
   return (
     <li className={`task-item ${taskItem.completed ? "completed" : ""}`}>
@@ -74,5 +69,4 @@ const TaskList: React.FC<TaskProps> = ({
   );
 };
 
-export default TaskList;
-
+export default Task;

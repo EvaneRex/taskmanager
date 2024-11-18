@@ -7,9 +7,9 @@
  * Note for future additions for the task files in general
  * Making it possible to mark as complete, adding a event keydown for space or enter to enable keyboard usage for marking as complete.
  */
-import TaskList from "./TaskList.tsx";
 import { useState } from "react";
 import NewTask from "./NewTask";
+import TaskList from "./TaskList";
 
 export type Task = {
   id: number;
@@ -60,21 +60,11 @@ export default function Taskmanager() {
       <NewTask onAddTask={addTask} />
 
       <section>
-        {tasks.length > 0 ? (
-          <ul>
-            {tasks.map((task) => (
-              <li key={task.id}>
-                <h2>
-                  {task.title} ({task.priority})
-                </h2>
-                <p>{task.summary}</p>
-                <button onClick={() => handleDelete(task.id)}>Delete</button>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No tasks yet. Add a task above!</p>
-        )}
+        <TaskList
+          taskItem={tasks}
+          removeTaskItem={deleteTask}
+          toggleTaskItemCompletion={toggleTaskCompletion}
+        />
       </section>
     </div>
   );
