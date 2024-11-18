@@ -60,11 +60,21 @@ export default function Taskmanager() {
       <NewTask onAddTask={addTask} />
 
       <section>
-        <TaskList
-          taskItem={tasks}
-          removeTaskItem={deleteTask}
-          toggleTaskItemCompletion={toggleTaskCompletion}
-        />
+        {tasks.length > 0 ? (
+          <ul>
+            {tasks.map((task) => (
+              <li key={task.id}>
+                <h2>
+                  {task.title} ({task.priority})
+                </h2>
+                <p>{task.summary}</p>
+                <button onClick={() => handleDelete(task.id)}>Delete</button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No tasks yet. Add a task above!</p>
+        )}
       </section>
     </div>
   );
