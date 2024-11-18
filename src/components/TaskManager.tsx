@@ -19,7 +19,7 @@ interface Task {
   priority: "High" | "Medium" | "Low";
 }
 
-export default function App() {
+export default function Taskmanager() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   // Add a new task
