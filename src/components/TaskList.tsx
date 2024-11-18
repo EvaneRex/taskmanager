@@ -28,7 +28,7 @@ interface TaskListType {
   id: number;
   title: string;
   summary: string;
-  task: string;
+  taskItem: string;
   priority: Priority;
   completed: boolean;
 }
@@ -59,24 +59,25 @@ const TaskList: React.FC<TaskListProps> = ({
   const groupedTasks = sortedTasks.reduce<
     Record<string, TaskListType[]>
   >((acc, tasks) => {
-    if (!acc[tasks.task]) {
-      acc[tasks.task] = [];
+    if (!acc[tasks.taskItem]) {
+      acc[tasks.taskItem] = [];
     }
-    acc[tasks.task].push(tasks);
+    acc[tasks.taskItem].push(tasks);
     return acc;
   }, {});
 
-  const handleDelete = (id: number) => {
+  /*onst handleDelete = (id: number) => {
     const confirmDeletion = window.confirm(
       "Are you sure you want to delete this task?"
     );
     if (confirmDeletion) {
       onDeleteTask(id);
     }
-  };
+  };*/
 
   return (
     <div arial-label="Task List"
+      {Object.keys(groupedTasks).map(task)}
 
 
 

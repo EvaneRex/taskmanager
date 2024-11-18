@@ -27,7 +27,7 @@ interface TaskProps {
     | "High"
     | "Medium"
     | "Low";
-    task: string;
+    taskItem: string;
 
   };
   onDelete: (id: number) => void;
@@ -38,7 +38,7 @@ interface TaskProps {
 export type Task = string;
 
 const TaskList: React.FC<TaskProps> = ({
-  tasks,
+  taskListItem,
   onDelete,
   toggleTaskListCompletion,
 }) => {
