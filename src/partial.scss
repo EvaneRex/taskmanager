@@ -10,6 +10,9 @@ $headingBold: "Lexend-Bold";
 $headingSemi: "Lexend-SemiBold";
 $headingRegular: "Lexend-Regular";
 $bodyTxt: "OpenSans-Regular";
+$borderRadiusOuter: 1rem;
+$borderRadiusInner: 1rem;
+//outer radius = inner radius + padding!
 
 //Font
 @font-face {
@@ -44,8 +47,14 @@ $bodyTxt: "OpenSans-Regular";
   font-size: $size;
 }
 
+//need to add height, width, margin etc, when we get to it
 @mixin box1 {
   background-color: $opacityBlue;
-  border-radius: 1rem;
+  border-radius: $borderRadiusOuter;
   backdrop-filter: blur(2px);
+}
+
+@mixin box2 {
+  background-color: $lightBlue;
+  border-radius: $borderRadiusInner;
 }
