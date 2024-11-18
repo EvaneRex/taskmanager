@@ -68,18 +68,20 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
   return (
     <>
       {/* Handles the submit for the shops */}
-      <form onSubmit={handleShopSubmit}>
+      <form onSubmit={handleShopSubmit} aria-labelledby="shop-form">
         <input
           type="text"
           value={shopName}
           onChange={(e) => setShopName(e.target.value)}
           placeholder="Add shopname"
         />
-        <button type="submit">Add shop</button>
+        <button type="submit" aria-label="Add shop">
+          Add shop
+        </button>
       </form>
 
       {/* Handles on submit for the items */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} aria-labelledby="item-form">
         <input
           type="text"
           value={inputValue}
@@ -133,7 +135,9 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           ))}
         </select>
 
-        <button type="submit">Add</button>
+        <button type="submit" aria-label="Add item">
+          Add
+        </button>
       </form>
     </>
   );
