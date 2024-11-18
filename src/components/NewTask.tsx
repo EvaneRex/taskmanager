@@ -9,7 +9,7 @@
  * What to put in the file?
  * <NewTask onAddTask={handleAddTask} />
  */
-import React, { FormEvent, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 
 type NewTaskProps = {
   onAddTask: (task: string, summary: string, priority: string) => void;
