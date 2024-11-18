@@ -80,7 +80,7 @@ const TaskList: React.FC<TaskListProps> = ({
           }}
         >
           <Task id={task.id} title={task.title} onDelete={handleDelete}>
-            <p>{task.description}</p>
+            <p>{task.summary}</p>
           </Task>
         </li>
       ))}
