@@ -23,14 +23,14 @@ export default function App() {
           onClick={() => switchComponent("task")}
           aria-pressed={activeComponent === "task"}
         >
-          <ListAltIcon />
+          <ListAltIcon className="list-icon" />
           Task Manager
         </button>
         <button
           onClick={() => switchComponent("shop")}
           aria-pressed={activeComponent === "shop"}
         >
-          <ShoppingBasketIcon />
+          <ShoppingBasketIcon className="list-icon" />
           Shop Manager
         </button>
       </div>
