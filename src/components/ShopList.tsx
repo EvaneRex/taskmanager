@@ -23,6 +23,7 @@ type Department =
   | "Bread"
   | "Meat"
   | "Dairy"
+  | "Dry goods"
   | "Frozen"
   | "Non Food";
 
@@ -32,8 +33,9 @@ const departmentOrder: Record<Department, number> = {
   Bread: 2,
   Meat: 3,
   Dairy: 4,
-  Frozen: 5,
-  "Non Food": 6,
+  "Dry goods": 5,
+  Frozen: 6,
+  "Non Food": 7,
 } as const;
 
 // Define the type for a shop item
