@@ -11,24 +11,29 @@ import TaskList from "./TaskList.tsx";
 import { useState } from "react";
 import NewTask from "./NewTask";
 
-export type Task {
+export type Task = {
   id: number;
   title: string;
   summary: string;
   completed: Boolean;
   priority: "High" | "Medium" | "Low";
-}
+};
 
 export default function Taskmanager() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   // Add a new task
-  const addTask = (task: string, summary: string, priority: string) => {
+  const addTask = (
+    task: string,
+    summary: string,
+    priority: "High" | "Medium" | "Low"
+  ) => {
     const newTask: Task = {
       id: tasks.length + 1, // Generate a simple unique ID
       title: task,
       summary: summary,
       priority: priority,
+      completed: false,
     };
 
     setTasks((prevTasks) => [...prevTasks, newTask]);

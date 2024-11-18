@@ -12,13 +12,17 @@
 import { FormEvent, useRef, useState } from "react";
 
 type NewTaskProps = {
-  onAddTask: (task: string, summary: string, priority: string) => void;
+  onAddTask: (
+    task: string,
+    summary: string,
+    priority: "High" | "Medium" | "Low"
+  ) => void;
 };
 
 export default function NewTask({ onAddTask }: NewTaskProps) {
   const task = useRef<HTMLInputElement>(null);
   const summary = useRef<HTMLInputElement>(null);
-  const [priority, setPriority] = useState<string>("Medium");
+  const [priority, setPriority] = useState<"High" | "Medium" | "Low">("Medium");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -63,7 +67,9 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
         <select
           id="priority"
           value={priority}
-          onChange={(e) => setPriority(e.target.value)}
+          onChange={(e) =>
+            setPriority(e.target.value as "High" | "Medium" | "Low")
+          }
           required
         >
           <option value="High">High</option>
