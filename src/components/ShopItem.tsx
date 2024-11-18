@@ -51,7 +51,7 @@ const ShopItem: React.FC<ShopItemProps> = ({
     //Function that handle deleting a task
     const handleDeleteClick = (id: number): void => {
         const confirmed = window.confirm(
-            "Er du sikker på, at du ønsker at slette?"
+            "Are you sure you want to delete this item?"
         );
         if (confirmed) {
             removeShopItem(id);
