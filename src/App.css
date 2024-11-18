@@ -18,4 +18,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  height: 5rem;
+  background-color: #4966bf;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+header div {
+  display: flex;
+  align-items: center;
+}
+header div img {
+  width: 4rem;
+  height: auto;
+  margin-right: 1rem;
 }/*# sourceMappingURL=App.css.map */

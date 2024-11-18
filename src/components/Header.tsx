@@ -23,9 +23,9 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({ title, logoUrl }) => {
   return (
     <header className="header">
-      <div className="header-content">
-        <img src={logoUrl} alt="Logo" className="header-logo" />
-        <h1>{title}</h1>
+      <div>
+        <img src={logoUrl} alt="Logo" />
+        <p>{title}</p>
       </div>
       <MenuRoundedIcon className="menu-icon" />
     </header>
