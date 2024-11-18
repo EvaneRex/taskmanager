@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url();
+}
+
 header {
   width: 100%;
   height: 5rem;
@@ -35,7 +39,41 @@ header div {
   align-items: center;
 }
 header div img {
-  width: 4rem;
+  width: 3rem;
   height: auto;
   margin-right: 1rem;
+}
+header div p {
+  font-family: "Lexend-Bold";
+  color: #02091e;
+  color: #dae0f0;
+  font-size: 1.5rem;
+}
+header .menu-icon {
+  color: #dae0f0;
+  font-size: 2.5rem;
+}
+
+.switchButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgba(73, 102, 191, 0.7);
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border: none;
+  margin: 1rem 0.5rem;
+}
+.switchButtons button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #93aefc;
+  font-family: "Lexend-SemiBold";
+  color: #02091e;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  border: none;
+  margin: 0.8rem;
 }/*# sourceMappingURL=App.css.map */

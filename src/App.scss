@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url();
+}
 
 header {
   width: 100%;
@@ -20,13 +23,29 @@ header {
     display: flex;
     align-items: center;
     img {
-      width: 4rem;
+      width: 3rem;
       height: auto;
       margin-right: 1rem;
     }
     p {
       @include partial.heading;
-      color: $whiteBlue;
+      color: partial.$whiteBlue;
+      font-size: 1.5rem;
     }
+  }
+  .menu-icon {
+    color: partial.$whiteBlue;
+    font-size: 2.5rem;
+  }
+}
+
+.switchButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @include partial.box1;
+  margin: 1rem 0.5rem;
+
+  button {
+    @include partial.switchButtons;
   }
 }
