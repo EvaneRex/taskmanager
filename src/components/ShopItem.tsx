@@ -16,67 +16,65 @@
 
 //Define interface for ShopItem
 interface ShopItemProps {
-    shopItem: {
-        id: number;
-        name: string;
-        completed: boolean;
-        department:
-        | "Fruit/Vegetables"
-        | "Bread"
-        | "Meat"
-        | "Dairy"
-        | "Dry goods"
-        | "Frozen"
-        | "Non Food";
-        shop: string;
-    };
-    removeShopItem: (id: number) => void;
-    toggleShopItemCompletion: (id: number) => void;
+  shopItem: {
+    id: number;
+    name: string;
+    completed: boolean;
+    department:
+      | "Fruit/Vegetables"
+      | "Bread"
+      | "Meat"
+      | "Dairy"
+      | "Dry goods"
+      | "Frozen"
+      | "Non Food";
+    shop: string;
+  };
+  removeShopItem: (id: number) => void;
+  toggleShopItemCompletion: (id: number) => void;
 }
 //Define the type for shops (will be just a string in this instance)
 export type Shop = string;
 
 const ShopItem: React.FC<ShopItemProps> = ({
-    shopItem,
-    removeShopItem,
-    toggleShopItemCompletion,
+  shopItem,
+  removeShopItem,
+  toggleShopItemCompletion,
 }) => {
-    //Function that handle marking a task as complete
-    const handleCompleteClick = (id: number): void => {
-        if (!shopItem.completed) {
-            toggleShopItemCompletion(id);
-        }
-    };
+  //Function that handle marking a task as complete
+  const handleCompleteClick = (id: number): void => {
+    toggleShopItemCompletion(id);
+  };
 
-    //Function that handle deleting a task
-    const handleDeleteClick = (id: number): void => {
-        const confirmed = window.confirm(
-            "Are you sure you want to delete this item?"
-        );
-        if (confirmed) {
-            removeShopItem(id);
-        }
-    };
-
-    //JSX for rendering the shop item
-    return (
-        <li className={`shop-item ${shopItem.completed ? "completed" : ""}`}>
-            <span>{shopItem.name}</span> {/*Task name without colourchange*/}
-            <span className={`priority-${shopItem.department}`}>
-                {" "}
-                - Department: {shopItem.department}
-            </span>
-            <button
-                onClick={() => handleCompleteClick(shopItem.id)}
-                className={`complete ${shopItem.completed ? "active" : ""}`}
-            >
-                {shopItem.completed ? "Undo" : "Complete"}
-            </button>
-            <button onClick={() => handleDeleteClick(shopItem.id)} className="delete">
-                Delete
-            </button>
-        </li>
+  //Function that handle deleting a task
+  const handleDeleteClick = (id: number): void => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this item?"
     );
+    if (confirmed) {
+      removeShopItem(id);
+    }
+  };
+
+  //JSX for rendering the shop item
+  return (
+    <li className={`shop-item ${shopItem.completed ? "completed" : ""}`}>
+      <span>{shopItem.name}</span> {/*Task name without colourchange*/}
+      <span className={`priority-${shopItem.department}`}>
+        {" "}
+        - Department: {shopItem.department}
+      </span>
+      <button
+        onClick={() => handleCompleteClick(shopItem.id)}
+        className={`complete ${shopItem.completed ? "active" : ""}`}
+      >
+        {shopItem.completed ? "Undo" : "Complete"}
+      </button>
+      <button onClick={() => handleDeleteClick(shopItem.id)} className="delete">
+        Delete
+      </button>
+    </li>
+  );
 };
 
 export default ShopItem;
