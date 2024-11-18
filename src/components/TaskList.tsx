@@ -11,8 +11,7 @@
  *<TaskList tasks={tasks} onDeleteTask={(id) />
  */
 
-import Task from "./Task.tsx";
-import { type Task as CTask } from "./TaskManager.tsx";
+import TaskItem from "./Task.tsx";
 
 type Priority = "High" | "Medium" | "Low";
 
@@ -24,29 +23,37 @@ const priorityOrder: Record<Priority, number> = {
 } as const;
 
 //Define the type for tasklist (??)
-interface TaskListType {
+interface TaskItemType {
   id: number;
   title: string;
   summary: string;
-  taskItem: string;
+  tasks: string;
   priority: Priority;
   completed: boolean;
 }
 
-//define the props for the TaskList component
-type TaskListProps = {
+/*type TaskListProps = {
   tasks: CTask[];
   onDeleteTask: (id: number) => void;
   toggleTaskListCompletion: (id: number) => void;
-};
+};*/
+
+
+//define the props for the TaskList component
+interface TaskListProps {
+  taskItem: TaskItemType[];
+  removeTaskItem: (id: number) => void;
+  toggleTaskItemCompletion: (id: number) => void;
+}
+
 
 const TaskList: React.FC<TaskListProps> = ({
-  tasks,
-  onDeleteTask,
-  toggleTaskListCompletion,
+  taskItem,
+  removeTaskItem,
+  toggleTaskItemCompletion,
 }) => {
   // Sort TaskList by priority and completed status
-  const sortedTasks = [...tasks].sort((a, b) => {
+  const sortedTaskItem = [...taskItem].sort((a, b) => {
     // Sort by completed status
     if (a.completed !== b.completed) {
       return a.completed ? 1 : -1; // Completed tasks go last
@@ -56,13 +63,13 @@ const TaskList: React.FC<TaskListProps> = ({
     return priorityOrder[a.priority] - priorityOrder[b.priority];
   });
 
-  const groupedTasks = sortedTasks.reduce<
-    Record<string, TaskListType[]>
-  >((acc, taskList) => {
-    if (!acc[taskList.taskitem]) {
-      acc[taskList.taskitem] = [];
+  const groupedTasks = sortedTaskItem.reduce<
+    Record<string, TaskItemType[]>
+  >((acc, taskItem) => {
+    if (!acc[taskItem.tasks]) {
+      acc[taskItem.tasks] = [];
     }
-    acc[taskList.taskitem].push(taskList);
+    acc[taskItem.tasks].push(taskItem);
     return acc;
   }, {});
 
@@ -76,30 +83,25 @@ const TaskList: React.FC<TaskListProps> = ({
   };*/
 
   return (
-    <div arial-label="Task List"
-      {Object.keys(groupedTasks).map(task)}
-
-
-
-      aria-label="Task list"
-      aria-roledescription="A list for generating tasks based on your input"
-    >
-      {tasks.map((task) => (
-        <li
-          key={task.id}
-          tabIndex={0}
-          onKeyDown={(event) => {
-            if (event.key === "Delete") {
-              handleDelete(task.id);
-            }
-          }}
-        >
-          <Task id={task.id} title={task.title} onDelete={handleDelete}>
-            <p>{task.summary}</p>
-          </Task>
-        </li>
+    <div aria-label="Task items">
+      {Object.keys(groupedTasks).map((tasks) => (
+        <section key={tasks} aria-labelledby={`Task-${tasks}`}>
+          <h2>{tasks}</h2>
+          <ul>
+            {groupedTasks[tasks].map((taskItem) => (
+              <TaskItem
+                key={taskItem.id}
+                taskItem={taskItem}
+                removeTaskItem={removeTaskItem}
+                toggleTaskItemCompletion={toggleTaskItemCompletion}
+              />
+            ))}
+          </ul>
+        </section>
       ))}
-    </ul>
+    </div>
   );
 };
+
 export default TaskList;
+
