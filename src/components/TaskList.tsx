@@ -14,10 +14,56 @@
 import Task from "./Task.tsx";
 import { type Task as CTask } from "./TaskManager.tsx";
 
+
+type Priority =
+  | "High"
+  | "Medium"
+  | "Low";
+
+
+//Define the order of priority
+const priorityOrder: Record<Priority, number> = {
+  High: 1,
+  Medium: 2,
+  Low: 3,
+} as const;
+
+//Define the type for tasklist (??)
+interface TaskListType {
+  id: number;
+  title: string;
+  summary: string;
+  priority: Priority;
+  completed: boolean;
+}
+
+//define the props for the TaskList component
 type TaskListProps = {
   tasks: CTask[];
   onDeleteTask: (id: number) => void;
-};
+  toggleTaskListCompletion: (id: number) => void;
+}
+
+const TaskList: React.FC<TaskListProps> = ({
+  tasks,
+  onDeleteTask,
+  toggleTaskListCompletion,
+}) => {
+  // Sort TaskList by priority and completed status
+  const sortedTasks = [...tasks].
+    sort((a, b) => {
+      // Sort by completed status
+      if (a.completed !== b.completed) {
+        return a.completed ? 1 : -1; // Completed tasks go last
+      }
+
+      // Sort by priority
+      return priorityOrder[a.priority]
+        - priorityOrder[b.priority];
+    });
+}
+
+
 
 export default function TaskList({ tasks, onDeleteTask }: TaskListProps) {
   const handleDelete = (id: number) => {

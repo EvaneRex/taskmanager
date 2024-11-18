@@ -7,15 +7,21 @@
  * Note for future additions for the task files in general
  * Making it possible to mark as complete, adding a event keydown for space or enter to enable keyboard usage for marking as complete.
  */
-import TaskList from "./TaskList.tsx"; import React, { useState } from "react";
+import TaskList from "./TaskList.tsx";
+import React, { useState } from "react";
 import NewTask from "./NewTask";
 
 interface Task {
   id: number;
   title: string;
   summary: string;
-  priority: string;
+  completed: Boolean;
+  priority:
+  | "High"
+  | "Medium"
+  | "Low";
 }
+
 
 export default function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
