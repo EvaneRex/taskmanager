@@ -15,28 +15,64 @@
    </Task>
  *
  */
-import { type ReactNode } from "react";
+
 
 interface TaskProps {
-  id: number;
-  title: string;
-  children: ReactNode;
+  tasks: {
+    id: number;
+    title: string;
+    summary: string;
+    completed: boolean;
+    priority:
+    | "High"
+    | "Medium"
+    | "Low";
+    task: string;
+
+  };
   onDelete: (id: number) => void;
+  toggleTaskListCompletion: (id: number) => void;
 }
 
-export default function Task({ id, title, children, onDelete }: TaskProps) {
+
+export type Task = string;
+
+const TaskList: React.FC<TaskProps> = ({
+  tasks,
+  onDelete,
+  toggleTaskListCompletion,
+}) => {
+  const handleCompleteClick = (id: number): void => {
+    toggleTaskListCompletion(id);
+  };
+
+  const handleDeleteClick = (id: number): void => {
+    const confirmed = window.confirm("Are you sure you want to delete this task?");
+    if (confirmed) {
+      onDelete(id);
+    }
+  };
+
+
   return (
-    <article>
-      <div>
-        <h2>{title}</h2>
-        {children}
-      </div>
+    <li className={`tasks ${tasks.completed ? "completed" : ""}`}>
+      <span>{tasks.title}</span> {/*Task name without colourchange*/}
+      <span className={`priority-${tasks.priority}`}>
+        {" "}
+        - Priority: {tasks.priority}
+      </span>
       <button
-        onClick={() => onDelete(id)}
-        aria-label="{`Delete task: ${title}`}"
+        onClick={() => handleCompleteClick(tasks.id)}
+        className={`complete ${tasks.completed ? "active" : ""}`}
       >
+        {tasks.completed ? "Undo" : "Complete"}
+      </button>
+      <button onClick={() => handleDeleteClick(tasks.id)} className="delete">
         Delete
       </button>
-    </article>
+    </li>
   );
-}
+};
+
+export default TaskList;
+
