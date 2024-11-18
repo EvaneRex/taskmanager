@@ -38,7 +38,7 @@ interface TaskProps {
 export type Task = string;
 
 const TaskList: React.FC<TaskProps> = ({
-  taskListItem,
+  taskList,
   onDelete,
   toggleTaskListCompletion,
 }) => {
@@ -55,19 +55,19 @@ const TaskList: React.FC<TaskProps> = ({
 
 
   return (
-    <li className={`tasks ${tasks.completed ? "completed" : ""}`}>
-      <span>{tasks.title}</span> {/*Task name without colourchange*/}
-      <span className={`priority-${tasks.priority}`}>
+    <li className={`task-list ${taskList.completed ? "completed" : ""}`}>
+      <span>{taskList.title}</span> {/*Task name without colourchange*/}
+      <span className={`priority-${taskList.priority}`}>
         {" "}
-        - Priority: {tasks.priority}
+        - Priority: {taskList.priority}
       </span>
       <button
-        onClick={() => handleCompleteClick(tasks.id)}
-        className={`complete ${tasks.completed ? "active" : ""}`}
+        onClick={() => handleCompleteClick(taskList.id)}
+        className={`complete ${taskList.completed ? "active" : ""}`}
       >
-        {tasks.completed ? "Undo" : "Complete"}
+        {taskList.completed ? "Undo" : "Complete"}
       </button>
-      <button onClick={() => handleDeleteClick(tasks.id)} className="delete">
+      <button onClick={() => handleDeleteClick(taskList.id)} className="delete">
         Delete
       </button>
     </li>
