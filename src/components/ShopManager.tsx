@@ -14,12 +14,13 @@ interface ShopItem {
   completed: boolean;
   shop: string;
   department:
-    | "Fruit/Vegetables"
-    | "Bread"
-    | "Meat"
-    | "Dairy"
-    | "Frozen"
-    | "Non Food";
+  | "Fruit/Vegetables"
+  | "Bread"
+  | "Meat"
+  | "Dairy"
+  | "Dry goods"
+  | "Frozen"
+  | "Non Food";
 }
 
 function ShopManager() {
@@ -48,6 +49,7 @@ function ShopManager() {
       | "Bread"
       | "Meat"
       | "Dairy"
+      | "Dry goods"
       | "Frozen"
       | "Non Food",
     itemShop: string
