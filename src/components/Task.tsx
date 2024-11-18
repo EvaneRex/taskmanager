@@ -39,7 +39,4 @@ export default function Task({ id, title, children, onDelete }: TaskProps) {
       </button>
     </article>
   );
-
-
-
 }
