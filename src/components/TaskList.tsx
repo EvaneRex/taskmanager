@@ -14,12 +14,7 @@
 import Task from "./Task.tsx";
 import { type Task as CTask } from "./TaskManager.tsx";
 
-
-type Priority =
-  | "High"
-  | "Medium"
-  | "Low";
-
+type Priority = "High" | "Medium" | "Low";
 
 //Define the order of priority
 const priorityOrder: Record<Priority, number> = {
@@ -42,7 +37,7 @@ type TaskListProps = {
   tasks: CTask[];
   onDeleteTask: (id: number) => void;
   toggleTaskListCompletion: (id: number) => void;
-}
+};
 
 const TaskList: React.FC<TaskListProps> = ({
   tasks,
@@ -50,22 +45,16 @@ const TaskList: React.FC<TaskListProps> = ({
   toggleTaskListCompletion,
 }) => {
   // Sort TaskList by priority and completed status
-  const sortedTasks = [...tasks].
-    sort((a, b) => {
-      // Sort by completed status
-      if (a.completed !== b.completed) {
-        return a.completed ? 1 : -1; // Completed tasks go last
-      }
+  const sortedTasks = [...tasks].sort((a, b) => {
+    // Sort by completed status
+    if (a.completed !== b.completed) {
+      return a.completed ? 1 : -1; // Completed tasks go last
+    }
 
-      // Sort by priority
-      return priorityOrder[a.priority]
-        - priorityOrder[b.priority];
-    });
-}
+    // Sort by priority
+    return priorityOrder[a.priority] - priorityOrder[b.priority];
+  });
 
-
-
-export default function TaskList({ tasks, onDeleteTask }: TaskListProps) {
   const handleDelete = (id: number) => {
     const confirmDeletion = window.confirm(
       "Are you sure you want to delete this task?"
@@ -97,4 +86,5 @@ export default function TaskList({ tasks, onDeleteTask }: TaskListProps) {
       ))}
     </ul>
   );
-}
+};
+export default TaskList;
