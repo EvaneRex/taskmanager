@@ -9,15 +9,16 @@
  * What to put in the file?
  * <NewTask onAddTask={handleAddTask} />
  */
-import { useRef, type FormEvent } from "react";
+import React, { FormEvent, useRef, useState } from "react";
 
 type NewTaskProps = {
-  onAddTask: (task: string, summary: string) => void;
+  onAddTask: (task: string, summary: string, priority: string) => void;
 };
 
 export default function NewTask({ onAddTask }: NewTaskProps) {
   const task = useRef<HTMLInputElement>(null);
   const summary = useRef<HTMLInputElement>(null);
+  const [priority, setPriority] = useState<string>("Medium");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -27,7 +28,8 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
 
     event.currentTarget.reset();
 
-    onAddTask(enteredTask, enteredSummary);
+    // Pass the task, summary, and selected priority to the parent
+    onAddTask(enteredTask, enteredSummary, priority);
   }
 
   return (
@@ -55,6 +57,21 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
           required
         />
       </p>
+
+      <p>
+        <label htmlFor="priority">Priority</label>
+        <select
+          id="priority"
+          value={priority}
+          onChange={(e) => setPriority(e.target.value)}
+          required
+        >
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </p>
+
       <p>
         <button type="submit" aria-label="Add task">
           Add task
