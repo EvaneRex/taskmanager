@@ -7,28 +7,27 @@
  * Note for future additions for the task files in general
  * Making it possible to mark as complete, adding a event keydown for space or enter to enable keyboard usage for marking as complete.
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewTask from "./NewTask";
-import TaskList from "./TaskList";
+import TaskList, { Priority, TaskItemType } from "./TaskList";
 
-export type Task = {
-  id: number;
-  title: string;
-  summary: string;
-  completed: Boolean;
-  priority: "High" | "Medium" | "Low";
-};
+
 
 export default function Taskmanager() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const storedTasks: TaskItemType[] = JSON.parse(localStorage.getItem("taskItems") || "[]");
+  const [tasks, setTasks] = useState<TaskItemType[]>(storedTasks);
+
+  useEffect(() => {
+    localStorage.setItem("taskItems", JSON.stringify(tasks));
+  }, [tasks])
 
   // Add a new task
   const addTask = (
     task: string,
     summary: string,
-    priority: "High" | "Medium" | "Low"
+    priority: Priority
   ) => {
-    const newTask: Task = {
+    const newTask: TaskItemType = {
       id: tasks.length + 1, // Generate a simple unique ID
       title: task,
       summary: summary,
@@ -38,6 +37,10 @@ export default function Taskmanager() {
 
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
+
+  const handleComplete = (id: number) => {
+    setTasks(tasks.map((task) => task.id === id ? { ...task, completed: !task.completed } : task))
+  }
 
   const handleDelete = (id: number) => {
     const confirmDeletion = window.confirm(
@@ -58,24 +61,7 @@ export default function Taskmanager() {
       <h1>Task Manager</h1>
 
       <NewTask onAddTask={addTask} />
-
-      <section>
-        {tasks.length > 0 ? (
-          <ul>
-            {tasks.map((task) => (
-              <li key={task.id}>
-                <h2>
-                  {task.title} ({task.priority})
-                </h2>
-                <p>{task.summary}</p>
-                <button onClick={() => handleDelete(task.id)}>Delete</button>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No tasks yet. Add a task above!</p>
-        )}
-      </section>
+      <TaskList taskItems={tasks as TaskItemType[]} removeTaskItem={handleDelete} toggleTaskItemCompletion={handleComplete} />
     </div>
   );
 }

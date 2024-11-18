@@ -13,7 +13,7 @@
 
 import TaskItem from "./Task.tsx";
 
-type Priority = "High" | "Medium" | "Low";
+export type Priority = "High" | "Medium" | "Low";
 
 //Define the order of priority
 const priorityOrder: Record<Priority, number> = {
@@ -23,11 +23,10 @@ const priorityOrder: Record<Priority, number> = {
 } as const;
 
 //Define the type for tasklist (??)
-interface TaskItemType {
+export interface TaskItemType {
   id: number;
   title: string;
   summary: string;
-  tasks: string;
   priority: Priority;
   completed: boolean;
 }
@@ -41,19 +40,19 @@ interface TaskItemType {
 
 //define the props for the TaskList component
 interface TaskListProps {
-  taskItem: TaskItemType[];
+  taskItems: TaskItemType[];
   removeTaskItem: (id: number) => void;
   toggleTaskItemCompletion: (id: number) => void;
 }
 
 
 const TaskList: React.FC<TaskListProps> = ({
-  taskItem,
+  taskItems: taskItems,
   removeTaskItem,
   toggleTaskItemCompletion,
 }) => {
   // Sort TaskList by priority and completed status
-  const sortedTaskItem = [...taskItem].sort((a, b) => {
+  const sortedTaskItem = [...taskItems].sort((a, b) => {
     // Sort by completed status
     if (a.completed !== b.completed) {
       return a.completed ? 1 : -1; // Completed tasks go last
@@ -66,12 +65,15 @@ const TaskList: React.FC<TaskListProps> = ({
   const groupedTasks = sortedTaskItem.reduce<
     Record<string, TaskItemType[]>
   >((acc, taskItem) => {
-    if (!acc[taskItem.tasks]) {
-      acc[taskItem.tasks] = [];
+    if (!acc[taskItem.priority]) {
+      acc[taskItem.priority] = [];
     }
-    acc[taskItem.tasks].push(taskItem);
+    acc[taskItem.priority].push(taskItem);
     return acc;
   }, {});
+
+
+  console.log(groupedTasks)
 
   return (
     <div aria-label="Task items">

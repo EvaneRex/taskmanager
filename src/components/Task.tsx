@@ -16,15 +16,10 @@
  *
  */
 
+import { TaskItemType } from "./TaskList";
+
 interface TaskProps {
-  taskItem: {
-    id: number;
-    title: string;
-    summary: string;
-    completed: boolean;
-    priority: "High" | "Medium" | "Low";
-    tasks: string;
-  };
+  taskItem: TaskItemType
   removeTaskItem: (id: number) => void;
   toggleTaskItemCompletion: (id: number) => void;
 }
