@@ -7,62 +7,60 @@
  * Note for future additions for the task files in general
  * Making it possible to mark as complete, adding a event keydown for space or enter to enable keyboard usage for marking as complete.
  */
-import TaskList from "./TaskList.tsx";
-import { useEffect, useState } from "react";
-import NewTask from "./NewTask.tsx";
+import TaskList from "./TaskList.tsx"; import React, { useState } from "react";
+import NewTask from "./NewTask";
 
-export type Task = {
-  title: string;
-  description: string;
+interface Task {
   id: number;
-};
+  title: string;
+  summary: string;
+  priority: string;
+}
 
-export default function TaskManager() {
+export default function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  // Loads tasks from the local storage
-  useEffect(() => {
-    const storedTasks = localStorage.getItem("tasks");
-    if (storedTasks) {
-      setTasks(JSON.parse(storedTasks));
-    }
-  }, []);
+  // Add a new task
+  const addTask = (task: string, summary: string, priority: string) => {
+    const newTask: Task = {
+      id: tasks.length + 1, // Generate a simple unique ID
+      title: task,
+      summary: summary,
+      priority: priority,
+    };
 
-  // Stores the tasks from local storage
-  useEffect(() => {
-    if (tasks.length > 0) {
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-    }
-  }, [tasks]);
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+  };
 
-  // handler for adding tasks
-  function handleAddTask(task: string, summary: string) {
-    setTasks((prevTasks) => {
-      const newTask: Task = {
-        id: Math.random(),
-        title: task,
-        description: summary,
-      };
-      return [...prevTasks, newTask];
-    });
-  }
-
-  //handles deletion for tasks based on id
-  function handleDeleteTask(id: number) {
-    setTasks((prevTasks: Task[]) => {
-      const updatedTasks = prevTasks.filter((task: Task) => task.id !== id);
-
-      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-
-      return updatedTasks;
-    });
-  }
+  // Delete a task
+  const deleteTask = (id: number) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  };
 
   return (
-    <main>
-      <h1 className="TM-h1">Taskmanager</h1>
-      <NewTask onAddTask={handleAddTask} />
-      <TaskList tasks={tasks} onDeleteTask={handleDeleteTask} />
-    </main>
+    <div>
+      <h1>Task Manager</h1>
+
+      <NewTask onAddTask={addTask} />
+
+      <section>
+        {tasks.length > 0 ? (
+          <ul>
+            {tasks.map((task) => (
+              <li key={task.id}>
+                <h2>
+                  {task.title} ({task.priority})
+                </h2>
+                <p>{task.summary}</p>
+                <button onClick={() => deleteTask(task.id)}>Delete</button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No tasks yet. Add a task above!</p>
+        )}
+      </section>
+    </div>
   );
 }
+
