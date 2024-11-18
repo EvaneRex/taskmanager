@@ -7,7 +7,7 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 
 type activeComponent = "task" | "shop";
 
-//Skal måske fjernes!!
+// Setup is temporary, as more managers are added the plan is to use react router but due to time and lack of knowledge, this is our setup for now :D
 export default function App() {
   const [activeComponent, setActiveComponent] =
     useState<activeComponent>("task");
