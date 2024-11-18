@@ -39,6 +39,15 @@ export default function Taskmanager() {
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
+  const handleDelete = (id: number) => {
+    const confirmDeletion = window.confirm(
+      "Are you sure you want to delete this task?"
+    );
+    if (confirmDeletion) {
+      deleteTask(id);
+    }
+  };
+
   // Delete a task
   const deleteTask = (id: number) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
@@ -59,7 +68,7 @@ export default function Taskmanager() {
                   {task.title} ({task.priority})
                 </h2>
                 <p>{task.summary}</p>
-                <button onClick={() => deleteTask(task.id)}>Delete</button>
+                <button onClick={() => handleDelete(task.id)}>Delete</button>
               </li>
             ))}
           </ul>
