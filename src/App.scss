@@ -95,5 +95,10 @@ header {
   .shopForm {
     @include partial.box2;
     grid-row: 2;
+
+    input {
+      @include partial.txt;
+      @include partial.input;
+    }
   }
 }

@@ -152,4 +152,17 @@ header .menu-icon {
   width: 100%;
   height: auto;
   grid-row: 2;
+}
+.taskmanager .taskForm input,
+.taskmanager .shopForm input,
+.shopmanager .taskForm input,
+.shopmanager .shopForm input {
+  font-family: "OpenSans-Regular";
+  color: #02091e;
+  font-size: 1rem;
+  background-color: white;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
 }/*# sourceMappingURL=App.css.map */
