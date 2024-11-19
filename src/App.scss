@@ -39,7 +39,7 @@ header {
   }
 
   .menu-icon {
-    color: partial.$whiteBlue;
+    color: partial.$blueBlack;
     font-size: 2.5rem;
   }
 }
@@ -49,6 +49,8 @@ header {
   grid-template-columns: 1fr 1fr;
   @include partial.box1;
   margin: 1rem 0.5rem;
+  padding: 1rem 1rem;
+  gap: 1rem;
 
   button {
     @include partial.switchButtons;

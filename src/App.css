@@ -51,30 +51,40 @@ header div p {
   font-size: 1.5rem;
 }
 header .menu-icon {
-  color: #dae0f0;
+  color: #02091e;
   font-size: 2.5rem;
 }
 
 .switchButtons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: rgba(73, 102, 191, 0.7);
-  border-radius: 1rem;
+  background-color: rgba(73, 102, 191, 0.8);
+  border-radius: 2rem;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   border: none;
   margin: 1rem 0.5rem;
+  padding: 1rem 1rem;
+  gap: 1rem;
 }
 .switchButtons button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: #93aefc;
   font-family: "Lexend-SemiBold";
   color: #02091e;
-  padding: 0.5rem 1rem;
+  padding: 1.5rem 1rem;
   font-size: 1.1rem;
   border-radius: 1rem;
   border: none;
-  margin: 0.8rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+.switchButtons button .list-icon {
+  background-color: #dae0f0;
+  color: #02091e;
+  font-size: 3rem;
+  border-radius: 50%;
+  padding: 0.4rem;
+  justify-self: center;
 }/*# sourceMappingURL=App.css.map */

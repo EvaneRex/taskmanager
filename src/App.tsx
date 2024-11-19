@@ -22,6 +22,7 @@ export default function App() {
         <button
           onClick={() => switchComponent("task")}
           aria-pressed={activeComponent === "task"}
+          className={activeComponent === "task" ? "active" : ""} // Conditionally add 'active' class
         >
           <ListAltIcon className="list-icon" />
           Task Manager
@@ -29,6 +30,7 @@ export default function App() {
         <button
           onClick={() => switchComponent("shop")}
           aria-pressed={activeComponent === "shop"}
+          className={activeComponent === "shop" ? "active" : ""} // Conditionally add 'active' class
         >
           <ShoppingBasketIcon className="list-icon" />
           Shop Manager

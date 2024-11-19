@@ -1,7 +1,7 @@
 //Variabler
 $mediumBlue: #4966bf;
 $lightBlue: #93aefc;
-$opacityBlue: rgba(73, 102, 191, 0.7);
+$opacityBlue: rgba(73, 102, 191, 0.8);
 $strongBlue: #021e73;
 $strongYellow: #fcca00;
 $whiteBlue: #dae0f0;
@@ -10,7 +10,7 @@ $headingBold: "Lexend-Bold";
 $headingSemi: "Lexend-SemiBold";
 $headingRegular: "Lexend-Regular";
 $bodyTxt: "OpenSans-Regular";
-$borderRadiusOuter: 1rem;
+$borderRadiusOuter: 2rem;
 $borderRadiusInner: 1rem;
 //outer radius = inner radius + padding!
 
@@ -49,17 +49,26 @@ $borderRadiusInner: 1rem;
 
 // For the switchbuttons at the top of the page
 @mixin switchButtons() {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: $lightBlue;
   font-family: $headingSemi;
   color: $blueBlack;
-  padding: 0.5rem 1rem;
+  padding: 1.5rem 1rem;
   font-size: 1.1rem;
   border-radius: $borderRadiusInner;
   border: none;
-  margin: 0.8rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+
+  .list-icon {
+    background-color: $whiteBlue;
+    color: $blueBlack;
+    font-size: 3rem;
+    border-radius: 50%;
+    padding: 0.4rem;
+    justify-self: center;
+  }
 }
 
 // This is for the bento boxes, box1 is the containers bg color, box2 is for the interactive or clickable parts
