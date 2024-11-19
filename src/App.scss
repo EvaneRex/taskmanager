@@ -84,6 +84,13 @@ header {
     grid-row: 1;
   }
 
+  h2 {
+    @include partial.heading;
+  }
+  p {
+    @include partial.txt;
+  }
+
   .taskForm,
   .shopForm {
     @include partial.box2;

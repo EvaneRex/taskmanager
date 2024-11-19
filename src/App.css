@@ -131,6 +131,17 @@ header .menu-icon {
   text-align: center;
   grid-row: 1;
 }
+.taskmanager h2,
+.shopmanager h2 {
+  font-family: "Lexend-Bold";
+  color: #02091e;
+}
+.taskmanager p,
+.shopmanager p {
+  font-family: "OpenSans-Regular";
+  color: #02091e;
+  font-size: 1rem;
+}
 .taskmanager .taskForm,
 .taskmanager .shopForm,
 .shopmanager .taskForm,
