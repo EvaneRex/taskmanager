@@ -106,7 +106,8 @@ header .menu-icon {
   display: none;
 }
 
-.taskmanager {
+.taskmanager,
+.shopmanager {
   background-color: rgba(73, 102, 191, 0.8);
   border-radius: 2rem;
   -webkit-backdrop-filter: blur(2px);
@@ -114,15 +115,30 @@ header .menu-icon {
   border: none;
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 0.4fr auto;
+  gap: 1rem;
 }
-.taskmanager h1 {
+.taskmanager h1,
+.shopmanager h1 {
   font-family: "Lexend-Bold";
   color: #02091e;
   background-color: #93aefc;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   width: 100%;
+  height: auto;
   text-align: center;
+  grid-row: 1;
+}
+.taskmanager .taskForm,
+.taskmanager .shopForm,
+.shopmanager .taskForm,
+.shopmanager .shopForm {
+  background-color: #93aefc;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: auto;
+  grid-row: 2;
 }/*# sourceMappingURL=App.css.map */

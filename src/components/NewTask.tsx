@@ -35,7 +35,11 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} aria-labelledby="form-title">
+    <form
+      className="taskForm"
+      onSubmit={handleSubmit}
+      aria-labelledby="form-title"
+    >
       <h2 id="form-title">Add a new task</h2>
       <p>
         <label htmlFor="Task"></label>

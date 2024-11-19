@@ -14,13 +14,13 @@ interface ShopItem {
   completed: boolean;
   shop: string;
   department:
-  | "Fruit/Vegetables"
-  | "Bread"
-  | "Meat"
-  | "Dairy"
-  | "Dry goods"
-  | "Frozen"
-  | "Non Food";
+    | "Fruit/Vegetables"
+    | "Bread"
+    | "Meat"
+    | "Dairy"
+    | "Dry goods"
+    | "Frozen"
+    | "Non Food";
 }
 
 function ShopManager() {
@@ -96,9 +96,9 @@ function ShopManager() {
     );
   };
   return (
-    <div className="app">
+    <div className="shopmanager">
       <h1>Shopping List</h1>
-      <section aria-labelledby="add-items">
+      <section className="shopForm" aria-labelledby="add-items">
         <h2 id="add-items">Add items and Shops</h2>
         <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
       </section>
@@ -116,8 +116,11 @@ function ShopManager() {
           />
         )}
       </section>
-      <button onClick={removeAllShopItems} className="delete-all"
-        aria-label="Delete all items and shops">
+      <button
+        onClick={removeAllShopItems}
+        className="delete-all"
+        aria-label="Delete all items and shops"
+      >
         Delete All Items and Shops
       </button>
     </div>
