@@ -60,10 +60,8 @@ const Task: React.FC<TaskProps> = ({
   return (
     <li className={`task-item ${taskItem.completed ? "completed" : ""}`}>
       <span>{taskItem.title}</span> {/*Task name without colourchange*/}
-      <span className={`priority-${taskItem.priority}`}>
-        {" "}
-        - Priority: {taskItem.priority}
-      </span>
+      <span className={`priority-${taskItem.priority}`}></span>
+      <span>{taskItem.summary}</span>
       {/* Buttons */}
       <button
         onClick={() => handleCompleteClick(taskItem.id)}
