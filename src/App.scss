@@ -5,8 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background-image: url();
+  background-image: url(/images/a60d18f0ddf1bcf8e998d9ac3e6c9132.jpg);
 }
 
 header {
@@ -22,17 +23,20 @@ header {
   div {
     display: flex;
     align-items: center;
+
     img {
       width: 3rem;
       height: auto;
       margin-right: 1rem;
     }
+
     p {
       @include partial.heading;
       color: partial.$whiteBlue;
       font-size: 1.5rem;
     }
   }
+
   .menu-icon {
     color: partial.$whiteBlue;
     font-size: 2.5rem;

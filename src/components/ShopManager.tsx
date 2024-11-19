@@ -103,7 +103,6 @@ function ShopManager() {
         <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
       </section>
       <section aria-labelledby="shopping-list">
-        <h2 id="shopping-list">Your Shopping List</h2>
         {shopItems.length === 0 ? (
           <p role="alert" aria-live="polite">
             No items in your shopping list. Start adding some!
