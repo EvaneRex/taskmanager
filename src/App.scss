@@ -66,10 +66,18 @@ header {
   }
 }
 
+.visually-hidden {
+  display: none;
+}
+
 .taskmanager {
   @include partial.box1;
+  display: flex;
+  flex-direction: column;
+
   h1 {
     @include partial.heading;
     @include partial.box2;
+    text-align: center;
   }
 }
