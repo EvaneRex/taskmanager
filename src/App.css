@@ -88,6 +88,16 @@ header .menu-icon {
   padding: 0.4rem;
   justify-self: center;
 }
+.switchButtons button:hover {
+  border: 3px solid #fcca00;
+  transition: 0.4s ease;
+}
 .switchButtons .active {
+  transition: 0.4s ease;
   border: inset 3px #4966bf;
+}
+.switchButtons .active .list-icon {
+  color: #fcca00;
+  background-color: #02091e;
+  transition: 0.4s ease;
 }/*# sourceMappingURL=App.css.map */

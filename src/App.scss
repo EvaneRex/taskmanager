@@ -57,6 +57,13 @@ header {
   }
 
   .active {
+    transition: partial.$transition;
     border: inset 3px partial.$mediumBlue;
+
+    .list-icon {
+      color: partial.$strongYellow;
+      background-color: partial.$blueBlack;
+      transition: partial.$transition;
+    }
   }
 }
