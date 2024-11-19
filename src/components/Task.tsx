@@ -1,8 +1,11 @@
 /**
- * This is the task component, which represents each induvidual task that gets added. It displays the title and description and is creating the button to delete the task.
+ * This is the task component, which represents each induvidual task that gets added. It displays the title, summary and priority. It also controls the marking of completion or deletion, and has an editing modal to update the tasks. 
  *
  * @param {TaskProps} props - The props for the component, it has been imported from the TaskList file. 
+ * @param {TaskItemType} props.taskItem - This contains the task details
  * @param {removeTaskItem} - A fuction for deletion, when the delete button is clicked.
+ * @param {toggleTaskItemCompletion} - A function for toggeling a tasks completion status
+ * @param {updatedTask} - A function that updates the task after editing
  *
  * @returns {JSX.Element} - The rendered Task component.
  
@@ -79,8 +82,11 @@ const Task: React.FC<TaskProps> = ({
             <h2 id="edit-task-title">Edit Task</h2>
             <label>
               Title:
-              <input value={title} onChange={(e) => setTitle(e.target.value)}
-                aria-label="Task title" />
+              <input
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                aria-label="Task title"
+              />
             </label>
             <label>
               Summary:
@@ -104,8 +110,15 @@ const Task: React.FC<TaskProps> = ({
                 <option value="Low">Low</option>
               </select>
             </label>
-            <button onClick={handleSaveClick} aria-label="Save task changes">Save</button>
-            <button onClick={() => setIsEditing(false)} aria-label="Cancel editing">Cancel</button>
+            <button onClick={handleSaveClick} aria-label="Save task changes">
+              Save
+            </button>
+            <button
+              onClick={() => setIsEditing(false)}
+              aria-label="Cancel editing"
+            >
+              Cancel
+            </button>
           </div>
         </div>
       )}
