@@ -6,8 +6,6 @@
  *
  * @returns {JSX.Element} - A fomr element containing inpput fields for the user to add a title and a summary
  *
- * What to put in the file?
- * <NewTask onAddTask={handleAddTask} />
  */
 import { FormEvent, useRef, useState } from "react";
 
@@ -37,29 +35,36 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} aria-labelledby="form-title">
+      <h2 id="form-title">Add a new task</h2>
       <p>
-        <label htmlFor="task"></label>
+        <label htmlFor="Task"></label>
         <input
           type="text"
           id="task"
           ref={task}
           placeholder="Add your task"
-          aria-label="Task input field"
+          aria-describedby="task-help"
           required
         />
+        <small id="task-help" className="visually-hidden">
+          Enter the task name or title.
+        </small>
       </p>
 
       <p>
-        <label htmlFor="summary"></label>
+        <label htmlFor="Summary"></label>
         <input
           type="text"
           id="summary"
           ref={summary}
           placeholder="Add summary"
-          aria-label="Summary input field"
+          aria-describedby="summary-help"
           required
         />
+        <small id="summary-help" className="visually-hidden">
+          Provide a brief description of the task
+        </small>
       </p>
 
       <p>
