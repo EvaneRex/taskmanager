@@ -76,16 +76,18 @@ const Task: React.FC<TaskProps> = ({
       {isEditing && (
         <div className="modal-overlay">
           <div className="modal">
-            <h2>Edit Task</h2>
+            <h2 id="edit-task-title">Edit Task</h2>
             <label>
               Title:
-              <input value={title} onChange={(e) => setTitle(e.target.value)} />
+              <input value={title} onChange={(e) => setTitle(e.target.value)}
+                aria-label="Task title" />
             </label>
             <label>
               Summary:
               <textarea
                 value={summary}
                 onChange={(e) => setSummary(e.target.value)}
+                aria-label="Task summary"
               />
             </label>
             <label>
@@ -95,14 +97,15 @@ const Task: React.FC<TaskProps> = ({
                 onChange={(e) =>
                   setPriority(e.target.value as "High" | "Medium" | "Low")
                 }
+                aria-label="Task priority"
               >
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
                 <option value="Low">Low</option>
               </select>
             </label>
-            <button onClick={handleSaveClick}>Save</button>
-            <button onClick={() => setIsEditing(false)}>Cancel</button>
+            <button onClick={handleSaveClick} aria-label="Save task changes">Save</button>
+            <button onClick={() => setIsEditing(false)} aria-label="Cancel editing">Cancel</button>
           </div>
         </div>
       )}
