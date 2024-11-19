@@ -7,7 +7,9 @@
 }
 
 body {
-  background-image: url(public/a60d18f0ddf1bcf8e998d9ac3e6c9132.jpg);
+  background-image: url(./assets/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 header {
@@ -32,7 +34,6 @@ header {
 
     p {
       @include partial.heading;
-      color: partial.$whiteBlue;
       font-size: 1.5rem;
     }
   }

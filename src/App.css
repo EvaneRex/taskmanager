@@ -2,22 +2,18 @@
   font-family: "Lexend-Bold";
   src: url(../src/assets/fonts/Lexend-Bold.ttf);
 }
-
 @font-face {
   font-family: "Lexend-SemiBold";
   src: url(../src/assets/fonts/Lexend-SemiBold.ttf);
 }
-
 @font-face {
   font-family: "Lexend-Regular";
   src: url(../src/assets/fonts/Lexend-Regular.ttf);
 }
-
 @font-face {
   font-family: "OpenSans-Regular";
   src: url(../src/assets/fonts/OpenSans-Regular.ttf);
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +21,9 @@
 }
 
 body {
-  background-image: url();
+  background-image: url(./assets/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 header {
@@ -38,25 +36,20 @@ header {
   justify-content: space-between;
   padding: 1rem;
 }
-
 header div {
   display: flex;
   align-items: center;
 }
-
 header div img {
   width: 3rem;
   height: auto;
   margin-right: 1rem;
 }
-
 header div p {
   font-family: "Lexend-Bold";
   color: #02091e;
-  color: #dae0f0;
   font-size: 1.5rem;
 }
-
 header .menu-icon {
   color: #dae0f0;
   font-size: 2.5rem;
@@ -68,11 +61,10 @@ header .menu-icon {
   background-color: rgba(73, 102, 191, 0.7);
   border-radius: 1rem;
   -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   border: none;
   margin: 1rem 0.5rem;
 }
-
 .switchButtons button {
   display: flex;
   flex-direction: column;
@@ -85,17 +77,4 @@ header .menu-icon {
   border-radius: 1rem;
   border: none;
   margin: 0.8rem;
-}
-
-/*# sourceMappingURL=App.css.map */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+}/*# sourceMappingURL=App.css.map */
