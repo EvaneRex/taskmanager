@@ -98,13 +98,27 @@ function ShopManager() {
   return (
     <div className="app">
       <h1>Shopping List</h1>
-      <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
-      <ShopList
-        shopItems={shopItems}
-        removeShopItem={removeShopItem}
-        toggleShopItemCompletion={toggleShopItemCompletion}
-      />
-      <button onClick={removeAllShopItems} className="delete-all">
+      <section aria-labelledby="add-items">
+        <h2 id="add-items">Add items and Shops</h2>
+        <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
+      </section>
+      <section aria-labelledby="shopping-list">
+        <h2 id="shopping-list">Your Shopping List</h2>
+        {shopItems.length === 0 ? (
+          <p role="alert" aria-live="polite">
+            No items in your shopping list. Start adding some!
+          </p>
+        ) : (
+          <ShopList
+            shopItems={shopItems}
+            removeShopItem={removeShopItem}
+            toggleShopItemCompletion={toggleShopItemCompletion}
+            aria-label="List of shopping items"
+          />
+        )}
+      </section>
+      <button onClick={removeAllShopItems} className="delete-all"
+        aria-label="Delete all items and shops">
         Delete All Items and Shops
       </button>
     </div>
