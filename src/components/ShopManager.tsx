@@ -97,7 +97,7 @@ function ShopManager() {
   };
   return (
     <div className="app">
-      <h1>Shop Manager</h1>
+      <h1>Shopping List</h1>
       <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
       <ShopList
         shopItems={shopItems}
