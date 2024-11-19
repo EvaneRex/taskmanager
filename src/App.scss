@@ -70,5 +70,6 @@ header {
   @include partial.box1;
   h1 {
     @include partial.heading;
+    @include partial.box2;
   }
 }

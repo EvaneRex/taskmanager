@@ -114,4 +114,8 @@ header .menu-icon {
 .taskmanager h1 {
   font-family: "Lexend-Bold";
   color: #02091e;
+  background-color: #93aefc;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
 }/*# sourceMappingURL=App.css.map */

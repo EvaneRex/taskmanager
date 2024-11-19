@@ -80,25 +80,28 @@ const Task: React.FC<TaskProps> = ({
         <div className="modal-overlay">
           <div className="modal">
             <h2 id="edit-task-title">Edit Task</h2>
-            <label>
+            <label htmlFor="editTitle">
               Title:
               <input
+                id="editTitle"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 aria-label="Task title"
               />
             </label>
-            <label>
+            <label htmlFor="editSummary">
               Summary:
               <textarea
+                id="editSummary"
                 value={summary}
                 onChange={(e) => setSummary(e.target.value)}
                 aria-label="Task summary"
               />
             </label>
-            <label>
+            <label htmlFor="editPriority">
               Priority:
               <select
+                id="editPriority"
                 value={priority}
                 onChange={(e) =>
                   setPriority(e.target.value as "High" | "Medium" | "Low")

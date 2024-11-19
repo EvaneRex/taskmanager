@@ -103,4 +103,6 @@ $transition: 0.4s ease;
 @mixin box2() {
   background-color: $lightBlue;
   border-radius: $borderRadiusInner;
+  padding: 0.5rem 1rem;
+  width: 100%;
 }
