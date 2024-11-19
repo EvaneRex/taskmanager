@@ -55,7 +55,7 @@ $borderRadiusInner: 1rem;
   padding: 1.5rem 1rem;
   font-size: 1.1rem;
   border-radius: $borderRadiusInner;
-  border: none;
+  border: 3px outset $whiteBlue;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
@@ -69,6 +69,10 @@ $borderRadiusInner: 1rem;
     padding: 0.4rem;
     justify-self: center;
   }
+}
+
+//This is for the general use of boxes
+@mixin button() {
 }
 
 // This is for the bento boxes, box1 is the containers bg color, box2 is for the interactive or clickable parts

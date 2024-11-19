@@ -74,7 +74,7 @@ header .menu-icon {
   padding: 1.5rem 1rem;
   font-size: 1.1rem;
   border-radius: 1rem;
-  border: none;
+  border: 3px outset #dae0f0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
@@ -89,5 +89,5 @@ header .menu-icon {
   justify-self: center;
 }
 .switchButtons .active {
-  border: 5px #fcca00 solid;
+  border: inset 3px #4966bf;
 }/*# sourceMappingURL=App.css.map */
