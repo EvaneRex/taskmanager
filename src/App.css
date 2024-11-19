@@ -100,4 +100,18 @@ header .menu-icon {
   color: #fcca00;
   background-color: #02091e;
   transition: 0.4s ease;
+}
+
+.taskmanager {
+  background-color: rgba(73, 102, 191, 0.8);
+  border-radius: 2rem;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border: none;
+  margin: 1rem 0.5rem;
+  padding: 1rem 1rem;
+}
+.taskmanager h1 {
+  font-family: "Lexend-Bold";
+  color: #02091e;
 }/*# sourceMappingURL=App.css.map */

@@ -48,8 +48,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   @include partial.box1;
-  margin: 1rem 0.5rem;
-  padding: 1rem 1rem;
   gap: 1rem;
 
   button {
@@ -65,5 +63,12 @@ header {
       background-color: partial.$blueBlack;
       transition: partial.$transition;
     }
+  }
+}
+
+.taskmanager {
+  @include partial.box1;
+  h1 {
+    @include partial.heading;
   }
 }

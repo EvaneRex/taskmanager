@@ -58,7 +58,7 @@ export default function Taskmanager() {
     );
   };
   return (
-    <div>
+    <div className="taskmanager">
       <h1>Task Manager</h1>
 
       <NewTask onAddTask={addTask} />

@@ -81,6 +81,14 @@ $transition: 0.4s ease;
 @mixin button() {
 }
 
+//This is for inputfields
+@mixin input() {
+}
+
+//this is for choises
+@mixin choice() {
+}
+
 // This is for the bento boxes, box1 is the containers bg color, box2 is for the interactive or clickable parts
 //need to add height, width, margin etc, when we get to it
 @mixin box1() {
@@ -88,6 +96,8 @@ $transition: 0.4s ease;
   border-radius: $borderRadiusOuter;
   backdrop-filter: blur(2px);
   border: none;
+  margin: 1rem 0.5rem;
+  padding: 1rem 1rem;
 }
 
 @mixin box2() {
