@@ -55,4 +55,8 @@ header {
   button {
     @include partial.switchButtons;
   }
+
+  .active {
+    border: 5px partial.$strongYellow solid;
+  }
 }

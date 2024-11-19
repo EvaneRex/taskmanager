@@ -87,4 +87,7 @@ header .menu-icon {
   border-radius: 50%;
   padding: 0.4rem;
   justify-self: center;
+}
+.switchButtons .active {
+  border: 5px #fcca00 solid;
 }/*# sourceMappingURL=App.css.map */
