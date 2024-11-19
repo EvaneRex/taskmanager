@@ -1,19 +1,12 @@
 /**
  * This is ShopList, which displays the shopping items grouped by shop and sorted by departments. Its also responsible for enabeling the marking of completed or remove buttons.
- *
- * @param {ShopListProps} props - The props for the component
- * @param {ShopItemType[]} props.shopItems - An array for the shopping items to display
+ * 
+ * @param {ShopItemType[]} - Array of things that define the shopItem.
  * @param {(id:number) => void} props.removeShopItem - A function to remove shop items based on id
  * @param {(id:number) => void} props.toggleShopItemCompletion - A function to toggle the status of an item
- *
+ * @param {ShopListProps} - props for the shopList component. 
  * @returns {JSX.Element} - A rendered shoplist component
  *
- * What to add in the file?
- *<ShopList
-        shopItems={shopItems}
-        removeShopItem={removeShopItem}
-        toggleShopItemCompletion={toggleShopItemCompletion}
-      />
  */
 
 import ShopItem from "./ShopItem";

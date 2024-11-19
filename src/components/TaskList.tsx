@@ -1,18 +1,16 @@
 /**
  * This is the TaskList component, its responsible for rendering the list itself. Every task is passed to the task component for display and users can delete the tasks using the onDeleteTask callback.
  *
- * @param {TaskListProps} props - The props for the tasklist component
- * @param {CTask[]} - An array for the task object to display. Each task contains an id, title and description.
- * @param {onDeleteTask} - a callback function, that deletes the task based on its id.
- *
+ *  @param {TaskItemType} - An array for the task object to display. Each task contains an id, title and description.
+ *  @param {TaskListProps} props - The props for the tasklist component
+ *  @param {removeTaskItem} - A callback function that deletes the task based on its id.
+ * @param {toggleShopItemCompletion} - A function to toggle the status of an item between complete and active.
  * @returns {JSX.Element} - A list of tasks rendered as on unordered list
  *
- * What to add in the file?
- *<TaskList tasks={tasks} onDeleteTask={(id) />
+ *
  */
 
 import TaskItem from "./Task.tsx";
-
 export type Priority = "High" | "Medium" | "Low";
 
 //Define the order of priority
@@ -22,7 +20,7 @@ const priorityOrder: Record<Priority, number> = {
   Low: 3,
 } as const;
 
-//Define the type for tasklist (??)
+//Define the type for taskItem
 export interface TaskItemType {
   id: number;
   title: string;
@@ -30,12 +28,6 @@ export interface TaskItemType {
   priority: Priority;
   completed: boolean;
 }
-
-/*type TaskListProps = {
-  tasks: CTask[];
-  onDeleteTask: (id: number) => void;
-  toggleTaskListCompletion: (id: number) => void;
-};*/
 
 //define the props for the TaskList component
 interface TaskListProps {
@@ -45,6 +37,7 @@ interface TaskListProps {
   onUpdateTask: (updatedTask: TaskItemType) => void;
 }
 
+//function for TaskList contains taskItem from  above and remove and toggle.
 const TaskList: React.FC<TaskListProps> = ({
   taskItems: taskItems,
   removeTaskItem,
