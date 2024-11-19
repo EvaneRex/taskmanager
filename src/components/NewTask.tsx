@@ -42,7 +42,7 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
     >
       <h2 id="form-title">Add a new task</h2>
       <p>
-        <label htmlFor="Task"></label>
+        <label htmlFor="task"></label>
         <input
           type="text"
           id="task"
@@ -57,7 +57,7 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
       </p>
 
       <p>
-        <label htmlFor="Summary"></label>
+        <label htmlFor="summary"></label>
         <input
           type="text"
           id="summary"
