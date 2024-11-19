@@ -1,5 +1,5 @@
 /**
- * The Taskmanager component manages the tasks by allowing the users to add, delete and mark them as complete. It uses localstorage to ensure the tasks stays even after page refresh.
+ * The Taskmanager component manages the tasks by allowing the users to add, delete, edit and mark them as complete. It uses localstorage to ensure the tasks stays even after page refresh.
  *
  * What to add to the file?
  * <Taskmanager />

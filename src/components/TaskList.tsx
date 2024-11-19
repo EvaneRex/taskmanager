@@ -1,12 +1,14 @@
 /**
- * This is the TaskList component, its responsible for rendering the list itself. Every task is passed to the task component for display and users can delete the tasks using the onDeleteTask callback.
+ * This is the TaskList component, its responsible for rendering the list itself. Every task is passed to the task component for display and users can delete the tasks using the onDeleteTask callback. Its also responsible for the sorting by priority.
  *
+ * @param {Priority} type - Adds the needed values for the priority i place of a string value, which is invalid
+ * @param {Priority} order - Gives each level af value, which is used to group and place the task based on priority
  *  @param {TaskItemType} - An array for the task object to display. Each task contains an id, title and description.
  *  @param {TaskListProps} props - The props for the tasklist component
  *  @param {removeTaskItem} - A callback function that deletes the task based on its id.
  * @param {toggleShopItemCompletion} - A function to toggle the status of an item between complete and active.
+ * @param {onUpdateTask} - A function that updates the task after an editing by the user
  * @returns {JSX.Element} - A list of tasks rendered as on unordered list
- *
  *
  */
 
@@ -55,6 +57,7 @@ const TaskList: React.FC<TaskListProps> = ({
     return priorityOrder[a.priority] - priorityOrder[b.priority];
   });
 
+  // Groups the tasks based on priority
   const groupedTasks = sortedTaskItem.reduce<Record<string, TaskItemType[]>>(
     (acc, taskItem) => {
       if (!acc[taskItem.priority]) {
