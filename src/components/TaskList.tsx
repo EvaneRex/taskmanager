@@ -37,19 +37,19 @@ export interface TaskItemType {
   toggleTaskListCompletion: (id: number) => void;
 };*/
 
-
 //define the props for the TaskList component
 interface TaskListProps {
   taskItems: TaskItemType[];
   removeTaskItem: (id: number) => void;
   toggleTaskItemCompletion: (id: number) => void;
+  onUpdateTask: (updatedTask: TaskItemType) => void;
 }
-
 
 const TaskList: React.FC<TaskListProps> = ({
   taskItems: taskItems,
   removeTaskItem,
   toggleTaskItemCompletion,
+  onUpdateTask,
 }) => {
   // Sort TaskList by priority and completed status
   const sortedTaskItem = [...taskItems].sort((a, b) => {
@@ -62,18 +62,18 @@ const TaskList: React.FC<TaskListProps> = ({
     return priorityOrder[a.priority] - priorityOrder[b.priority];
   });
 
-  const groupedTasks = sortedTaskItem.reduce<
-    Record<string, TaskItemType[]>
-  >((acc, taskItem) => {
-    if (!acc[taskItem.priority]) {
-      acc[taskItem.priority] = [];
-    }
-    acc[taskItem.priority].push(taskItem);
-    return acc;
-  }, {});
+  const groupedTasks = sortedTaskItem.reduce<Record<string, TaskItemType[]>>(
+    (acc, taskItem) => {
+      if (!acc[taskItem.priority]) {
+        acc[taskItem.priority] = [];
+      }
+      acc[taskItem.priority].push(taskItem);
+      return acc;
+    },
+    {}
+  );
 
-
-  console.log(groupedTasks)
+  console.log(groupedTasks);
 
   return (
     <div aria-label="Task items">
@@ -87,6 +87,7 @@ const TaskList: React.FC<TaskListProps> = ({
                 taskItem={taskItem}
                 removeTaskItem={removeTaskItem}
                 toggleTaskItemCompletion={toggleTaskItemCompletion}
+                onUpdateTask={onUpdateTask}
               />
             ))}
           </ul>
@@ -97,4 +98,3 @@ const TaskList: React.FC<TaskListProps> = ({
 };
 
 export default TaskList;
-

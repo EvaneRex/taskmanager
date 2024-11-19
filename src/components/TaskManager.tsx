@@ -51,6 +51,12 @@ export default function Taskmanager() {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
+  // Updates the task after editing
+  const updateTask = (updatedTask: TaskItemType) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) => (task.id === updatedTask.id ? updatedTask : task))
+    );
+  };
   return (
     <div>
       <h1>Task Manager</h1>
@@ -60,6 +66,7 @@ export default function Taskmanager() {
         taskItems={tasks as TaskItemType[]}
         removeTaskItem={deleteTask}
         toggleTaskItemCompletion={handleComplete}
+        onUpdateTask={updateTask}
       />
     </div>
   );

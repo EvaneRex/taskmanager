@@ -17,11 +17,13 @@
  */
 
 import { TaskItemType } from "./TaskList";
+import { useState } from "react";
 
 interface TaskProps {
-  taskItem: TaskItemType
+  taskItem: TaskItemType;
   removeTaskItem: (id: number) => void;
   toggleTaskItemCompletion: (id: number) => void;
+  onUpdateTask: (updatedTask: TaskItemType) => void;
 }
 
 export type Tasks = string;
@@ -30,7 +32,13 @@ const Task: React.FC<TaskProps> = ({
   taskItem,
   removeTaskItem,
   toggleTaskItemCompletion,
+  onUpdateTask,
 }) => {
+  const [isEditing, setIsEditing] = useState(false); // Modal visibility state
+  const [title, setTitle] = useState(taskItem.title);
+  const [summary, setSummary] = useState(taskItem.summary);
+  const [priority, setPriority] = useState(taskItem.priority);
+
   const handleCompleteClick = (id: number): void => {
     toggleTaskItemCompletion(id);
   };
@@ -44,6 +52,18 @@ const Task: React.FC<TaskProps> = ({
     }
   };
 
+  // Handles the editing changes and updates the tasks
+  const handleSaveClick = () => {
+    const updatedTask = {
+      ...taskItem,
+      title,
+      summary,
+      priority,
+    };
+    onUpdateTask(updatedTask);
+    setIsEditing(false); // Closes the modal
+  };
+
   return (
     <li className={`task-item ${taskItem.completed ? "completed" : ""}`}>
       <span>{taskItem.title}</span> {/*Task name without colourchange*/}
@@ -51,15 +71,51 @@ const Task: React.FC<TaskProps> = ({
         {" "}
         - Priority: {taskItem.priority}
       </span>
+      {/* Buttons */}
       <button
         onClick={() => handleCompleteClick(taskItem.id)}
         className={`complete ${taskItem.completed ? "active" : ""}`}
       >
         {taskItem.completed ? "Undo" : "Complete"}
       </button>
+      <button onClick={() => setIsEditing(true)}>Edit</button>
       <button onClick={() => handleDeleteClick(taskItem.id)} className="delete">
         Delete
       </button>
+      {/* Modal for Editing */}
+      {isEditing && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Edit Task</h2>
+            <label>
+              Title:
+              <input value={title} onChange={(e) => setTitle(e.target.value)} />
+            </label>
+            <label>
+              Summary:
+              <textarea
+                value={summary}
+                onChange={(e) => setSummary(e.target.value)}
+              />
+            </label>
+            <label>
+              Priority:
+              <select
+                value={priority}
+                onChange={(e) =>
+                  setPriority(e.target.value as "High" | "Medium" | "Low")
+                }
+              >
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </label>
+            <button onClick={handleSaveClick}>Save</button>
+            <button onClick={() => setIsEditing(false)}>Cancel</button>
+          </div>
+        </div>
+      )}
     </li>
   );
 };
