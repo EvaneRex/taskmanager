@@ -75,10 +75,6 @@ header .menu-icon {
   height: auto;
   gap: 1rem;
 }
-.switchButtons h2 {
-  font-family: "Lexend-Bold";
-  color: #02091e;
-}
 .switchButtons button {
   background-color: #93aefc;
   font-family: "Lexend-SemiBold";
@@ -190,6 +186,13 @@ header .menu-icon {
   width: 100%;
   height: auto;
   grid-row: 2;
+}
+.taskmanager .taskForm label,
+.taskmanager .shopForm label,
+.shopmanager .taskForm label,
+.shopmanager .shopForm label {
+  font-family: "Lexend-Regular";
+  font-size: 1rem;
 }
 .taskmanager .taskForm input,
 .taskmanager .shopForm input,
@@ -463,12 +466,24 @@ header .menu-icon {
   transition: 0.4s ease;
   color: #fcca00;
 }
+.taskmanager .modal-overlay .modal h2,
+.shopmanager .modal-overlay .modal h2 {
+  font-size: 1.5rem;
+}
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
+@media screen and (min-width: 425px) and (max-width: 800px) {
+  .switchButtons button {
+    font-size: 1.3rem;
+  }
+}
 /*Desktop version - made on behalf og bigger screens*/
 @media only screen and (min-width: 801px) {
   .manager {
     max-width: 1000px;
+  }
+  .switchButtons button {
+    font-size: 1.5rem;
   }
   .taskmanager h1,
   .shopmanager h1 {
@@ -476,9 +491,78 @@ header .menu-icon {
   }
   .taskmanager h2,
   .shopmanager h2 {
+    font-size: 1.5rem;
+  }
+  .taskmanager p,
+  .shopmanager p {
     font-size: 1.3rem;
   }
-  .switchButtons button {
-    font-size: 1.4rem;
+  .taskmanager button,
+  .shopmanager button {
+    font-size: 1.3rem;
+  }
+  .taskmanager .taskForm input,
+  .taskmanager .taskForm select,
+  .taskmanager .taskForm option,
+  .taskmanager .taskForm button,
+  .taskmanager .shopForm input,
+  .taskmanager .shopForm select,
+  .taskmanager .shopForm option,
+  .taskmanager .shopForm button,
+  .shopmanager .taskForm input,
+  .shopmanager .taskForm select,
+  .shopmanager .taskForm option,
+  .shopmanager .taskForm button,
+  .shopmanager .shopForm input,
+  .shopmanager .shopForm select,
+  .shopmanager .shopForm option,
+  .shopmanager .shopForm button {
+    font-size: 1.3rem;
+  }
+  .taskmanager .taskForm button,
+  .taskmanager .shopForm button,
+  .shopmanager .taskForm button,
+  .shopmanager .shopForm button {
+    height: 3rem;
+  }
+  .taskmanager .taskBox ul li button,
+  .shopmanager .taskBox ul li button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .taskmanager .taskBox ul li button .icon,
+  .shopmanager .taskBox ul li button .icon {
+    width: 2rem;
+    height: auto;
+  }
+  .taskmanager .taskBox .modal input,
+  .taskmanager .taskBox .modal select,
+  .taskmanager .taskBox .modal option,
+  .taskmanager .taskBox .modal button,
+  .taskmanager .taskBox .modal .custom-edit,
+  .shopmanager .taskBox .modal input,
+  .shopmanager .taskBox .modal select,
+  .shopmanager .taskBox .modal option,
+  .shopmanager .taskBox .modal button,
+  .shopmanager .taskBox .modal .custom-edit {
+    font-size: 1.3rem;
+  }
+  .taskmanager .taskBox .modal label,
+  .shopmanager .taskBox .modal label {
+    font-size: 1.3rem;
+  }
+  .taskmanager .taskBox .modal button,
+  .shopmanager .taskBox .modal button {
+    height: 3rem;
+  }
+  .taskmanager .shopBox .shop-item button,
+  .shopmanager .shopBox .shop-item button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .taskmanager .shopBox .shop-item button .icon,
+  .shopmanager .shopBox .shop-item button .icon {
+    width: 2rem;
+    height: auto;
   }
 }/*# sourceMappingURL=App.css.map */

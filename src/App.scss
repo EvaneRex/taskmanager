@@ -56,10 +56,6 @@ header {
   @include partial.box1;
   gap: 1rem;
 
-  h2 {
-    @include partial.heading;
-  }
-
   button {
     @include partial.switchButtons;
     @include partial.heading;
@@ -124,6 +120,11 @@ header {
   .shopForm {
     @include partial.box2;
     grid-row: 2;
+
+    label {
+      font-family: partial.$headingRegular;
+      font-size: 1rem;
+    }
 
     input {
       @include partial.txt;
@@ -247,15 +248,18 @@ header {
       button {
         @include partial.button;
       }
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   }
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
 @media screen and (min-width: 425px) and (max-width: 800px) {
-  .taskmanager,
-  .shopmanager {
-    .shopForm {
+  .switchButtons {
+    button {
+      font-size: 1.3rem;
     }
   }
 }
@@ -265,6 +269,11 @@ header {
   .manager {
     max-width: partial.$deskwidth;
   }
+  .switchButtons {
+    button {
+      font-size: 1.5rem;
+    }
+  }
 
   .taskmanager,
   .shopmanager {
@@ -273,13 +282,66 @@ header {
     }
 
     h2 {
+      font-size: 1.5rem;
+    }
+    p {
       font-size: 1.3rem;
     }
-  }
-
-  .switchButtons {
     button {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
+    }
+    .taskForm,
+    .shopForm {
+      input,
+      select,
+      option,
+      button {
+        font-size: 1.3rem;
+      }
+      button {
+        height: 3rem;
+      }
+    }
+    .taskBox {
+      ul {
+        li {
+          button {
+            width: 2.5rem;
+            height: 2.5rem;
+            .icon {
+              width: 2rem;
+              height: auto;
+            }
+          }
+        }
+      }
+      .modal {
+        input,
+        select,
+        option,
+        button,
+        .custom-edit {
+          font-size: 1.3rem;
+        }
+        label {
+          font-size: 1.3rem;
+        }
+        button {
+          height: 3rem;
+        }
+      }
+    }
+    .shopBox {
+      .shop-item {
+        button {
+          width: 2.5rem;
+          height: 2.5rem;
+          .icon {
+            width: 2rem;
+            height: auto;
+          }
+        }
+      }
     }
   }
 }
