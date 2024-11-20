@@ -61,13 +61,11 @@ header {
   @include partial.box1;
   gap: 1rem;
 
-  h2 {
-    @include partial.heading;
-
-  }
-
   button {
     @include partial.switchButtons;
+    @include partial.heading;
+    font-size: 1.75rem;
+
 
     .list-icon {
       @include partial.list-icon;
@@ -182,7 +180,7 @@ header {
   .switchButtons {
 
 
-    h2 {
+    button {
       font-size: 1.4rem;
 
     }

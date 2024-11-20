@@ -80,10 +80,6 @@ header .menu-icon {
   height: height;
   gap: 1rem;
 }
-.switchButtons h2 {
-  font-family: "Lexend-Bold";
-  color: #02091e;
-}
 .switchButtons button {
   background-color: #93aefc;
   font-family: "Lexend-SemiBold";
@@ -99,6 +95,9 @@ header .menu-icon {
   height: height;
   width: auto;
   transition: 0.4s ease;
+  font-family: "Lexend-Bold";
+  color: #02091e;
+  font-size: 1.75rem;
 }
 .switchButtons button:hover {
   border: 3px solid #fcca00;
@@ -263,7 +262,7 @@ header .menu-icon {
   .shopmanager h2 {
     font-size: 1.3rem;
   }
-  .switchButtons h2 {
+  .switchButtons button {
     font-size: 1.4rem;
   }
 }/*# sourceMappingURL=App.css.map */
