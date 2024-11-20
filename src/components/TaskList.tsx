@@ -79,7 +79,7 @@ const TaskList: React.FC<TaskListProps> = ({
           key={tasks}
           aria-labelledby={`task-${tasks}`}
         >
-          <h2>{tasks}</h2> {/* Shows the priority! */}
+          <h2 className="priority">{tasks}</h2> {/* Shows the priority! */}
           <ul>
             {groupedTasks[tasks].map((taskItem) => (
               <TaskItem

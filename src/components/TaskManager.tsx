@@ -63,12 +63,21 @@ export default function Taskmanager() {
         <h1>Task Manager</h1>
 
         <NewTask onAddTask={addTask} />
-        <TaskList
-          taskItems={tasks as TaskItemType[]}
-          removeTaskItem={deleteTask}
-          toggleTaskItemCompletion={handleComplete}
-          onUpdateTask={updateTask}
-        />
+
+        <section aria-labelledby="task-list">
+          {tasks.length === 0 ? (
+            <p className="alertMsg" role="alert" aria-live="polite">
+              No tasks yet. Start adding some!
+            </p>
+          ) : (
+            <TaskList
+              taskItems={tasks as TaskItemType[]}
+              removeTaskItem={deleteTask}
+              toggleTaskItemCompletion={handleComplete}
+              onUpdateTask={updateTask}
+            />
+          )}
+        </section>
       </div>
     </div>
   );

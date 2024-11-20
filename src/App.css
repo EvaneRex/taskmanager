@@ -172,8 +172,13 @@ header .menu-icon {
 }
 .taskmanager .alertMsg,
 .shopmanager .alertMsg {
-  margin-left: 1rem;
-  font-weight: bold;
+  font-family: "Lexend-Bold";
+  color: #02091e;
+  background-color: #93aefc;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+  width: 100%;
+  height: auto;
 }
 .taskmanager .taskForm,
 .taskmanager .shopForm,
@@ -265,11 +270,23 @@ header .menu-icon {
   color: #02091e;
   margin-bottom: 1rem;
 }
+.taskmanager .shopBox .priority,
+.taskmanager .taskBox .priority,
+.shopmanager .shopBox .priority,
+.shopmanager .taskBox .priority {
+  text-decoration: underline;
+}
 .taskmanager .shopBox ul li,
 .taskmanager .taskBox ul li,
 .shopmanager .shopBox ul li,
 .shopmanager .taskBox ul li {
   list-style: none;
+}
+.taskmanager .shopBox ul li h2,
+.taskmanager .taskBox ul li h2,
+.shopmanager .shopBox ul li h2,
+.shopmanager .taskBox ul li h2 {
+  font-size: 1.2rem;
 }
 .taskmanager .shopBox ul li h2,
 .taskmanager .shopBox ul li p,
@@ -318,6 +335,7 @@ header .menu-icon {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
+  justify-content: right;
 }
 .taskmanager .shopBox ul .shop-item .shop-buttons button,
 .taskmanager .taskBox ul .shop-item .shop-buttons button,
@@ -334,7 +352,7 @@ header .menu-icon {
 .shopmanager .taskBox ul .task-item {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 2.5rem;
   gap: 0.5rem;
 }
 .taskmanager .shopBox ul .task-item .task-buttons,
@@ -345,6 +363,7 @@ header .menu-icon {
   flex-direction: row;
   margin-bottom: 0.5rem;
   justify-content: right;
+  grid-row: 2;
 }
 .taskmanager .shopBox ul .task-item .task-buttons button,
 .taskmanager .taskBox ul .task-item .task-buttons button,
@@ -446,12 +465,6 @@ header .menu-icon {
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
-@media screen and (min-width: 500px) and (max-width: 800px) {
-  .taskmanager h1,
-  .shopmanager h1 {
-    font-size: 1;
-  }
-}
 /*Desktop version - made on behalf og bigger screens*/
 @media only screen and (min-width: 801px) {
   .manager {
