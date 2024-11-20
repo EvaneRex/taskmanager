@@ -14,13 +14,13 @@ interface ShopItem {
   completed: boolean;
   shop: string;
   department:
-    | "Fruit/Vegetables"
-    | "Bread"
-    | "Meat"
-    | "Dairy"
-    | "Dry goods"
-    | "Frozen"
-    | "Non Food";
+  | "Fruit/Vegetables"
+  | "Bread"
+  | "Meat"
+  | "Dairy"
+  | "Dry goods"
+  | "Frozen"
+  | "Non Food";
 }
 
 function ShopManager() {
@@ -96,33 +96,35 @@ function ShopManager() {
     );
   };
   return (
-    <div className="shopmanager">
-      <h1>Shopping List</h1>
-      <section className="shopForm" aria-labelledby="add-items">
-        <h2 id="add-items">Add items and Shops</h2>
-        <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
-      </section>
-      <section aria-labelledby="shopping-list">
-        {shopItems.length === 0 ? (
-          <p role="alert" aria-live="polite">
-            No items in your shopping list. Start adding some!
-          </p>
-        ) : (
-          <ShopList
-            shopItems={shopItems}
-            removeShopItem={removeShopItem}
-            toggleShopItemCompletion={toggleShopItemCompletion}
-            aria-label="List of shopping items"
-          />
-        )}
-      </section>
-      <button
-        onClick={removeAllShopItems}
-        className="delete-all"
-        aria-label="Delete all items and shops"
-      >
-        Delete All Items and Shops
-      </button>
+    <div className="manager">
+      <div className="shopmanager">
+        <h1>Shopping List</h1>
+        <section className="shopForm" aria-labelledby="add-items">
+          <h2 id="add-items">Add items and Shops</h2>
+          <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
+        </section>
+        <section aria-labelledby="shopping-list">
+          {shopItems.length === 0 ? (
+            <p role="alert" aria-live="polite">
+              No items in your shopping list. Start adding some!
+            </p>
+          ) : (
+            <ShopList
+              shopItems={shopItems}
+              removeShopItem={removeShopItem}
+              toggleShopItemCompletion={toggleShopItemCompletion}
+              aria-label="List of shopping items"
+            />
+          )}
+        </section>
+        <button
+          onClick={removeAllShopItems}
+          className="delete-all"
+          aria-label="Delete all items and shops"
+        >
+          Delete All Items and Shops
+        </button>
+      </div>
     </div>
   );
 }
