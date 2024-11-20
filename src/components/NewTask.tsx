@@ -72,7 +72,7 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
       </p>
 
       <p>
-        <label htmlFor="priority">Priority</label>
+        <label className="prioritytxt" htmlFor="priority">Priority:</label>
         <select
           id="priority"
           value={priority}
