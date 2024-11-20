@@ -89,11 +89,6 @@ header .menu-icon {
   gap: 1rem;
 }
 
-.switchButtons h2 {
-  font-family: "Lexend-Bold";
-  color: #02091e;
-}
-
 .switchButtons button {
   background-color: #93aefc;
   font-family: "Lexend-SemiBold";
@@ -109,6 +104,9 @@ header .menu-icon {
   height: height;
   width: auto;
   transition: 0.4s ease;
+  font-family: "Lexend-Bold";
+  color: #02091e;
+  font-size: 1.75rem;
 }
 
 .switchButtons button:hover {
@@ -150,8 +148,6 @@ header .menu-icon {
   border: none;
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
-  width: auto;
-  height: height;
   width: auto;
   height: height;
   display: grid;
@@ -218,12 +214,10 @@ header .menu-icon {
   color: #02091e;
   font-size: 1rem;
   background-color: white;
-  background-color: white;
   padding: 0.2rem;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
   width: 100%;
-  height: auto;
   height: auto;
 }
 
@@ -235,7 +229,6 @@ header .menu-icon {
 .shopmanager .taskForm option,
 .shopmanager .shopForm select,
 .shopmanager .shopForm option {
-  background-color: white;
   background-color: white;
   font-family: "OpenSans-Regular";
   font-size: 1rem;
@@ -328,9 +321,6 @@ header .menu-icon {
 
 /*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
 @media only screen and (max-width: 500px) {
-  .manager {
-    padding: 0;
-  }
 
   .taskmanager h1,
   .shopmanager h1 {
@@ -343,8 +333,9 @@ header .menu-icon {
   }
 
   .switchButtons h2 {
-    font-size: 1.4rem;
+    .switchButtons button {
+      font-size: 1.4rem;
+    }
   }
-}
 
-/*# sourceMappingURL=App.css.map */
+  /*# sourceMappingURL=App.css.map */

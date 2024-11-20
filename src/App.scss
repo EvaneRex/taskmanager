@@ -67,6 +67,8 @@ header {
 
   button {
     @include partial.switchButtons;
+    @include partial.heading;
+    font-size: 1.75rem;
 
     .list-icon {
       @include partial.list-icon;
@@ -178,6 +180,12 @@ header {
 
     h2 {
       font-size: 1.3rem;
+    }
+  }
+
+  .switchButtons {
+    h2 {
+      font-size: 1.4rem;
     }
   }
 }
