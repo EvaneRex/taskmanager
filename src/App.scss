@@ -61,6 +61,11 @@ header {
   @include partial.box1;
   gap: 1rem;
 
+  h2 {
+    @include partial.heading;
+
+  }
+
   button {
     @include partial.switchButtons;
 
@@ -98,6 +103,7 @@ header {
     @include partial.box2;
     text-align: center;
     grid-row: 1;
+    font-size: 2rem;
   }
 
   h2 {
@@ -156,6 +162,10 @@ header {
 /*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
 @media only screen and (max-width: 500px) {
 
+  .manager {
+    padding: 0;
+  }
+
   .taskmanager,
   .shopmanager {
     h1 {
@@ -169,4 +179,13 @@ header {
 
   }
 
+  .switchButtons {
+
+
+    h2 {
+      font-size: 1.4rem;
+
+    }
+
+  }
 }

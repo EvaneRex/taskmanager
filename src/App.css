@@ -80,6 +80,10 @@ header .menu-icon {
   height: height;
   gap: 1rem;
 }
+.switchButtons h2 {
+  font-family: "Lexend-Bold";
+  color: #02091e;
+}
 .switchButtons button {
   background-color: #93aefc;
   font-family: "Lexend-SemiBold";
@@ -149,6 +153,7 @@ header .menu-icon {
   height: height;
   text-align: center;
   grid-row: 1;
+  font-size: 2rem;
 }
 .taskmanager h2,
 .shopmanager h2 {
@@ -247,6 +252,9 @@ header .menu-icon {
 }
 /*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
 @media only screen and (max-width: 500px) {
+  .manager {
+    padding: 0;
+  }
   .taskmanager h1,
   .shopmanager h1 {
     font-size: 1.75rem;
@@ -254,5 +262,8 @@ header .menu-icon {
   .taskmanager h2,
   .shopmanager h2 {
     font-size: 1.3rem;
+  }
+  .switchButtons h2 {
+    font-size: 1.4rem;
   }
 }/*# sourceMappingURL=App.css.map */

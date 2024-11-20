@@ -26,7 +26,7 @@ export default function App() {
             className={activeComponent === "task" ? "active" : ""} // Conditionally add 'active' class
           >
             <ListAltIcon className="list-icon" />
-            Task Manager
+            <h2>Task Manager</h2>
           </button>
           <button
             onClick={() => switchComponent("shop")}
@@ -34,7 +34,7 @@ export default function App() {
             className={activeComponent === "shop" ? "active" : ""} // Conditionally add 'active' class
           >
             <ShoppingBasketIcon className="list-icon" />
-            Shop Manager
+            <h2>Shop Manager</h2>
           </button>
         </div>
       </div>
