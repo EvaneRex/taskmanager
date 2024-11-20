@@ -117,6 +117,10 @@ header {
     option {
       @include partial.choice;
     }
+
+    button {
+      @include partial.button;
+    }
   }
 }
 
