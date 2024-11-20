@@ -22,7 +22,7 @@ const Header: FC<HeaderProps> = ({ title, logoUrl }) => {
   return (
     <header className="header">
       <div>
-        <img src={logoUrl} alt="Logo" />
+        <img src={logoUrl} alt="Logo" loading="lazy" />
         <p>{title}</p>
       </div>
       <MenuRoundedIcon className="menu-icon" />
