@@ -24,13 +24,13 @@ interface ShopItemProps {
     name: string;
     completed: boolean;
     department:
-      | "Fruit/Vegetables"
-      | "Bread"
-      | "Meat"
-      | "Dairy"
-      | "Dry goods"
-      | "Frozen"
-      | "Non Food";
+    | "Fruit/Vegetables"
+    | "Bread"
+    | "Meat"
+    | "Dairy"
+    | "Dry goods"
+    | "Frozen"
+    | "Non Food";
     shop: string;
   };
   removeShopItem: (id: number) => void;
@@ -65,7 +65,7 @@ const ShopItem: React.FC<ShopItemProps> = ({
       <span>{shopItem.name}</span> {/*Task name without colourchange*/}
       <span className={`priority-${shopItem.department}`}>
         {" "}
-        - Department: {shopItem.department}
+        - {shopItem.department}
       </span>
       <button
         onClick={() => handleCompleteClick(shopItem.id)}
