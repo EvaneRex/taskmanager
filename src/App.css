@@ -213,13 +213,13 @@ header .menu-icon {
   font-family: "OpenSans-Regular";
   font-size: 1rem;
   border-radius: 0.5rem;
-<<<<<<< HEAD
   width: 100%;
   height: auto;
   padding: 0.2rem;
   margin: 0.5rem 0;
   border: #02091e 1.6px inset;
 }
+
 .taskmanager .taskForm button,
 .taskmanager .shopForm button,
 .shopmanager .taskForm button,
@@ -235,6 +235,7 @@ header .menu-icon {
   margin-bottom: 0.6rem;
   border: 3px outset #4966bf;
 }
+
 .taskmanager .taskForm button:hover,
 .taskmanager .shopForm button:hover,
 .shopmanager .taskForm button:hover,
@@ -242,8 +243,6 @@ header .menu-icon {
   border: 3px solid #fcca00;
   transition: 0.4s ease;
   color: #fcca00;
-=======
->>>>>>> 5684faec020b7b0bec225350cee213fd81587fca
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
