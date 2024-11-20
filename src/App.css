@@ -89,6 +89,11 @@ header .menu-icon {
   gap: 1rem;
 }
 
+.switchButtons h2 {
+  font-family: "Lexend-Bold";
+  color: #02091e;
+}
+
 .switchButtons button {
   background-color: #93aefc;
   font-family: "Lexend-SemiBold";
@@ -333,9 +338,8 @@ header .menu-icon {
   }
 
   .switchButtons h2 {
-    .switchButtons button {
-      font-size: 1.4rem;
-    }
+    font-size: 1.4rem;
   }
+}
 
-  /*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=App.css.map */
