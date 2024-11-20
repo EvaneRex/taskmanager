@@ -58,7 +58,7 @@ header .menu-icon {
 .manager {
   margin: auto;
   padding: 0 1rem;
-  width: 100vw;
+  width: 100%;
 }
 
 .switchButtons {
@@ -244,6 +244,14 @@ header .menu-icon {
   transition: 0.4s ease;
   color: #fcca00;
 }
+.taskmanager .taskBox li,
+.shopmanager .taskBox li {
+  border-bottom: 2px solid #02091e;
+}
+.taskmanager .taskBox li:last-child,
+.shopmanager .taskBox li:last-child {
+  border: none;
+}
 .taskmanager .shopBox,
 .taskmanager .taskBox,
 .shopmanager .shopBox,
@@ -255,6 +263,7 @@ header .menu-icon {
   height: auto;
   font-family: "Lexend-Bold";
   color: #02091e;
+  margin-bottom: 1rem;
 }
 .taskmanager .shopBox ul li,
 .taskmanager .taskBox ul li,
@@ -300,7 +309,6 @@ header .menu-icon {
   display: grid;
   grid-template-columns: 2fr 0.5fr;
   align-items: center;
-  margin-bottom: 0.5rem;
   word-break: break-all;
 }
 .taskmanager .shopBox ul .shop-item .shop-buttons,
@@ -309,11 +317,39 @@ header .menu-icon {
 .shopmanager .taskBox ul .shop-item .shop-buttons {
   display: flex;
   flex-direction: row;
+  margin-bottom: 0.5rem;
 }
 .taskmanager .shopBox ul .shop-item .shop-buttons button,
 .taskmanager .taskBox ul .shop-item .shop-buttons button,
 .shopmanager .shopBox ul .shop-item .shop-buttons button,
 .shopmanager .taskBox ul .shop-item .shop-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.2rem;
+}
+.taskmanager .shopBox ul .task-item,
+.taskmanager .taskBox ul .task-item,
+.shopmanager .shopBox ul .task-item,
+.shopmanager .taskBox ul .task-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+}
+.taskmanager .shopBox ul .task-item .task-buttons,
+.taskmanager .taskBox ul .task-item .task-buttons,
+.shopmanager .shopBox ul .task-item .task-buttons,
+.shopmanager .taskBox ul .task-item .task-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+  justify-content: right;
+}
+.taskmanager .shopBox ul .task-item .task-buttons button,
+.taskmanager .taskBox ul .task-item .task-buttons button,
+.shopmanager .shopBox ul .task-item .task-buttons button,
+.shopmanager .taskBox ul .task-item .task-buttons button {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -66,29 +66,36 @@ const Task: React.FC<TaskProps> = ({
 
   return (
     <li className={`task-item ${taskItem.completed ? "completed" : ""}`}>
-      <h2>{taskItem.title}</h2> {/*Task name without colourchange*/}
-      <p>{taskItem.summary}</p>
+      <div>
+        <h2>{taskItem.title}</h2> {/*Task name without colourchange*/}
+        <p>{taskItem.summary}</p>
+      </div>
       {/* Buttons */}
-      <button
-        onClick={() => handleCompleteClick(taskItem.id)}
-        className={`complete ${taskItem.completed ? "active" : ""}`}
-      >
-        {taskItem.completed ? (
-          <>
-            <UndoIcon className="icon" />
-          </>
-        ) : (
-          <>
-            <CheckCircleOutlineIcon className="icon" />
-          </>
-        )}
-      </button>
-      <button onClick={() => setIsEditing(true)}>
-        <EditIcon />
-      </button>
-      <button onClick={() => handleDeleteClick(taskItem.id)} className="delete">
-        <RemoveCircleOutlineIcon className="icon" />
-      </button>
+      <div className="task-buttons">
+        <button
+          onClick={() => handleCompleteClick(taskItem.id)}
+          className={`complete ${taskItem.completed ? "active" : ""}`}
+        >
+          {taskItem.completed ? (
+            <>
+              <UndoIcon className="icon" />
+            </>
+          ) : (
+            <>
+              <CheckCircleOutlineIcon className="icon" />
+            </>
+          )}
+        </button>
+        <button onClick={() => setIsEditing(true)}>
+          <EditIcon />
+        </button>
+        <button
+          onClick={() => handleDeleteClick(taskItem.id)}
+          className="delete"
+        >
+          <RemoveCircleOutlineIcon className="icon" />
+        </button>
+      </div>
       {/* Modal for Editing */}
       {isEditing && (
         <div className="modal-overlay">
