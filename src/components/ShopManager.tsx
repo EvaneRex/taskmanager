@@ -14,13 +14,13 @@ interface ShopItem {
   completed: boolean;
   shop: string;
   department:
-  | "Fruit/Vegetables"
-  | "Bread"
-  | "Meat"
-  | "Dairy"
-  | "Dry goods"
-  | "Frozen"
-  | "Non Food";
+    | "Fruit/Vegetables"
+    | "Bread"
+    | "Meat"
+    | "Dairy"
+    | "Dry goods"
+    | "Frozen"
+    | "Non Food";
 }
 
 function ShopManager() {
@@ -101,7 +101,11 @@ function ShopManager() {
         <h1>Shopping List</h1>
         <section className="shopForm" aria-labelledby="add-items">
           <h2 id="add-items">Add shop and item</h2>
-          <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
+          <ShopInput
+            addShopItem={addShopItem}
+            addShop={addShop}
+            shops={shops}
+          />
         </section>
         <section aria-labelledby="shopping-list">
           {shopItems.length === 0 ? (

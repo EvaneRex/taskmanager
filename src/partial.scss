@@ -38,7 +38,7 @@ $deskwidth: 1000px;
 }
 
 //Mixins
-@mixin heading($family: $headingBold, $size: size, $color: $blueBlack) {
+@mixin heading($family: $headingBold, $size: 1.5rem, $color: $blueBlack) {
   font-family: $family;
   color: $color;
 }
@@ -50,11 +50,11 @@ $deskwidth: 1000px;
 }
 
 // For the switchbuttons at the top of the page
-@mixin switchButtons($fontsize: 1.1rem, $height: height, $width: auto) {
+@mixin switchButtons($fontsize: 1.1rem, $height: auto, $width: 100%) {
   background-color: $lightBlue;
   font-family: $headingSemi;
   color: $blueBlack;
-  padding: 1.5rem 1rem;
+  padding: 1rem 0.5rem;
   font-size: $fontsize;
   border-radius: $borderRadiusInner;
   border: 3px outset $whiteBlue;
@@ -82,17 +82,26 @@ $deskwidth: 1000px;
 }
 
 //This is for the general use of boxes
-@mixin button($height: 2rem, $width: 100%, $fontsize: 1rem) {
+@mixin button(
+  $height: 2rem,
+  $width: 100%,
+  $fontsize: 1rem,
+  $br: 0.5rem,
+  $mb: 0.6rem
+) {
   background-color: $strongBlue;
   font-family: $headingSemi;
   font-size: $fontsize;
   color: $whiteBlue;
-  border-radius: 0.5rem;
+  border-radius: $br;
   width: $width;
   height: $height;
-  padding: 0.2rem;
-  margin-bottom: 0.6rem;
+  padding: 0.5rem;
+  margin-bottom: $mb;
   border: 3px outset $mediumBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     border: 3px solid $strongYellow;
@@ -101,7 +110,7 @@ $deskwidth: 1000px;
   }
 }
 
-@mixin icon-button($height: 2.5rem, $width: 2.5rem, $fontsize: 1rem) {
+@mixin icon-button($height: 2rem, $width: 2rem, $fontsize: 1rem) {
   background-color: $strongBlue;
   font-family: $headingSemi;
   font-size: $fontsize;
@@ -109,10 +118,10 @@ $deskwidth: 1000px;
   border-radius: 50%;
   width: $width;
   height: $height;
-  border: 3px outset $mediumBlue;
+  border: 2px outset $mediumBlue;
 
   &:hover {
-    border: 3px solid $strongYellow;
+    border: 2px solid $strongYellow;
     transition: $transition;
     color: $strongYellow;
   }

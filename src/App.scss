@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-:focus {
-  outline: 3px solid rgb(255, 153, 0);
-  outline-offset: 2px;
-}
-
 body {
   background-image: url(./assets/background.jpg);
   background-size: cover;
@@ -165,13 +160,15 @@ header {
       }
       .shop-item {
         display: grid;
-        grid-template-columns: 1fr 40%;
+        grid-template-columns: 2fr 0.5fr;
         align-items: center;
         margin-bottom: 0.5rem;
+        word-break: break-all;
+
         .shop-buttons {
           display: flex;
           flex-direction: row;
-          justify-items: right;
+
           button {
             display: flex;
             justify-content: center;
@@ -187,6 +184,12 @@ header {
         color: partial.$mediumBlue;
       }
     }
+  }
+  button {
+    @include partial.button;
+    border-radius: partial.$borderRadiusInner;
+    margin-bottom: 0.25rem;
+    height: 3rem;
   }
 }
 
