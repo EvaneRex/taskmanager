@@ -162,6 +162,7 @@ header {
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
 @media only screen and (max-width: 800px) {
+
   .taskmanager,
   .shopmanager {
     h1 {
@@ -172,6 +173,7 @@ header {
 
 /*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
 @media only screen and (max-width: 500px) {
+
   .taskmanager,
   .shopmanager {
     h1 {
@@ -184,7 +186,7 @@ header {
   }
 
   .switchButtons {
-    h2 {
+    button {
       font-size: 1.4rem;
     }
   }
