@@ -65,25 +65,27 @@ const ShopItem: React.FC<ShopItemProps> = ({
       <span>{shopItem.name}</span> {/*Task name without colourchange*/}
       <span className={`priority-${shopItem.department}`}>
         {" "}
-        - Department: {shopItem.department}
+        - {shopItem.department}
       </span>
-      <button
-        onClick={() => handleCompleteClick(shopItem.id)}
-        className={`complete ${shopItem.completed ? "active" : ""}`}
-      >
-        {shopItem.completed ? (
-          <>
-            <UndoIcon />
-          </>
-        ) : (
-          <>
-            <CheckCircleOutlineIcon />
-          </>
-        )}
-      </button>
-      <button onClick={() => handleDeleteClick(shopItem.id)} className="delete">
-        <RemoveCircleOutlineIcon />
-      </button>
+      <div className="button-group">
+        <button
+          onClick={() => handleCompleteClick(shopItem.id)}
+          className={`complete ${shopItem.completed ? "active" : ""}`}
+        >
+          {shopItem.completed ? (
+            <>
+              <UndoIcon />
+            </>
+          ) : (
+            <>
+              <CheckCircleOutlineIcon />
+            </>
+          )}
+        </button>
+        <button onClick={() => handleDeleteClick(shopItem.id)}>
+          <RemoveCircleOutlineIcon />
+        </button>
+      </div>
     </li>
   );
 };

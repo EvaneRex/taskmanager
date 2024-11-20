@@ -101,6 +101,23 @@ $deskwidth: 1000px;
   }
 }
 
+@mixin icon-button($height: 3rem, $width: 3rem, $fontsize: 1rem) {
+  background-color: $strongBlue;
+  font-family: $headingSemi;
+  font-size: $fontsize;
+  color: $whiteBlue;
+  border-radius: 0.5rem;
+  width: $width;
+  height: $height;
+  border: 3px outset $mediumBlue;
+
+  &:hover {
+    border: 3px solid $strongYellow;
+    transition: $transition;
+    color: $strongYellow;
+  }
+}
+
 //This is for inputfields
 @mixin input($width: 100%, $height: auto) {
   background-color: white;

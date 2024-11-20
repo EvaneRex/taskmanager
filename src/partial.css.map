@@ -1,10 +1,1 @@
-{
-  "version": 3,
-  "sources": [
-    "partial.scss",
-    "partial.css"
-  ],
-  "names": [],
-  "mappings": "AAmBA;EACE,0BAAA;EACA,6CAAA;AClBF;ADqBA;EACE,8BAAA;EACA,iDAAA;ACnBF;ADsBA;EACE,6BAAA;EACA,gDAAA;ACpBF;ADuBA;EACE,+BAAA;EACA,kDAAA;ACrBF",
-  "file": "partial.css"
-}
+{"version":3,"sources":["partial.scss","partial.css"],"names":[],"mappings":"AAmBA;EACE,0BAAA;EACA,6CAAA;AClBF;ADqBA;EACE,8BAAA;EACA,iDAAA;ACnBF;ADsBA;EACE,6BAAA;EACA,gDAAA;ACpBF;ADuBA;EACE,+BAAA;EACA,kDAAA;ACrBF","file":"partial.css"}
