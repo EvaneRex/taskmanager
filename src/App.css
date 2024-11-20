@@ -20,6 +20,11 @@
   box-sizing: border-box;
 }
 
+:focus {
+  outline: 3px solid rgb(255, 153, 0);
+  outline-offset: 2px;
+}
+
 body {
   background-image: url(./assets/background.jpg);
   background-size: cover;
@@ -89,6 +94,7 @@ header .menu-icon {
   align-items: center;
   height: auto;
   width: auto;
+  transition: 0.4s ease;
 }
 .switchButtons button:hover {
   border: 3px solid #fcca00;
@@ -212,6 +218,15 @@ header .menu-icon {
   height: 2rem;
   padding: 0.2rem;
   margin-bottom: 0.6rem;
+  border: 3px outset #4966bf;
+}
+.taskmanager .taskForm button:hover,
+.taskmanager .shopForm button:hover,
+.shopmanager .taskForm button:hover,
+.shopmanager .shopForm button:hover {
+  border: 3px solid #fcca00;
+  transition: 0.4s ease;
+  color: #fcca00;
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/

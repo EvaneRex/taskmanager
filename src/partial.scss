@@ -64,6 +64,7 @@ $deskwidth: 1000px;
   align-items: center;
   height: $height;
   width: $width;
+  transition: $transition;
 
   &:hover {
     border: 3px solid $strongYellow;
@@ -91,6 +92,13 @@ $deskwidth: 1000px;
   height: $height;
   padding: 0.2rem;
   margin-bottom: 0.6rem;
+  border: 3px outset $mediumBlue;
+
+  &:hover {
+    border: 3px solid $strongYellow;
+    transition: $transition;
+    color: $strongYellow;
+  }
 }
 
 //This is for inputfields
