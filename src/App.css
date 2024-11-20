@@ -255,6 +255,7 @@ header .menu-icon {
 .taskmanager .taskBox li,
 .shopmanager .taskBox li {
   border-bottom: 2px solid #02091e;
+  padding-top: 0.5rem;
 }
 .taskmanager .taskBox li:last-child,
 .shopmanager .taskBox li:last-child {
@@ -385,7 +386,8 @@ header .menu-icon {
 .shopmanager .shopBox ul .task-item.completed,
 .shopmanager .taskBox ul .shop-item.completed,
 .shopmanager .taskBox ul .task-item.completed {
-  text-decoration: line-through;
+  -webkit-text-decoration: line-through #4966bf 3px;
+          text-decoration: line-through #4966bf 3px;
   color: #4966bf;
 }
 .taskmanager button,
@@ -523,11 +525,27 @@ header .menu-icon {
   .shopmanager .shopForm .prioritytxt {
     font-size: 1.3rem;
   }
+  .taskmanager .taskForm input,
+  .taskmanager .taskForm select,
+  .taskmanager .taskForm option,
+  .taskmanager .shopForm input,
+  .taskmanager .shopForm select,
+  .taskmanager .shopForm option,
+  .shopmanager .taskForm input,
+  .shopmanager .taskForm select,
+  .shopmanager .taskForm option,
+  .shopmanager .shopForm input,
+  .shopmanager .shopForm select,
+  .shopmanager .shopForm option {
+    width: 45%;
+  }
   .taskmanager .taskForm button,
   .taskmanager .shopForm button,
   .shopmanager .taskForm button,
   .shopmanager .shopForm button {
     height: 3rem;
+    width: 45%;
+    justify-self: center;
   }
   .taskmanager .taskBox ul li button,
   .shopmanager .taskBox ul li button {

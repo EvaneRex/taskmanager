@@ -143,6 +143,7 @@ header {
   .taskBox {
     li {
       border-bottom: 2px solid partial.$blueBlack;
+      padding-top: 0.5rem;
 
       &:last-child {
         border: none;
@@ -218,7 +219,7 @@ header {
 
       .shop-item.completed,
       .task-item.completed {
-        text-decoration: line-through;
+        text-decoration: line-through partial.$mediumBlue 3px;
         color: partial.$mediumBlue;
       }
     }
@@ -298,9 +299,16 @@ header {
       button,
       .prioritytxt {
         font-size: 1.3rem;
+      } //THIS IS FOR THE POTENTIAL SHIFT IN LAYOYT FOR DESKTOP, CHECK GROUPING IN TSX
+      input,
+      select,
+      option {
+        width: 45%;
       }
       button {
         height: 3rem;
+        width: 45%;
+        justify-self: center;
       }
     }
     .taskBox {
