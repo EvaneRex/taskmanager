@@ -4,7 +4,7 @@ $lightBlue: #93aefc;
 $opacityBlue: rgba(73, 102, 191, 0.8);
 $strongBlue: #021e73;
 $strongYellow: #fcca00;
-$whiteBlue: #dae0f0;
+$whiteBlue: #ecf0fa;
 $blueBlack: #02091e;
 $headingBold: "Lexend-Bold";
 $headingSemi: "Lexend-SemiBold";
@@ -87,7 +87,7 @@ $deskwidth: 1000px;
 @mixin button() {}
 
 //This is for inputfields
-@mixin input($width: 100%, $height: height) {
+@mixin input($width: 100%, $height: auto) {
   background-color: white;
   padding: 0.2rem;
   border-radius: 0.5rem;
@@ -97,7 +97,7 @@ $deskwidth: 1000px;
 }
 
 //this is for choises
-@mixin choice($fontsize: 1rem, $width: 100%, $height: height) {
+@mixin choice($fontsize: 1rem, $width: 100%, $height: auto) {
   background-color: white;
   font-family: $bodyTxt;
   font-size: $fontsize;
@@ -105,6 +105,8 @@ $deskwidth: 1000px;
   width: $width;
   height: $height;
   padding: 0.2rem;
+  margin: 0.5rem 0;
+  border: $blueBlack 1.6px inset;
 }
 
 // This is for the bento boxes, box1 is the containers bg color, box2 is for the interactive or clickable parts
