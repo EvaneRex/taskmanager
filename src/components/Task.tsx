@@ -75,11 +75,11 @@ const Task: React.FC<TaskProps> = ({
       >
         {taskItem.completed ? (
           <>
-            <UndoIcon />
+            <UndoIcon className="icon" />
           </>
         ) : (
           <>
-            <CheckCircleOutlineIcon />
+            <CheckCircleOutlineIcon className="icon" />
           </>
         )}
       </button>
@@ -87,7 +87,7 @@ const Task: React.FC<TaskProps> = ({
         <EditIcon />
       </button>
       <button onClick={() => handleDeleteClick(taskItem.id)} className="delete">
-        <RemoveCircleOutlineIcon />
+        <RemoveCircleOutlineIcon className="icon" />
       </button>
       {/* Modal for Editing */}
       {isEditing && (

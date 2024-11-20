@@ -150,11 +150,28 @@ header {
     @include partial.box2;
     @include partial.heading;
 
-    li {
-      list-style: none;
+    ul {
+      li {
+        list-style: none;
 
-      button {
-        @include partial.button;
+        h2,
+        p {
+          word-wrap: break-word;
+        }
+
+        button {
+          @include partial.icon-button;
+        }
+        .button-group {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+      .shop-item.completed,
+      .task-item.completed {
+        text-decoration: line-through;
+        color: partial.$mediumBlue;
       }
     }
   }

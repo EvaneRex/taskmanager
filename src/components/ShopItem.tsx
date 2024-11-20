@@ -67,23 +67,25 @@ const ShopItem: React.FC<ShopItemProps> = ({
         {" "}
         - {shopItem.department}
       </span>
-      <button
-        onClick={() => handleCompleteClick(shopItem.id)}
-        className={`complete ${shopItem.completed ? "active" : ""}`}
-      >
-        {shopItem.completed ? (
-          <>
-            <UndoIcon />
-          </>
-        ) : (
-          <>
-            <CheckCircleOutlineIcon />
-          </>
-        )}
-      </button>
-      <button onClick={() => handleDeleteClick(shopItem.id)} className="delete">
-        <RemoveCircleOutlineIcon />
-      </button>
+      <div className="button-group">
+        <button
+          onClick={() => handleCompleteClick(shopItem.id)}
+          className={`complete ${shopItem.completed ? "active" : ""}`}
+        >
+          {shopItem.completed ? (
+            <>
+              <UndoIcon />
+            </>
+          ) : (
+            <>
+              <CheckCircleOutlineIcon />
+            </>
+          )}
+        </button>
+        <button onClick={() => handleDeleteClick(shopItem.id)}>
+          <RemoveCircleOutlineIcon />
+        </button>
+      </div>
     </li>
   );
 };
