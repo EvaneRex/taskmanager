@@ -100,7 +100,7 @@ function ShopManager() {
       <div className="shopmanager">
         <h1>Shopping List</h1>
         <section className="shopForm" aria-labelledby="add-items">
-          <h2 id="add-items">Add items and Shops</h2>
+          <h2 id="add-items">Add shop and item</h2>
           <ShopInput addShopItem={addShopItem} addShop={addShop} shops={shops} />
         </section>
         <section aria-labelledby="shopping-list">
