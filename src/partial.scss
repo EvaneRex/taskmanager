@@ -38,7 +38,7 @@ $deskwidth: 1000px;
 }
 
 //Mixins
-@mixin heading($family: $headingBold, $size: 1.5rem, $color: $blueBlack) {
+@mixin heading($family: $headingBold, $size: size, $color: $blueBlack) {
   font-family: $family;
   color: $color;
 }
@@ -50,7 +50,7 @@ $deskwidth: 1000px;
 }
 
 // For the switchbuttons at the top of the page
-@mixin switchButtons($fontsize: 1.1rem, $height: auto, $width: auto) {
+@mixin switchButtons($fontsize: 1.1rem, $height: height, $width: auto) {
   background-color: $lightBlue;
   font-family: $headingSemi;
   color: $blueBlack;
@@ -103,8 +103,7 @@ $deskwidth: 1000px;
 
 //This is for inputfields
 @mixin input($width: 100%, $height: auto) {
-  background-color: $whiteBlue;
-  color: $blueBlack;
+  background-color: white;
   padding: 0.2rem;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
@@ -114,7 +113,7 @@ $deskwidth: 1000px;
 
 //this is for choises
 @mixin choice($fontsize: 1rem, $width: 100%, $height: auto) {
-  background-color: $whiteBlue;
+  background-color: white;
   font-family: $bodyTxt;
   font-size: $fontsize;
   border-radius: 0.5rem;
@@ -127,7 +126,7 @@ $deskwidth: 1000px;
 
 // This is for the bento boxes, box1 is the containers bg color, box2 is for the interactive or clickable parts
 //need to add height, width, margin etc, when we get to it
-@mixin box1($width: auto, $height: auto) {
+@mixin box1($width: auto, $height: height) {
   background-color: $opacityBlue;
   border-radius: $borderRadiusOuter;
   backdrop-filter: blur(2px);
@@ -139,7 +138,7 @@ $deskwidth: 1000px;
   height: $height;
 }
 
-@mixin box2($width: 100%, $height: auto) {
+@mixin box2($width: 100%, $height: height) {
   background-color: $lightBlue;
   border-radius: $borderRadiusInner;
   padding: 0.5rem 1rem;

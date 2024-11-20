@@ -2,18 +2,22 @@
   font-family: "Lexend-Bold";
   src: url(../src/assets/fonts/Lexend-Bold.ttf);
 }
+
 @font-face {
   font-family: "Lexend-SemiBold";
   src: url(../src/assets/fonts/Lexend-SemiBold.ttf);
 }
+
 @font-face {
   font-family: "Lexend-Regular";
   src: url(../src/assets/fonts/Lexend-Regular.ttf);
 }
+
 @font-face {
   font-family: "OpenSans-Regular";
   src: url(../src/assets/fonts/OpenSans-Regular.ttf);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -41,20 +45,24 @@ header {
   justify-content: space-between;
   padding: 1rem;
 }
+
 header div {
   display: flex;
   align-items: center;
 }
+
 header div img {
   width: 3rem;
   height: auto;
   margin-right: 1rem;
 }
+
 header div p {
   font-family: "Lexend-Bold";
   color: #02091e;
   font-size: 1.5rem;
 }
+
 header .menu-icon {
   color: #02091e;
   font-size: 2.5rem;
@@ -76,10 +84,9 @@ header .menu-icon {
   border: none;
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
-  width: auto;
-  height: auto;
   gap: 1rem;
 }
+
 .switchButtons button {
   background-color: #93aefc;
   font-family: "Lexend-SemiBold";
@@ -92,14 +99,16 @@ header .menu-icon {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   align-items: center;
-  height: auto;
+  height: height;
   width: auto;
   transition: 0.4s ease;
 }
+
 .switchButtons button:hover {
   border: 3px solid #fcca00;
   transition: 0.4s ease;
 }
+
 .switchButtons button .list-icon {
   background-color: #ecf0fa;
   color: #02091e;
@@ -108,11 +117,13 @@ header .menu-icon {
   padding: 0.4rem;
   justify-self: center;
 }
+
 .switchButtons .active {
   transition: 0.4s ease;
   border: inset 3px #4966bf;
   background-color: #93aefc;
 }
+
 .switchButtons .active .list-icon {
   color: #fcca00;
   background-color: #02091e;
@@ -132,12 +143,11 @@ header .menu-icon {
   border: none;
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
-  width: auto;
-  height: auto;
   display: grid;
   grid-template-rows: 0.4fr auto;
   gap: 1rem;
 }
+
 .taskmanager h1,
 .shopmanager h1 {
   font-family: "Lexend-Bold";
@@ -146,21 +156,24 @@ header .menu-icon {
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   width: 100%;
-  height: auto;
+  height: height;
   text-align: center;
   grid-row: 1;
 }
+
 .taskmanager h2,
 .shopmanager h2 {
   font-family: "Lexend-Bold";
   color: #02091e;
 }
+
 .taskmanager p,
 .shopmanager p {
   font-family: "OpenSans-Regular";
   color: #02091e;
   font-size: 1rem;
 }
+
 .taskmanager .taskForm,
 .taskmanager .shopForm,
 .shopmanager .taskForm,
@@ -169,9 +182,10 @@ header .menu-icon {
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   width: 100%;
-  height: auto;
+  height: height;
   grid-row: 2;
 }
+
 .taskmanager .taskForm input,
 .taskmanager .shopForm input,
 .shopmanager .taskForm input,
@@ -185,8 +199,8 @@ header .menu-icon {
   border-radius: 0.5rem;
   margin: 0.5rem 0;
   width: 100%;
-  height: auto;
 }
+
 .taskmanager .taskForm select,
 .taskmanager .taskForm option,
 .taskmanager .shopForm select,
@@ -199,6 +213,7 @@ header .menu-icon {
   font-family: "OpenSans-Regular";
   font-size: 1rem;
   border-radius: 0.5rem;
+<<<<<<< HEAD
   width: 100%;
   height: auto;
   padding: 0.2rem;
@@ -227,7 +242,31 @@ header .menu-icon {
   border: 3px solid #fcca00;
   transition: 0.4s ease;
   color: #fcca00;
+=======
+>>>>>>> 5684faec020b7b0bec225350cee213fd81587fca
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
-/*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*//*# sourceMappingURL=App.css.map */
+@media only screen and (max-width: 800px) {
+
+  .taskmanager h1,
+  .shopmanager h1 {
+    font-size: 1;
+  }
+}
+
+/*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
+@media only screen and (max-width: 500px) {
+
+  .taskmanager h1,
+  .shopmanager h1 {
+    font-size: 1.75rem;
+  }
+
+  .taskmanager h2,
+  .shopmanager h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */
