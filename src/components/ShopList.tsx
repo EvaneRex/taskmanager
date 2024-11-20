@@ -75,7 +75,7 @@ const ShopList: React.FC<ShopListProps> = ({
   }, {});
 
   return (
-    <div aria-label="Shopping items">
+    <div className="shopBox" aria-label="Shopping items">
       {Object.keys(groupedShopItems).map((shop) => (
         <section key={shop} aria-labelledby={`shop-${shop}`}>
           <h2>{shop}</h2>

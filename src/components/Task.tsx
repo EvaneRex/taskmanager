@@ -14,6 +14,10 @@
 
 import { TaskItemType } from "./TaskList";
 import { useState } from "react";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import UndoIcon from "@mui/icons-material/Undo";
+import EditIcon from "@mui/icons-material/Edit";
 
 interface TaskProps {
   taskItem: TaskItemType;
@@ -69,11 +73,21 @@ const Task: React.FC<TaskProps> = ({
         onClick={() => handleCompleteClick(taskItem.id)}
         className={`complete ${taskItem.completed ? "active" : ""}`}
       >
-        {taskItem.completed ? "Undo" : "Complete"}
+        {taskItem.completed ? (
+          <>
+            <UndoIcon />
+          </>
+        ) : (
+          <>
+            <CheckCircleOutlineIcon />
+          </>
+        )}
       </button>
-      <button onClick={() => setIsEditing(true)}>Edit</button>
+      <button onClick={() => setIsEditing(true)}>
+        <EditIcon />
+      </button>
       <button onClick={() => handleDeleteClick(taskItem.id)} className="delete">
-        Delete
+        <RemoveCircleOutlineIcon />
       </button>
       {/* Modal for Editing */}
       {isEditing && (

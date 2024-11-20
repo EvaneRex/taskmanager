@@ -72,7 +72,7 @@ const TaskList: React.FC<TaskListProps> = ({
   console.log(groupedTasks);
 
   return (
-    <div aria-label="Task items">
+    <div className="taskBox" aria-label="Task items">
       {Object.keys(groupedTasks).map((tasks) => (
         <section key={tasks} aria-labelledby={`task-${tasks}`}>
           <h2>{tasks}</h2> {/* Shows the priority! */}

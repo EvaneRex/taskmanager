@@ -13,6 +13,9 @@
  * @returns JSX element for rendering the shop item
  * 
  */
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import UndoIcon from "@mui/icons-material/Undo";
 
 //Define interface for ShopItem
 interface ShopItemProps {
@@ -68,10 +71,18 @@ const ShopItem: React.FC<ShopItemProps> = ({
         onClick={() => handleCompleteClick(shopItem.id)}
         className={`complete ${shopItem.completed ? "active" : ""}`}
       >
-        {shopItem.completed ? "Undo" : "Complete"}
+        {shopItem.completed ? (
+          <>
+            <UndoIcon />
+          </>
+        ) : (
+          <>
+            <CheckCircleOutlineIcon />
+          </>
+        )}
       </button>
       <button onClick={() => handleDeleteClick(shopItem.id)} className="delete">
-        Delete
+        <RemoveCircleOutlineIcon />
       </button>
     </li>
   );
