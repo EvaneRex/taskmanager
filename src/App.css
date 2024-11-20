@@ -58,6 +58,7 @@ header .menu-icon {
 .manager {
   max-width: 1200px;
   margin: auto;
+  padding: 0 2rem;
 }
 
 .switchButtons {
