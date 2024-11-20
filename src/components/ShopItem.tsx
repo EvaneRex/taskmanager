@@ -24,13 +24,13 @@ interface ShopItemProps {
     name: string;
     completed: boolean;
     department:
-      | "Fruit/Vegetables"
-      | "Bread"
-      | "Meat"
-      | "Dairy"
-      | "Dry goods"
-      | "Frozen"
-      | "Non Food";
+    | "Fruit/Vegetables"
+    | "Bread"
+    | "Meat"
+    | "Dairy"
+    | "Dry goods"
+    | "Frozen"
+    | "Non Food";
     shop: string;
   };
   removeShopItem: (id: number) => void;
