@@ -50,9 +50,9 @@ header {
 }
 
 .manager {
-  max-width: partial.$deskwidth;
   margin: auto;
   padding: 0 1rem;
+  width: 100vw;
 }
 
 .switchButtons {
@@ -68,7 +68,6 @@ header {
   button {
     @include partial.switchButtons;
     @include partial.heading;
-    font-size: 1.75rem;
 
     .list-icon {
       @include partial.list-icon;
@@ -116,7 +115,8 @@ header {
   }
 
   .prioritytxt {
-    font-weight: bold;
+    @include partial.heading;
+    font-family: partial.$headingSemi;
     font-size: 1.2rem;
   }
 
@@ -162,11 +162,22 @@ header {
         button {
           @include partial.icon-button;
         }
-
-        .button-group {
+      }
+      .shop-item {
+        display: grid;
+        grid-template-columns: 1fr 40%;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        .shop-buttons {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
+          flex-direction: row;
+          justify-items: right;
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0.2rem;
+          }
         }
       }
 
@@ -180,8 +191,7 @@ header {
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
-@media only screen and (max-width: 800px) {
-
+@media screen and (min-width: 500px) and (max-width: 800px) {
   .taskmanager,
   .shopmanager {
     h1 {
@@ -190,11 +200,10 @@ header {
   }
 }
 
-/*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
-@media only screen and (max-width: 500px) {
-
+/*Desktop version - made on behalf og bigger screens*/
+@media only screen and (min-width: 801px) {
   .manager {
-    min-width: 100%;
+    max-width: partial.$deskwidth;
   }
 
   .taskmanager,

@@ -61,9 +61,9 @@ header .menu-icon {
 }
 
 .manager {
-  max-width: 1000px;
   margin: auto;
   padding: 0 1rem;
+  width: 100vw;
 }
 
 .switchButtons {
@@ -77,7 +77,7 @@ header .menu-icon {
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
   width: auto;
-  height: height;
+  height: auto;
   gap: 1rem;
 }
 .switchButtons h2 {
@@ -101,7 +101,6 @@ header .menu-icon {
   transition: 0.4s ease;
   font-family: "Lexend-Bold";
   color: #02091e;
-  font-size: 1.75rem;
 }
 .switchButtons button:hover {
   border: 3px solid #fcca00;
@@ -140,7 +139,7 @@ header .menu-icon {
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
   width: auto;
-  height: height;
+  height: auto;
   display: grid;
   grid-template-rows: 0.4fr auto;
   gap: 1rem;
@@ -153,7 +152,7 @@ header .menu-icon {
   border-radius: 1rem;
   padding: 1rem 1rem;
   width: 100%;
-  height: height;
+  height: auto;
   text-align: center;
   grid-row: 1;
   font-size: 2rem;
@@ -171,7 +170,9 @@ header .menu-icon {
 }
 .taskmanager .prioritytxt,
 .shopmanager .prioritytxt {
-  font-weight: bold;
+  font-family: "Lexend-Bold";
+  color: #02091e;
+  font-family: "Lexend-SemiBold";
   font-size: 1.2rem;
 }
 .taskmanager .alertMsg,
@@ -187,7 +188,7 @@ header .menu-icon {
   border-radius: 1rem;
   padding: 1rem 1rem;
   width: 100%;
-  height: height;
+  height: auto;
   grid-row: 2;
 }
 .taskmanager .taskForm input,
@@ -253,7 +254,7 @@ header .menu-icon {
   border-radius: 1rem;
   padding: 1rem 1rem;
   width: 100%;
-  height: height;
+  height: auto;
   font-family: "Lexend-Bold";
   color: #02091e;
 }
@@ -281,9 +282,9 @@ header .menu-icon {
   font-family: "Lexend-SemiBold";
   font-size: 1rem;
   color: #ecf0fa;
-  border-radius: 0.5rem;
-  width: 3rem;
-  height: 3rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
   border: 3px outset #4966bf;
 }
 .taskmanager .shopBox ul li button:hover,
@@ -294,13 +295,31 @@ header .menu-icon {
   transition: 0.4s ease;
   color: #fcca00;
 }
-.taskmanager .shopBox ul li .button-group,
-.taskmanager .taskBox ul li .button-group,
-.shopmanager .shopBox ul li .button-group,
-.shopmanager .taskBox ul li .button-group {
-  display: flex;
-  justify-content: space-between;
+.taskmanager .shopBox ul .shop-item,
+.taskmanager .taskBox ul .shop-item,
+.shopmanager .shopBox ul .shop-item,
+.shopmanager .taskBox ul .shop-item {
+  display: grid;
+  grid-template-columns: 1fr 40%;
   align-items: center;
+  margin-bottom: 0.5rem;
+}
+.taskmanager .shopBox ul .shop-item .shop-buttons,
+.taskmanager .taskBox ul .shop-item .shop-buttons,
+.shopmanager .shopBox ul .shop-item .shop-buttons,
+.shopmanager .taskBox ul .shop-item .shop-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-items: right;
+}
+.taskmanager .shopBox ul .shop-item .shop-buttons button,
+.taskmanager .taskBox ul .shop-item .shop-buttons button,
+.shopmanager .shopBox ul .shop-item .shop-buttons button,
+.shopmanager .taskBox ul .shop-item .shop-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.2rem;
 }
 .taskmanager .shopBox ul .shop-item.completed,
 .taskmanager .shopBox ul .task-item.completed,
@@ -315,16 +334,16 @@ header .menu-icon {
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
-@media only screen and (max-width: 800px) {
+@media screen and (min-width: 500px) and (max-width: 800px) {
   .taskmanager h1,
   .shopmanager h1 {
     font-size: 1;
   }
 }
-/*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
-@media only screen and (max-width: 500px) {
+/*Desktop version - made on behalf og bigger screens*/
+@media only screen and (min-width: 801px) {
   .manager {
-    min-width: 100%;
+    max-width: 1000px;
   }
   .taskmanager h1,
   .shopmanager h1 {

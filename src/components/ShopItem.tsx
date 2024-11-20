@@ -24,13 +24,13 @@ interface ShopItemProps {
     name: string;
     completed: boolean;
     department:
-    | "Fruit/Vegetables"
-    | "Bread"
-    | "Meat"
-    | "Dairy"
-    | "Dry goods"
-    | "Frozen"
-    | "Non Food";
+      | "Fruit/Vegetables"
+      | "Bread"
+      | "Meat"
+      | "Dairy"
+      | "Dry goods"
+      | "Frozen"
+      | "Non Food";
     shop: string;
   };
   removeShopItem: (id: number) => void;
@@ -62,12 +62,13 @@ const ShopItem: React.FC<ShopItemProps> = ({
   //JSX for rendering the shop item
   return (
     <li className={`shop-item ${shopItem.completed ? "completed" : ""}`}>
-      <span>{shopItem.name}</span> {/*Task name without colourchange*/}
-      <span className={`priority-${shopItem.department}`}>
-        {" "}
-        - {shopItem.department}
-      </span>
-      <div className="button-group">
+      <div>
+        <p className={`priority-${shopItem.department}`}>
+          {shopItem.name} - {shopItem.department}
+        </p>{" "}
+        {/*Task name without colourchange*/}
+      </div>
+      <div className="shop-buttons">
         <button
           onClick={() => handleCompleteClick(shopItem.id)}
           className={`complete ${shopItem.completed ? "active" : ""}`}

@@ -101,12 +101,12 @@ $deskwidth: 1000px;
   }
 }
 
-@mixin icon-button($height: 3rem, $width: 3rem, $fontsize: 1rem) {
+@mixin icon-button($height: 2.5rem, $width: 2.5rem, $fontsize: 1rem) {
   background-color: $strongBlue;
   font-family: $headingSemi;
   font-size: $fontsize;
   color: $whiteBlue;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   width: $width;
   height: $height;
   border: 3px outset $mediumBlue;
@@ -143,7 +143,7 @@ $deskwidth: 1000px;
 
 // This is for the bento boxes, box1 is the containers bg color, box2 is for the interactive or clickable parts
 //need to add height, width, margin etc, when we get to it
-@mixin box1($width: auto, $height: height) {
+@mixin box1($width: auto, $height: auto) {
   background-color: $opacityBlue;
   border-radius: $borderRadiusOuter;
   backdrop-filter: blur(2px);
@@ -155,7 +155,7 @@ $deskwidth: 1000px;
   height: $height;
 }
 
-@mixin box2($width: 100%, $height: height) {
+@mixin box2($width: 100%, $height: auto) {
   background-color: $lightBlue;
   border-radius: $borderRadiusInner;
   padding: 1rem 1rem;
