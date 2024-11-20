@@ -85,6 +85,12 @@ header .menu-icon {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   align-items: center;
+  height: auto;
+  width: auto;
+}
+.switchButtons button:hover {
+  border: 3px solid #fcca00;
+  transition: 0.4s ease;
 }
 .switchButtons button .list-icon {
   background-color: #dae0f0;
@@ -94,14 +100,10 @@ header .menu-icon {
   padding: 0.4rem;
   justify-self: center;
 }
-.switchButtons button:hover {
-  border: 3px solid #fcca00;
-  transition: 0.4s ease;
-}
 .switchButtons .active {
   transition: 0.4s ease;
-  border: inset 3px #93aefc;
-  background-color: #4966bf;
+  border: inset 3px #4966bf;
+  background-color: #93aefc;
 }
 .switchButtons .active .list-icon {
   color: #fcca00;
@@ -172,6 +174,19 @@ header .menu-icon {
   border-radius: 0.5rem;
   margin: 0.5rem 0;
   width: 100%;
+}
+.taskmanager .taskForm select,
+.taskmanager .taskForm option,
+.taskmanager .shopForm select,
+.taskmanager .shopForm option,
+.shopmanager .taskForm select,
+.shopmanager .taskForm option,
+.shopmanager .shopForm select,
+.shopmanager .shopForm option {
+  background-color: white;
+  font-family: "OpenSans-Regular";
+  font-size: 1rem;
+  border-radius: 0.5rem;
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/

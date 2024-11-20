@@ -38,9 +38,9 @@ $deskwidth: 1200px;
 }
 
 //Mixins
-@mixin heading($family: $headingBold, $size: 1.5rem) {
+@mixin heading($family: $headingBold, $size: 1.5rem, $color: $blueBlack) {
   font-family: $family;
-  color: $blueBlack;
+  color: $color;
 }
 
 @mixin txt($color: $blueBlack, $size: 1rem) {
@@ -50,27 +50,20 @@ $deskwidth: 1200px;
 }
 
 // For the switchbuttons at the top of the page
-@mixin switchButtons() {
+@mixin switchButtons($fontsize: 1.1rem, $height: auto, $width: auto) {
   background-color: $lightBlue;
   font-family: $headingSemi;
   color: $blueBlack;
   padding: 1.5rem 1rem;
-  font-size: 1.1rem;
+  font-size: $fontsize;
   border-radius: $borderRadiusInner;
   border: 3px outset $whiteBlue;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   align-items: center;
-
-  .list-icon {
-    background-color: $whiteBlue;
-    color: $blueBlack;
-    font-size: 3rem;
-    border-radius: 50%;
-    padding: 0.4rem;
-    justify-self: center;
-  }
+  height: $height;
+  width: $width;
 
   &:hover {
     border: 3px solid $strongYellow;
@@ -78,25 +71,43 @@ $deskwidth: 1200px;
   }
 }
 
+@mixin list-icon($fontsize: 3rem) {
+  background-color: $whiteBlue;
+  color: $blueBlack;
+  font-size: $fontsize;
+  border-radius: 50%;
+  padding: 0.4rem;
+  justify-self: center;
+}
 
 //This is for the general use of boxes
-@mixin button() {}
+@mixin button() {
+}
 
 //This is for inputfields
-@mixin input($width: 100%) {
+@mixin input($width: 100%, $height: auto) {
   background-color: white;
   padding: 0.2rem;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
   width: $width;
+  height: $height;
 }
 
 //this is for choises
-@mixin choice() {}
+@mixin choice($fontsize: 1rem, $width: 100%, $height: auto) {
+  background-color: white;
+  font-family: $bodyTxt;
+  font-size: $fontsize;
+  border-radius: 0.5rem;
+  width: $width;
+  height: $auto;
+  padding: 0.2rem;
+}
 
 // This is for the bento boxes, box1 is the containers bg color, box2 is for the interactive or clickable parts
 //need to add height, width, margin etc, when we get to it
-@mixin box1() {
+@mixin box1($width: auto, $height: auto) {
   background-color: $opacityBlue;
   border-radius: $borderRadiusOuter;
   backdrop-filter: blur(2px);
@@ -104,6 +115,8 @@ $deskwidth: 1200px;
   border: none;
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
+  width: $width;
+  height: $height;
 }
 
 @mixin box2($width: 100%, $height: auto) {
