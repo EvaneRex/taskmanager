@@ -391,6 +391,59 @@ header .menu-icon {
   transition: 0.4s ease;
   color: #fcca00;
 }
+.taskmanager .modal-overlay .modal input,
+.taskmanager .modal-overlay .modal textarea,
+.shopmanager .modal-overlay .modal input,
+.shopmanager .modal-overlay .modal textarea {
+  background-color: white;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  height: auto;
+}
+.taskmanager .modal-overlay .modal .custom-edit,
+.shopmanager .modal-overlay .modal .custom-edit {
+  width: 100%;
+  height: 6rem;
+  resize: none;
+}
+.taskmanager .modal-overlay .modal select,
+.taskmanager .modal-overlay .modal option,
+.shopmanager .modal-overlay .modal select,
+.shopmanager .modal-overlay .modal option {
+  background-color: white;
+  font-family: "OpenSans-Regular";
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: auto;
+  padding: 0.2rem;
+  margin: 0.5rem 0;
+  border: #02091e 1.6px inset;
+}
+.taskmanager .modal-overlay .modal button,
+.shopmanager .modal-overlay .modal button {
+  background-color: #021e73;
+  font-family: "Lexend-SemiBold";
+  font-size: 1rem;
+  color: #ecf0fa;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.6rem;
+  border: 3px outset #4966bf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.taskmanager .modal-overlay .modal button:hover,
+.shopmanager .modal-overlay .modal button:hover {
+  border: 3px solid #fcca00;
+  transition: 0.4s ease;
+  color: #fcca00;
+}
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
 @media screen and (min-width: 500px) and (max-width: 800px) {

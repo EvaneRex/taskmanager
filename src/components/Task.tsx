@@ -117,6 +117,7 @@ const Task: React.FC<TaskProps> = ({
                 value={summary}
                 onChange={(e) => setSummary(e.target.value)}
                 aria-label="Task summary"
+                className="custom-edit"
               />
             </label>
             <label htmlFor="editPriority">
