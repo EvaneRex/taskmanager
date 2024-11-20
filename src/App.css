@@ -505,18 +505,22 @@ header .menu-icon {
   .taskmanager .taskForm select,
   .taskmanager .taskForm option,
   .taskmanager .taskForm button,
+  .taskmanager .taskForm .prioritytxt,
   .taskmanager .shopForm input,
   .taskmanager .shopForm select,
   .taskmanager .shopForm option,
   .taskmanager .shopForm button,
+  .taskmanager .shopForm .prioritytxt,
   .shopmanager .taskForm input,
   .shopmanager .taskForm select,
   .shopmanager .taskForm option,
   .shopmanager .taskForm button,
+  .shopmanager .taskForm .prioritytxt,
   .shopmanager .shopForm input,
   .shopmanager .shopForm select,
   .shopmanager .shopForm option,
-  .shopmanager .shopForm button {
+  .shopmanager .shopForm button,
+  .shopmanager .shopForm .prioritytxt {
     font-size: 1.3rem;
   }
   .taskmanager .taskForm button,
