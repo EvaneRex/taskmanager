@@ -58,16 +58,18 @@ export default function Taskmanager() {
     );
   };
   return (
-    <div className="taskmanager">
-      <h1>Task Manager</h1>
+    <div className="manager">
+      <div className="taskmanager">
+        <h1>Task Manager</h1>
 
-      <NewTask onAddTask={addTask} />
-      <TaskList
-        taskItems={tasks as TaskItemType[]}
-        removeTaskItem={deleteTask}
-        toggleTaskItemCompletion={handleComplete}
-        onUpdateTask={updateTask}
-      />
+        <NewTask onAddTask={addTask} />
+        <TaskList
+          taskItems={tasks as TaskItemType[]}
+          removeTaskItem={deleteTask}
+          toggleTaskItemCompletion={handleComplete}
+          onUpdateTask={updateTask}
+        />
+      </div>
     </div>
   );
 }

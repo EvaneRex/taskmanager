@@ -55,13 +55,19 @@ header .menu-icon {
   font-size: 2.5rem;
 }
 
+.manager {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
 .switchButtons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: rgba(73, 102, 191, 0.8);
   border-radius: 2rem;
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
   border: none;
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
@@ -111,8 +117,8 @@ header .menu-icon {
 .shopmanager {
   background-color: rgba(73, 102, 191, 0.8);
   border-radius: 2rem;
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
   border: none;
   margin: 1rem 0.5rem;
   padding: 1rem 1rem;
@@ -166,4 +172,7 @@ header .menu-icon {
   border-radius: 0.5rem;
   margin: 0.5rem 0;
   width: 100%;
-}/*# sourceMappingURL=App.css.map */
+}
+
+/*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
+/*phone version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*//*# sourceMappingURL=App.css.map */
