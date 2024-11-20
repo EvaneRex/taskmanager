@@ -105,7 +105,7 @@ function ShopManager() {
         </section>
         <section aria-labelledby="shopping-list">
           {shopItems.length === 0 ? (
-            <p role="alert" aria-live="polite">
+            <p className="alertMsg" role="alert" aria-live="polite">
               No items in your shopping list. Start adding some!
             </p>
           ) : (

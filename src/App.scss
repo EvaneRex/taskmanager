@@ -5,10 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :focus {
   outline: 3px solid rgb(255, 153, 0);
   outline-offset: 2px;
 }
+
 body {
   background-image: url(./assets/background.jpg);
   background-size: cover;
@@ -59,6 +61,10 @@ header {
   @include partial.box1;
   gap: 1rem;
 
+  h2 {
+    @include partial.heading;
+  }
+
   button {
     @include partial.switchButtons;
 
@@ -96,6 +102,7 @@ header {
     @include partial.box2;
     text-align: center;
     grid-row: 1;
+    font-size: 2rem;
   }
 
   h2 {
@@ -104,6 +111,16 @@ header {
 
   p {
     @include partial.txt;
+  }
+
+  .prioritytxt {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .alertMsg {
+    margin-left: 1rem;
+    font-weight: bold;
   }
 
   .taskForm,
