@@ -5,10 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :focus {
   outline: 3px solid rgb(255, 153, 0);
   outline-offset: 2px;
 }
+
 body {
   background-image: url(./assets/background.jpg);
   background-size: cover;
@@ -111,6 +113,12 @@ header {
     font-size: 1.2rem;
   }
 
+  .alertMsg {
+    margin-left: 1rem;
+    font-weight: bold;
+  }
+
+
   .taskForm,
   .shopForm {
     @include partial.box2;
@@ -130,6 +138,8 @@ header {
       @include partial.button;
     }
   }
+
+
 }
 
 /*tablet version - made on behalf of recommendation on smaller screens such as phones and smaller tablets*/
