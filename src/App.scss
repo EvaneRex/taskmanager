@@ -64,7 +64,8 @@ header {
 
   .active {
     transition: partial.$transition;
-    border: inset 3px partial.$mediumBlue;
+    border: inset 3px partial.$lightBlue;
+    background-color: partial.$mediumBlue;
 
     .list-icon {
       color: partial.$strongYellow;

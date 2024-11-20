@@ -100,7 +100,8 @@ header .menu-icon {
 }
 .switchButtons .active {
   transition: 0.4s ease;
-  border: inset 3px #4966bf;
+  border: inset 3px #93aefc;
+  background-color: #4966bf;
 }
 .switchButtons .active .list-icon {
   color: #fcca00;
