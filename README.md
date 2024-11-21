@@ -1,11 +1,16 @@
 # Posty The Taskmanager
 
-<div>
-  <img src="public/posty.svg" alt="Posty Logo" style="width: 150px; height: auto; float: right; margin-left: 2rem;"/>
-  <p>Hi!</p>
-
-  <p>My name is Posty, and I'm here to help YOU with organizing your day! I can help organize your grocery shopping and manage your miscellaneous tasks.</p>
-</div>
+<table>
+  <tr>
+    <td style="text-align: right; padding-left: 1rem;">
+      <img src="public/posty.svg" alt="Posty Logo" style="width: 150px; height: auto;"/>
+    </td>
+    <td>
+      <p>Hi!</p>
+      <p>My name is Posty, and I'm here to help YOU with organizing your day! I can help organize your grocery shopping and manage your miscellaneous tasks.</p>
+    </td>
+  </tr>
+</table>
 
 ## Installation of various modules
 
