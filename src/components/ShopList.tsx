@@ -14,9 +14,9 @@ import ShopItem from "./ShopItem";
 type Department =
   | "Fruit/Vegetables"
   | "Bread"
-  | "Meat"
-  | "Dairy"
   | "Dry goods"
+  | "Dairy"
+  | "Meat"
   | "Frozen"
   | "Non Food";
 
@@ -24,9 +24,9 @@ type Department =
 const departmentOrder: Record<Department, number> = {
   "Fruit/Vegetables": 1,
   Bread: 2,
-  Meat: 3,
+  "Dry goods": 3,
   Dairy: 4,
-  "Dry goods": 5,
+  Meat: 5,
   Frozen: 6,
   "Non Food": 7,
 } as const;
