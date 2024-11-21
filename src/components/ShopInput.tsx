@@ -98,14 +98,14 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           onChange={(e) =>
             setSelectedDepartment(
               e.target.value as
-                | "Fruit/Vegetables"
-                | "Bread"
-                | "Meat"
-                | "Dairy"
-                | "Dry goods"
-                | "Frozen"
-                | "Non Food"
-                | " "
+              | "Fruit/Vegetables"
+              | "Bread"
+              | "Dry goods"
+              | "Dairy"
+              | "Meat"
+              | "Frozen"
+              | "Non Food"
+              | " "
             )
           }
           required
@@ -115,11 +115,12 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           </option>
           <option value="Fruit/Vegetables">Fruit & Vegetables</option>
           <option value="Bread">Bread</option>
-          <option value="Meat">Meat</option>
-          <option value="Non food">Non Food</option>
           <option value="Dry goods">Dry goods</option>
           <option value="Dairy">Dairy</option>
+          <option value="Meat">Meat</option>
           <option value="Frozen">Frozen</option>
+          <option value="Non food">Non Food</option>
+
         </select>
 
         {/* Shop selection */}
