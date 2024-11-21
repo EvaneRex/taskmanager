@@ -15,6 +15,7 @@
 
 import { FC, useState } from "react";
 
+// Defines the props
 interface ShopInputProps {
   addShopItem: (
     item: string,
@@ -32,10 +33,12 @@ interface ShopInputProps {
   shops: string[];
 }
 
+// The ShopInput component
 const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
-  const [inputValue, setInputValue] = useState("");
-  const [shopName, setShopName] = useState("");
-  const [selectedShop, setSelectedShop] = useState("");
+  // Defines the state variables using useState
+  const [inputValue, setInputValue] = useState(""); // stores the input value for adding a new shop item
+  const [shopName, setShopName] = useState(""); // stores the name of the shop to be added
+  const [selectedShop, setSelectedShop] = useState(""); // store the selected shop from a dropdown or input
   const [selectedDepartment, setSelectedDepartment] = useState<
     | "Fruit/Vegetables"
     | "Bread"
@@ -44,12 +47,16 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
     | "Dry goods"
     | "Frozen"
     | "Non Food"
-    | " "
-  >(" ");
+    | " " // Is the empty selection state for department
+  >(" "); // default value
 
+  // handle form submission for adding a shop item
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (inputValue.trim() && selectedShop && selectedDepartment !== " ") {
+      //checks the inputValue(item name), selectedShop and selectedDepartment are valid
+
+      // Resets the form inputs after the item is added
       addShopItem(inputValue, selectedDepartment, selectedShop);
       setInputValue("");
       setSelectedShop("");
@@ -57,11 +64,13 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
     }
   };
 
+  // handle form submission for adding a new shop
   const handleShopSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (shopName.trim()) {
-      addShop(shopName);
-      setShopName("");
+      // Checks if shopName is not an empty string
+      addShop(shopName); // calls the function to add a new shop with shopName
+      setShopName(""); // clears the shop name input after the shop is added
     }
   };
 
@@ -98,14 +107,14 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           onChange={(e) =>
             setSelectedDepartment(
               e.target.value as
-              | "Fruit/Vegetables"
-              | "Bread"
-              | "Dry goods"
-              | "Dairy"
-              | "Meat"
-              | "Frozen"
-              | "Non Food"
-              | " "
+                | "Fruit/Vegetables"
+                | "Bread"
+                | "Dry goods"
+                | "Dairy"
+                | "Meat"
+                | "Frozen"
+                | "Non Food"
+                | " "
             )
           }
           required
@@ -120,7 +129,6 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           <option value="Meat">Meat</option>
           <option value="Frozen">Frozen</option>
           <option value="Non food">Non Food</option>
-
         </select>
 
         {/* Shop selection */}
