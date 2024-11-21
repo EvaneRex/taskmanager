@@ -1,13 +1,10 @@
 # Posty The Taskmanager
 
-<div style="display:flex; flex-direction:row-reverse; align-items:center;">
-<img src="public\posty.svg" alt="Posty Logo" style="width: 150px; height: auto; margin-left:2rem;"/>
 <div>
-Hi!
+  <img src="public/posty.svg" alt="Posty Logo" style="width: 150px; height: auto; float: right; margin-left: 2rem;"/>
+  <p>Hi!</p>
 
-My name is Posty and im here to help YOU with organising your day! I can help organise your grocery shopping and manage your mischellaneous tasks.
-
-</div>
+  <p>My name is Posty, and I'm here to help YOU with organizing your day! I can help organize your grocery shopping and manage your miscellaneous tasks.</p>
 </div>
 
 ## Installation of various modules
@@ -55,4 +52,4 @@ Just choose which manager you need and start adding!
 
 #### Note
 
-Posty is still only in the early development fast so the functionality is is limited to the two managers.
+Posty is still only in the early development fase so the functionality is limited to the two managers.
