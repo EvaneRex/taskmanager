@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# Posty The Taskmanager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div style="display:flex; flex-direction:row-reverse; align-items:center;">
+<img src="public\posty.svg" alt="Posty Logo" style="width: 150px; height: auto; margin-left:2rem;"/>
+<div>
+Hi!
 
-Currently, two official plugins are available:
+My name is Posty and im here to help YOU with organising your day! I can help organise your grocery shopping and manage your mischellaneous tasks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+</div>
+</div>
 
-## Expanding the ESLint configuration
+## Installation of various modules
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+There is a couple of different things to install or initialize. Im assuming you already have Visual Studio Code installed, if not you can find it here and follow their guide - [Visual Studio Code](https://code.visualstudio.com/)
 
-- Configure the top-level `parserOptions` property like this:
+From here on Visual Studio Code will be refered to as VSC.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Node.js
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+One of the first things you need to install is node.js, you can follow their directions on the site. After instalation, you can check if it was succesfull by opening the terminal and typing `node -v` and a version number should show.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- [node.js](https://nodejs.org/en/download/package-manager)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Vite
+
+After this you need to install vite, which you can do. Now depending on what system you use, there a a few things to keep in mind.
+
+If your computer is set up using OneDrive, there is a chance you will run into problems due to the security setup by it. Therefore you need to install it in the C: drive in a file.
+
+- Create a folder, this will contain all projects using React or Typescript, both which im based on.
+
+- Open a terminal by right clicking on the folder and choosing terminal.
+- Write `npm install vite` - to check if its through, write `npm vite -version` and press enter, a number should show
+
+### TypeScript
+
+This one is simple and is done in a terminal, it does not have to be a specific one as its installed globally.
+
+- In a terminal, write `npm install -g typescript` and press enter
+- To check if its succesfull, write `npm tsc -v` and press enter
+
+## Final
+
+Now you can download my folder from Github into the parent folder, you created when installing vite.
+
+Once you've opened the folder in VSC, open a terminal if one is not already open, make sure its the one labelled powershell (you can see the name to the right).
+
+- Copy this: `npm install @mui/icons-material @mui/material @emotion/styled @emotion/react` into it and press enter
+
+### Almost there!
+
+Now all you have to do is to write `npm run dev` in the terminal in VSC and click the localhost link, and if everthing is installed correctly, Posty The Taskmanager should appear.
+Just choose which manager you need and start adding!
+
+#### Note
+
+Posty is still only in the early development fast so the functionality is is limited to the two managers.
