@@ -254,7 +254,7 @@ header .menu-icon {
 }
 .taskmanager .taskBox li,
 .shopmanager .taskBox li {
-  border-bottom: 2px solid #02091e;
+  border-bottom: 2px solid #4966bf;
   padding-top: 0.5rem;
 }
 .taskmanager .taskBox li:last-child,
