@@ -300,15 +300,8 @@ header {
       .prioritytxt {
         font-size: 1.3rem;
       } //THIS IS FOR THE POTENTIAL SHIFT IN LAYOYT FOR DESKTOP, CHECK GROUPING IN TSX
-      input,
-      select,
-      option {
-        width: 45%;
-      }
       button {
         height: 3rem;
-        width: 45%;
-        justify-self: center;
       }
     }
     .taskBox {

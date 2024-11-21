@@ -2,18 +2,22 @@
   font-family: "Lexend-Bold";
   src: url(../src/assets/fonts/Lexend-Bold.ttf);
 }
+
 @font-face {
   font-family: "Lexend-SemiBold";
   src: url(../src/assets/fonts/Lexend-SemiBold.ttf);
 }
+
 @font-face {
   font-family: "Lexend-Regular";
   src: url(../src/assets/fonts/Lexend-Regular.ttf);
 }
+
 @font-face {
   font-family: "OpenSans-Regular";
   src: url(../src/assets/fonts/OpenSans-Regular.ttf);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -36,20 +40,24 @@ header {
   justify-content: space-between;
   padding: 1rem;
 }
+
 header div {
   display: flex;
   align-items: center;
 }
+
 header div img {
   width: 3rem;
   height: auto;
   margin-right: 1rem;
 }
+
 header div p {
   font-family: "Lexend-Bold";
   color: #02091e;
   font-size: 1.5rem;
 }
+
 header .menu-icon {
   color: #02091e;
   font-size: 2.5rem;
@@ -75,6 +83,7 @@ header .menu-icon {
   height: auto;
   gap: 1rem;
 }
+
 .switchButtons button {
   background-color: #93aefc;
   font-family: "Lexend-SemiBold";
@@ -93,10 +102,12 @@ header .menu-icon {
   font-family: "Lexend-Bold";
   color: #02091e;
 }
+
 .switchButtons button:hover {
   border: 3px solid #fcca00;
   transition: 0.4s ease;
 }
+
 .switchButtons button .list-icon {
   background-color: #ecf0fa;
   color: #02091e;
@@ -105,11 +116,13 @@ header .menu-icon {
   padding: 0.4rem;
   justify-self: center;
 }
+
 .switchButtons .active {
   transition: 0.4s ease;
   border: inset 3px #4966bf;
   background-color: #93aefc;
 }
+
 .switchButtons .active .list-icon {
   color: #fcca00;
   background-color: #02091e;
@@ -135,6 +148,7 @@ header .menu-icon {
   grid-template-rows: 0.4fr auto;
   gap: 1rem;
 }
+
 .taskmanager h1,
 .shopmanager h1 {
   font-family: "Lexend-Bold";
@@ -148,17 +162,20 @@ header .menu-icon {
   grid-row: 1;
   font-size: 2rem;
 }
+
 .taskmanager h2,
 .shopmanager h2 {
   font-family: "Lexend-Bold";
   color: #02091e;
 }
+
 .taskmanager p,
 .shopmanager p {
   font-family: "OpenSans-Regular";
   color: #02091e;
   font-size: 1rem;
 }
+
 .taskmanager .prioritytxt,
 .shopmanager .prioritytxt {
   font-family: "Lexend-Bold";
@@ -166,6 +183,7 @@ header .menu-icon {
   font-family: "Lexend-SemiBold";
   font-size: 1.2rem;
 }
+
 .taskmanager .alertMsg,
 .shopmanager .alertMsg {
   font-family: "Lexend-Bold";
@@ -176,6 +194,7 @@ header .menu-icon {
   width: 100%;
   height: auto;
 }
+
 .taskmanager .taskForm,
 .taskmanager .shopForm,
 .shopmanager .taskForm,
@@ -187,6 +206,7 @@ header .menu-icon {
   height: auto;
   grid-row: 2;
 }
+
 .taskmanager .taskForm label,
 .taskmanager .shopForm label,
 .shopmanager .taskForm label,
@@ -194,6 +214,7 @@ header .menu-icon {
   font-family: "Lexend-Regular";
   font-size: 1rem;
 }
+
 .taskmanager .taskForm input,
 .taskmanager .shopForm input,
 .shopmanager .taskForm input,
@@ -208,6 +229,7 @@ header .menu-icon {
   width: 100%;
   height: auto;
 }
+
 .taskmanager .taskForm select,
 .taskmanager .taskForm option,
 .taskmanager .shopForm select,
@@ -226,6 +248,7 @@ header .menu-icon {
   margin: 0.5rem 0;
   border: #02091e 1.6px inset;
 }
+
 .taskmanager .taskForm button,
 .taskmanager .shopForm button,
 .shopmanager .taskForm button,
@@ -244,6 +267,7 @@ header .menu-icon {
   justify-content: center;
   align-items: center;
 }
+
 .taskmanager .taskForm button:hover,
 .taskmanager .shopForm button:hover,
 .shopmanager .taskForm button:hover,
@@ -252,15 +276,18 @@ header .menu-icon {
   transition: 0.4s ease;
   color: #fcca00;
 }
+
 .taskmanager .taskBox li,
 .shopmanager .taskBox li {
   border-bottom: 2px solid #4966bf;
   padding-top: 0.5rem;
 }
+
 .taskmanager .taskBox li:last-child,
 .shopmanager .taskBox li:last-child {
   border: none;
 }
+
 .taskmanager .shopBox,
 .taskmanager .taskBox,
 .shopmanager .shopBox,
@@ -274,24 +301,28 @@ header .menu-icon {
   color: #02091e;
   margin-bottom: 1rem;
 }
+
 .taskmanager .shopBox .priority,
 .taskmanager .taskBox .priority,
 .shopmanager .shopBox .priority,
 .shopmanager .taskBox .priority {
   text-decoration: underline;
 }
+
 .taskmanager .shopBox ul li,
 .taskmanager .taskBox ul li,
 .shopmanager .shopBox ul li,
 .shopmanager .taskBox ul li {
   list-style: none;
 }
+
 .taskmanager .shopBox ul li h2,
 .taskmanager .taskBox ul li h2,
 .shopmanager .shopBox ul li h2,
 .shopmanager .taskBox ul li h2 {
   font-size: 1.2rem;
 }
+
 .taskmanager .shopBox ul li h2,
 .taskmanager .shopBox ul li p,
 .taskmanager .taskBox ul li h2,
@@ -302,6 +333,7 @@ header .menu-icon {
 .shopmanager .taskBox ul li p {
   word-wrap: break-word;
 }
+
 .taskmanager .shopBox ul li button,
 .taskmanager .taskBox ul li button,
 .shopmanager .shopBox ul li button,
@@ -315,6 +347,7 @@ header .menu-icon {
   height: 2rem;
   border: 2px outset #4966bf;
 }
+
 .taskmanager .shopBox ul li button:hover,
 .taskmanager .taskBox ul li button:hover,
 .shopmanager .shopBox ul li button:hover,
@@ -323,6 +356,7 @@ header .menu-icon {
   transition: 0.4s ease;
   color: #fcca00;
 }
+
 .taskmanager .shopBox ul .shop-item,
 .taskmanager .taskBox ul .shop-item,
 .shopmanager .shopBox ul .shop-item,
@@ -332,6 +366,7 @@ header .menu-icon {
   align-items: center;
   word-break: break-all;
 }
+
 .taskmanager .shopBox ul .shop-item .shop-buttons,
 .taskmanager .taskBox ul .shop-item .shop-buttons,
 .shopmanager .shopBox ul .shop-item .shop-buttons,
@@ -341,6 +376,7 @@ header .menu-icon {
   margin-bottom: 0.5rem;
   justify-content: right;
 }
+
 .taskmanager .shopBox ul .shop-item .shop-buttons button,
 .taskmanager .taskBox ul .shop-item .shop-buttons button,
 .shopmanager .shopBox ul .shop-item .shop-buttons button,
@@ -350,6 +386,7 @@ header .menu-icon {
   align-items: center;
   margin-left: 0.2rem;
 }
+
 .taskmanager .shopBox ul .task-item,
 .taskmanager .taskBox ul .task-item,
 .shopmanager .shopBox ul .task-item,
@@ -359,6 +396,7 @@ header .menu-icon {
   grid-template-rows: 1fr 2.5rem;
   gap: 0.5rem;
 }
+
 .taskmanager .shopBox ul .task-item .task-buttons,
 .taskmanager .taskBox ul .task-item .task-buttons,
 .shopmanager .shopBox ul .task-item .task-buttons,
@@ -369,6 +407,7 @@ header .menu-icon {
   justify-content: right;
   grid-row: 2;
 }
+
 .taskmanager .shopBox ul .task-item .task-buttons button,
 .taskmanager .taskBox ul .task-item .task-buttons button,
 .shopmanager .shopBox ul .task-item .task-buttons button,
@@ -378,6 +417,7 @@ header .menu-icon {
   align-items: center;
   margin-left: 0.2rem;
 }
+
 .taskmanager .shopBox ul .shop-item.completed,
 .taskmanager .shopBox ul .task-item.completed,
 .taskmanager .taskBox ul .shop-item.completed,
@@ -387,9 +427,10 @@ header .menu-icon {
 .shopmanager .taskBox ul .shop-item.completed,
 .shopmanager .taskBox ul .task-item.completed {
   -webkit-text-decoration: line-through #4966bf 3px;
-          text-decoration: line-through #4966bf 3px;
+  text-decoration: line-through #4966bf 3px;
   color: #4966bf;
 }
+
 .taskmanager button,
 .shopmanager button {
   background-color: #021e73;
@@ -409,12 +450,14 @@ header .menu-icon {
   margin-bottom: 0.25rem;
   height: 3rem;
 }
+
 .taskmanager button:hover,
 .shopmanager button:hover {
   border: 3px solid #fcca00;
   transition: 0.4s ease;
   color: #fcca00;
 }
+
 .taskmanager .modal-overlay .modal input,
 .taskmanager .modal-overlay .modal textarea,
 .shopmanager .modal-overlay .modal input,
@@ -426,12 +469,14 @@ header .menu-icon {
   width: 100%;
   height: auto;
 }
+
 .taskmanager .modal-overlay .modal .custom-edit,
 .shopmanager .modal-overlay .modal .custom-edit {
   width: 100%;
   height: 6rem;
   resize: none;
 }
+
 .taskmanager .modal-overlay .modal select,
 .taskmanager .modal-overlay .modal option,
 .shopmanager .modal-overlay .modal select,
@@ -446,6 +491,7 @@ header .menu-icon {
   margin: 0.5rem 0;
   border: #02091e 1.6px inset;
 }
+
 .taskmanager .modal-overlay .modal button,
 .shopmanager .modal-overlay .modal button {
   background-color: #021e73;
@@ -462,12 +508,14 @@ header .menu-icon {
   justify-content: center;
   align-items: center;
 }
+
 .taskmanager .modal-overlay .modal button:hover,
 .shopmanager .modal-overlay .modal button:hover {
   border: 3px solid #fcca00;
   transition: 0.4s ease;
   color: #fcca00;
 }
+
 .taskmanager .modal-overlay .modal h2,
 .shopmanager .modal-overlay .modal h2 {
   font-size: 1.5rem;
@@ -479,30 +527,37 @@ header .menu-icon {
     font-size: 1.3rem;
   }
 }
+
 /*Desktop version - made on behalf og bigger screens*/
 @media only screen and (min-width: 801px) {
   .manager {
     max-width: 1000px;
   }
+
   .switchButtons button {
     font-size: 1.5rem;
   }
+
   .taskmanager h1,
   .shopmanager h1 {
     font-size: 1.75rem;
   }
+
   .taskmanager h2,
   .shopmanager h2 {
     font-size: 1.5rem;
   }
+
   .taskmanager p,
   .shopmanager p {
     font-size: 1.3rem;
   }
+
   .taskmanager button,
   .shopmanager button {
     font-size: 1.3rem;
   }
+
   .taskmanager .taskForm input,
   .taskmanager .taskForm select,
   .taskmanager .taskForm option,
@@ -525,42 +580,31 @@ header .menu-icon {
   .shopmanager .shopForm .prioritytxt {
     font-size: 1.3rem;
   }
-  .taskmanager .taskForm input,
-  .taskmanager .taskForm select,
-  .taskmanager .taskForm option,
-  .taskmanager .shopForm input,
-  .taskmanager .shopForm select,
-  .taskmanager .shopForm option,
-  .shopmanager .taskForm input,
-  .shopmanager .taskForm select,
-  .shopmanager .taskForm option,
-  .shopmanager .shopForm input,
-  .shopmanager .shopForm select,
-  .shopmanager .shopForm option {
-    width: 45%;
-  }
+
   .taskmanager .taskForm button,
   .taskmanager .shopForm button,
   .shopmanager .taskForm button,
   .shopmanager .shopForm button {
     height: 3rem;
-    width: 45%;
-    justify-self: center;
   }
+
   .taskmanager .taskBox ul li,
   .shopmanager .taskBox ul li {
     padding-bottom: 1rem;
   }
+
   .taskmanager .taskBox ul li button,
   .shopmanager .taskBox ul li button {
     width: 2.5rem;
     height: 2.5rem;
   }
+
   .taskmanager .taskBox ul li button .icon,
   .shopmanager .taskBox ul li button .icon {
     width: 2rem;
     height: auto;
   }
+
   .taskmanager .taskBox .modal input,
   .taskmanager .taskBox .modal select,
   .taskmanager .taskBox .modal option,
@@ -573,22 +617,28 @@ header .menu-icon {
   .shopmanager .taskBox .modal .custom-edit {
     font-size: 1.3rem;
   }
+
   .taskmanager .taskBox .modal label,
   .shopmanager .taskBox .modal label {
     font-size: 1.3rem;
   }
+
   .taskmanager .taskBox .modal button,
   .shopmanager .taskBox .modal button {
     height: 3rem;
   }
+
   .taskmanager .shopBox .shop-item button,
   .shopmanager .shopBox .shop-item button {
     width: 2.5rem;
     height: 2.5rem;
   }
+
   .taskmanager .shopBox .shop-item button .icon,
   .shopmanager .shopBox .shop-item button .icon {
     width: 2rem;
     height: auto;
   }
-}/*# sourceMappingURL=App.css.map */
+}
+
+/*# sourceMappingURL=App.css.map */

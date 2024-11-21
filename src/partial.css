@@ -2,15 +2,20 @@
   font-family: "Lexend-Bold";
   src: url(../src/assets/fonts/Lexend-Bold.ttf);
 }
+
 @font-face {
   font-family: "Lexend-SemiBold";
   src: url(../src/assets/fonts/Lexend-SemiBold.ttf);
 }
+
 @font-face {
   font-family: "Lexend-Regular";
   src: url(../src/assets/fonts/Lexend-Regular.ttf);
 }
+
 @font-face {
   font-family: "OpenSans-Regular";
   src: url(../src/assets/fonts/OpenSans-Regular.ttf);
-}/*# sourceMappingURL=partial.css.map */
+}
+
+/*# sourceMappingURL=partial.css.map */
