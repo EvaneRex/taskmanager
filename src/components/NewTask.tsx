@@ -21,7 +21,7 @@ export default function NewTask({ onAddTask }: NewTaskProps) {
   const task = useRef<HTMLInputElement>(null);
   const summary = useRef<HTMLInputElement>(null);
   const [priority, setPriority] = useState<"High" | "Medium" | "Low">("Medium");
-
+  //handles the submitment of a new task
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
