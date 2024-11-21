@@ -74,6 +74,7 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           value={shopName}
           onChange={(e) => setShopName(e.target.value)}
           placeholder="Add shopname"
+          name="shopName"
         />
         <button type="submit" aria-label="Add shop">
           Add shop
@@ -87,10 +88,12 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Add a new item"
+          name="itemName"
         />
 
         {/* Department selection */}
         <select
+          name="selectDep"
           value={selectedDepartment}
           onChange={(e) =>
             setSelectedDepartment(
@@ -122,6 +125,7 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
 
         {/* Shop selection */}
         <select
+          name="selectShop"
           value={selectedShop}
           onChange={(e) => setSelectedShop(e.target.value)}
           required

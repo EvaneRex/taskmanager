@@ -9,7 +9,7 @@
  *
  * */
 
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+//import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { FC } from "react";
 
 //interface sets the conditions that must be fulfilled, kinda like a set of rules that must be followed. type can also be used, that will look like type HeaderProps ={}
@@ -25,7 +25,7 @@ const Header: FC<HeaderProps> = ({ title, logoUrl }) => {
         <img src={logoUrl} alt="Logo" loading="lazy" />
         <p>{title}</p>
       </div>
-      <MenuRoundedIcon className="menu-icon" />
+      {/**<MenuRoundedIcon className="menu-icon" /> */}
     </header>
   );
 };
