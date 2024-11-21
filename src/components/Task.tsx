@@ -77,8 +77,8 @@ const Task: React.FC<TaskProps> = ({
       <div className="task-buttons">
         <button
           onClick={() => handleCompleteClick(taskItem.id)}
-          className={`complete ${taskItem.completed ? "active" : ""}`} {/*btn that handles the task status*/}
-        >
+          className={`complete ${taskItem.completed ? "active" : ""}`}
+        >{/*btn that handles the task status*/}
           {taskItem.completed ? (
             <>
               <UndoIcon className="icon" />
@@ -94,8 +94,8 @@ const Task: React.FC<TaskProps> = ({
         </button>
         <button
           onClick={() => handleDeleteClick(taskItem.id)}
-          className="delete" {/*btn that handles the delete option*/}
-        >
+          className="delete"
+        >{/*btn that handles the delete option*/}
           <RemoveCircleOutlineIcon className="icon" />
         </button>
       </div>
