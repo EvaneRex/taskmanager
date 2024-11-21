@@ -24,18 +24,19 @@ interface ShopItemProps {
     name: string;
     completed: boolean;
     department:
-    | "Fruit/Vegetables"
-    | "Bread"
-    | "Dry goods"
-    | "Dairy"
-    | "Meat"
-    | "Frozen"
-    | "Non Food";
+      | "Fruit/Vegetables"
+      | "Bread"
+      | "Dry goods"
+      | "Dairy"
+      | "Meat"
+      | "Frozen"
+      | "Non Food";
     shop: string;
   };
-  removeShopItem: (id: number) => void;
-  toggleShopItemCompletion: (id: number) => void;
+  removeShopItem: (id: number) => void; // function to remove a shop item by id
+  toggleShopItemCompletion: (id: number) => void; // function to toggle completion status of a shop item based on id
 }
+
 //Define the type for shops (will be just a string in this instance)
 export type Shop = string;
 
@@ -49,7 +50,7 @@ const ShopItem: React.FC<ShopItemProps> = ({
     toggleShopItemCompletion(id);
   };
 
-  //Function that handle deleting a task
+  //Function that handle deleting a task with a confirmation msg
   const handleDeleteClick = (id: number): void => {
     const confirmed = window.confirm(
       "Are you sure you want to delete this item?"

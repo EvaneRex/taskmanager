@@ -11,6 +11,7 @@
 
 import ShopItem from "./ShopItem";
 
+// Defines a type for departments
 type Department =
   | "Fruit/Vegetables"
   | "Bread"
@@ -20,7 +21,7 @@ type Department =
   | "Frozen"
   | "Non Food";
 
-// Define the order of departments
+// Define the order of departments with a record
 const departmentOrder: Record<Department, number> = {
   "Fruit/Vegetables": 1,
   Bread: 2,
@@ -31,7 +32,7 @@ const departmentOrder: Record<Department, number> = {
   "Non Food": 7,
 } as const;
 
-// Define the type for a shop item
+// Define the structure for a shop item
 interface ShopItemType {
   id: number;
   name: string;
@@ -47,6 +48,7 @@ interface ShopListProps {
   toggleShopItemCompletion: (id: number) => void;
 }
 
+// The ShopList component itself
 const ShopList: React.FC<ShopListProps> = ({
   shopItems,
   removeShopItem,
@@ -65,14 +67,15 @@ const ShopList: React.FC<ShopListProps> = ({
 
   // Group shopItems by shop
   const groupedShopItems = sortedShopItems.reduce<
-    Record<string, ShopItemType[]>
+    Record<string, ShopItemType[]> // Defines the type of resulting object, a record where the key is a string(shop name), and value is an array of ShopItemType
   >((acc, shopItem) => {
+    //Checks if the shop already exists
     if (!acc[shopItem.shop]) {
-      acc[shopItem.shop] = [];
+      acc[shopItem.shop] = []; //if its doesnt, initializes it with an empty array
     }
-    acc[shopItem.shop].push(shopItem);
-    return acc;
-  }, {});
+    acc[shopItem.shop].push(shopItem); //add the current shop item to the corresponding shops array
+    return acc; // returns the updated object
+  }, {}); //starts with an empy object initially
 
   return (
     <div aria-label="Shopping items">
