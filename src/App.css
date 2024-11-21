@@ -547,6 +547,10 @@ header .menu-icon {
     width: 45%;
     justify-self: center;
   }
+  .taskmanager .taskBox ul li,
+  .shopmanager .taskBox ul li {
+    padding-bottom: 1rem;
+  }
   .taskmanager .taskBox ul li button,
   .shopmanager .taskBox ul li button {
     width: 2.5rem;
