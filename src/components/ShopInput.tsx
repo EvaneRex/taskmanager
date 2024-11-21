@@ -91,6 +91,7 @@ const ShopInput: FC<ShopInputProps> = ({ addShopItem, addShop, shops }) => {
       </form>
 
       {/* Handles on submit for the items */}
+      <h2>Add item</h2>
       <form onSubmit={handleSubmit} aria-labelledby="item-form">
         <input
           type="text"
