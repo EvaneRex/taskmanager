@@ -8,6 +8,8 @@
  *  @param {removeTaskItem} - A callback function that deletes the task based on its id.
  * @param {toggleShopItemCompletion} - A function to toggle the status of an item between complete and active.
  * @param {onUpdateTask} - A function that updates the task after an editing by the user
+ * 
+ * 
  * @returns {JSX.Element} - A list of tasks rendered as on unordered list
  *
  */

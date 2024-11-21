@@ -1,12 +1,12 @@
 /**
  * The Taskmanager component manages the tasks by allowing the users to add, delete, edit and mark them as complete. It uses localstorage to ensure the tasks stays even after page refresh.
  *
- * What to add to the file?
- * <Taskmanager />
  *
  * Note for future additions for the task files in general
  * Adding a event keydown for space or enter to enable keyboard usage for marking as complete.
+ * 
  */
+
 import { useEffect, useState } from "react";
 import NewTask from "./NewTask";
 import TaskList, { Priority, TaskItemType } from "./TaskList";

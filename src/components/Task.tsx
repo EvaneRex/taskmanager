@@ -19,8 +19,9 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import UndoIcon from "@mui/icons-material/Undo";
 import EditIcon from "@mui/icons-material/Edit";
 
+
 interface TaskProps {
-  taskItem: TaskItemType;
+  taskItem: TaskItemType; //imported from TaskList.tsx 
   removeTaskItem: (id: number) => void;
   toggleTaskItemCompletion: (id: number) => void;
   onUpdateTask: (updatedTask: TaskItemType) => void;
@@ -34,15 +35,17 @@ const Task: React.FC<TaskProps> = ({
   toggleTaskItemCompletion,
   onUpdateTask,
 }) => {
+  //functions that makes it possible for them to interact and update the task list
   const [isEditing, setIsEditing] = useState(false); // Modal visibility state
   const [title, setTitle] = useState(taskItem.title);
   const [summary, setSummary] = useState(taskItem.summary);
   const [priority, setPriority] = useState(taskItem.priority);
 
+  //function that give the task the status of complete or not-complete
   const handleCompleteClick = (id: number): void => {
     toggleTaskItemCompletion(id);
   };
-
+  //function that make it possible to delete an task.
   const handleDeleteClick = (id: number): void => {
     const confirmed = window.confirm(
       "Are you sure you want to delete this task?"
@@ -74,7 +77,7 @@ const Task: React.FC<TaskProps> = ({
       <div className="task-buttons">
         <button
           onClick={() => handleCompleteClick(taskItem.id)}
-          className={`complete ${taskItem.completed ? "active" : ""}`}
+          className={`complete ${taskItem.completed ? "active" : ""}`} {/*btn that handles the task status*/}
         >
           {taskItem.completed ? (
             <>
@@ -86,12 +89,12 @@ const Task: React.FC<TaskProps> = ({
             </>
           )}
         </button>
-        <button onClick={() => setIsEditing(true)}>
+        <button onClick={() => setIsEditing(true)}>{/*btn that handles the editing*/}
           <EditIcon />
         </button>
         <button
           onClick={() => handleDeleteClick(taskItem.id)}
-          className="delete"
+          className="delete" {/*btn that handles the delete option*/}
         >
           <RemoveCircleOutlineIcon className="icon" />
         </button>
